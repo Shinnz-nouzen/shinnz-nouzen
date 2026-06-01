@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -49,11 +50,42 @@
   }
 
   .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    display: block;
+    width: auto;
+    max-height: 56px;
+  }
+
+  .logo-image {
+    display: inline-block;
+    max-width: 220px;
+    height: auto;
+  }
+
+  .hero-logo {
+    display: block;
+    margin: 0 auto 1rem;
+    max-width: 140px;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--mocha);
-    letter-spacing: 0.02em;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
   }
 
   .nav-links {
@@ -151,16 +183,17 @@
 
   .star-fill { color: var(--gold); font-size: 0.9rem; }
 
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 5vw, 4.2rem);
-    font-weight: 700;
-    line-height: 1.1;
-    color: var(--espresso);
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3.5rem, 5vw, 5rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.03em !important;
+    color: var(--espresso) !important;
     margin-bottom: 1.5rem;
   }
 
-  h1 em {
+  .hero h1 em {
     font-style: italic;
     color: var(--caramel);
   }
@@ -235,22 +268,6 @@
     z-index: 2;
   }
 
-  .cafe-icon-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-  }
-
-  .cafe-icon-circle {
-    width: 80px; height: 80px;
-    background: linear-gradient(135deg, var(--caramel), var(--gold));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.2rem;
-  }
-
   .cafe-card-name {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
@@ -299,6 +316,7 @@
 
   .float-pill {
     position: absolute;
+    z-index: 20;
     background: var(--white);
     border: 1px solid rgba(196,132,42,0.2);
     border-radius: 2rem;
@@ -312,6 +330,29 @@
     align-items: center;
     gap: 0.4rem;
     animation: float 3s ease-in-out infinite;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+
+  .status-badge.open {
+    background: rgba(52, 160, 99, 0.12);
+    color: #216638;
+    border: 1px solid rgba(52, 160, 99, 0.2);
+  }
+
+  .status-badge.closed {
+    background: rgba(204, 67, 54, 0.12);
+    color: #7A1E18;
+    border: 1px solid rgba(204, 67, 54, 0.2);
   }
 
   .pill-1 { top: -16px; left: -24px; animation-delay: 0s; }
@@ -337,8 +378,31 @@
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--caramel);
+    color: var(--gold);
     margin-bottom: 0.75rem;
+  }
+
+  .section-intro {
+    max-width: 640px;
+    margin-bottom: 2.5rem;
+  }
+
+  #about h2,
+  #menu h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 4vw, 4.5rem);
+    font-weight: 800;
+    color: var(--espresso);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+
+  #about .section-intro p,
+  #menu .section-intro p {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.75;
   }
 
   h2 {
@@ -711,14 +775,6 @@
     text-align: center;
   }
 
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--cream);
-    margin-bottom: 0.5rem;
-  }
-
   .footer-tagline {
     font-size: 0.82rem;
     margin-bottom: 2rem;
@@ -747,6 +803,30 @@
     border-top: 1px solid rgba(255,255,255,0.08);
     padding-top: 1.5rem;
     margin-top: 0.5rem;
+  }
+
+  .footer-credit {
+    font-size: 0.72rem;
+    color: rgba(250,246,238,0.65);
+    margin-top: 0.5rem;
+    opacity: 0.9;
+  }
+
+  .footer-credit-highlight {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: var(--cream);
+    font-weight: 600;
+  }
+
+  .footer-credit-highlight::before {
+    content: '◆';
+    display: inline-block;
+    color: var(--gold);
+    margin-right: 0.4rem;
+    font-size: 0.85rem;
+    transform: translateY(-1px);
   }
 
   /* ANIMATIONS */
@@ -790,7 +870,9 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">The Siblings ☕</div>
+  <a href="#top" class="nav-logo">
+    <img src="The Siblings Mart and Cafe logo" alt="The Siblings Mart & Café logo" class="logo-image" width="150">
+  </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#menu">Menu</a></li>
@@ -819,11 +901,9 @@
 
     <div class="hero-visual">
       <div class="cafe-illustration">
-        <div class="float-pill pill-1">🟢 Open Now</div>
+        <div class="float-pill pill-1 status-badge">● Open Now</div>
         <div class="cafe-card-main">
-          <div class="cafe-icon-row">
-            <div class="cafe-icon-circle">☕</div>
-          </div>
+          <img src="The Siblings Mart and Cafe logo" alt="The Siblings Mart & Café logo" class="hero-logo" width="180">
           <div class="cafe-card-name">The Siblings Mart & Café</div>
           <div class="cafe-card-subtitle">Café · Mart · Tboung Khmum</div>
           <div class="cafe-card-stats">
@@ -841,7 +921,9 @@
             </div>
           </div>
         </div>
-        <div class="float-pill pill-2">💰 Affordable Prices</div>
+       </div>
+        </div>
+       <div class="float-pill pill-2">💰 Affordable Prices</div>
       </div>
     </div>
   </div>
@@ -850,10 +932,10 @@
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="container">
-    <div class="fade-in">
+    <div class="fade-in section-intro">
       <p class="section-label">Who We Are</p>
       <h2>A Family Spot<br>You'll Love</h2>
-      <p style="max-width: 540px; color: var(--muted); font-size: 1rem; line-height: 1.75;">We're a sibling-run café and convenience mart right here in Tboung Khmum. Whether you're grabbing your morning coffee, a quick snack, or just a place to sit and relax — we've got you covered with genuine warmth and honest prices.</p>
+      <p>We're a sibling-run café and convenience mart right here in Tboung Khmum. Whether you're grabbing your morning coffee, a quick snack, or just a place to sit and relax — we've got you covered with genuine warmth and honest prices.</p>
     </div>
 
     <div class="info-grid fade-in">
@@ -884,52 +966,13 @@
 <!-- MENU -->
 <section class="section" id="menu" style="background: var(--warm);">
   <div class="container">
-    <div class="fade-in">
+    <div class="fade-in section-intro">
       <p class="section-label">What We Offer</p>
       <h2>Our Menu</h2>
       <p style="color: var(--muted); font-size: 0.95rem; max-width: 420px;">A little something for every taste — hot drinks, cold drinks, snacks and more.</p>
     </div>
 
-    <div class="menu-strip fade-in">
-      <div class="menu-chip active">☕ All</div>
-      <div class="menu-chip">Hot Drinks</div>
-      <div class="menu-chip">Cold Drinks</div>
-      <div class="menu-chip">Food & Snacks</div>
-      <div class="menu-chip">Mart Items</div>
-    </div>
-
-    <div class="menu-items fade-in">
-      <div class="menu-item">
-        <div class="menu-item-icon">☕</div>
-        <div class="menu-item-name">Hot Coffee</div>
-        <div class="menu-item-tag">Classic · Hot</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-icon">🧊</div>
-        <div class="menu-item-name">Iced Coffee</div>
-        <div class="menu-item-tag">Refreshing · Cold</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-icon">🧋</div>
-        <div class="menu-item-name">Milk Tea</div>
-        <div class="menu-item-tag">Creamy · Cold</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-icon">🥤</div>
-        <div class="menu-item-name">Fresh Drinks</div>
-        <div class="menu-item-tag">Juices · Cold</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-icon">🍞</div>
-        <div class="menu-item-name">Pastries & Snacks</div>
-        <div class="menu-item-tag">Light Bites</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-icon">🛍️</div>
-        <div class="menu-item-name">Mart Essentials</div>
-        <div class="menu-item-tag">Daily Needs</div>
-      </div>
-    </div>
+    <div id="react-menu-root" class="mt-8"></div>
   </div>
 </section>
 
@@ -940,10 +983,7 @@
       <p class="section-label">We're Here For You</p>
       <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-bottom:0.5rem;">
         <h2 style="margin:0;">Opening Hours</h2>
-        <div class="hours-open-badge">
-          <span class="dot-green"></span>
-          Open Now
-        </div>
+        <div class="hours-open-badge status-badge">● Open Now</div>
       </div>
       <p style="color: rgba(250,246,238,0.55); font-size: 0.9rem;">We're open every day of the week — come visit us!</p>
 
@@ -1074,7 +1114,9 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">The Siblings Mart & Café</div>
+  <div class="footer-logo">
+    <img src="The Siblings Mart and Cafe logo" alt="The Siblings Mart & Café logo" class="logo-image" width="150">
+  </div>
   <p class="footer-tagline">Good service · Affordable prices · Tboung Khmum</p>
   <ul class="footer-links">
     <li><a href="#about">About</a></li>
@@ -1085,14 +1127,35 @@
   </ul>
   <p class="footer-copy">© 2025 The Siblings Mart & Café · Tboung Khmum, Cambodia<br>
   <span style="font-size:0.7rem; opacity:0.5;">☎ 017 291 588 · Open 7 AM – 10 PM Daily</span></p>
+  <p class="footer-credit">Website by <span class="footer-credit-highlight">Future Project Team</span></p>
 </footer>
 
 <script>
+  // Open/closed status based on local time
+  function isStoreOpen() {
+    const now = new Date();
+    const hour = now.getHours();
+    return hour >= 7 && hour < 22;
+  }
+
+  function updateStatusBadges() {
+    const open = isStoreOpen();
+    const statusText = open ? '● Open Now' : '● Closed Now';
+    document.querySelectorAll('.status-badge').forEach(badge => {
+      badge.textContent = statusText;
+      badge.classList.toggle('open', open);
+      badge.classList.toggle('closed', !open);
+    });
+  }
+
   // Highlight today's day card
   const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   const today = days[new Date().getDay()];
   const todayCard = document.getElementById('day-' + today);
   if (todayCard) todayCard.classList.add('today');
+
+  updateStatusBadges();
+  setInterval(updateStatusBadges, 60000);
 
   // Fade-in on scroll
   const obs = new IntersectionObserver((entries) => {
@@ -1101,14 +1164,6 @@
 
   document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-  // Menu chip filter (visual only)
-  document.querySelectorAll('.menu-chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-      document.querySelectorAll('.menu-chip').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-    });
-  });
-
   // Nav scroll effect
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
@@ -1116,6 +1171,73 @@
       ? '0 4px 20px rgba(44,26,14,0.08)'
       : 'none';
   });
+</script>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script>
+  const { useState } = React;
+
+  const menuItems = [
+    { id: 1, name: 'Hot Coffee', category: 'hot_drink', tags: 'CLASSIC • HOT', icon: '☕' },
+    { id: 2, name: 'Espresso', category: 'hot_drink', tags: 'BOLD • HOT', icon: '🔥' },
+    { id: 3, name: 'Iced Coffee', category: 'cold_drink', tags: 'REFRESHING • COLD', icon: '🧊' },
+    { id: 4, name: 'Milk Tea', category: 'cold_drink', tags: 'CREAMY • COLD', icon: '🧋' },
+    { id: 5, name: 'Fresh Juice', category: 'cold_drink', tags: 'FRUITY • COLD', icon: '🥤' },
+    { id: 6, name: 'Pastries & Snacks', category: 'food_snack', tags: 'BITE-SIZED • TASTY', icon: '🥐' },
+    { id: 7, name: 'Sandwich', category: 'food_snack', tags: 'FILLING • SAVORY', icon: '🥪' },
+    { id: 8, name: 'Mart Essentials', category: 'mart_item', tags: 'EVERYDAY • HANDY', icon: '🛍️' },
+    { id: 9, name: 'Cold Water', category: 'mart_item', tags: 'REFRESHING • CHILLED', icon: '💧' },
+  ];
+
+  const filterCategories = [
+    { key: 'all', label: 'All', icon: '☕' },
+    { key: 'hot_drink', label: 'Hot Drinks', icon: '🔥' },
+    { key: 'cold_drink', label: 'Cold Drinks', icon: '🧊' },
+    { key: 'food_snack', label: 'Food & Snacks', icon: '🥐' },
+    { key: 'mart_item', label: 'Mart Items', icon: '🛍️' },
+  ];
+
+  function MenuGrid() {
+    const [selectedCategory, setSelectedCategory] = useState('all');
+    const items = selectedCategory === 'all'
+      ? menuItems
+      : menuItems.filter(item => item.category === selectedCategory);
+
+    return (
+      React.createElement('div', { className: 'mt-8' },
+        React.createElement('div', { className: 'flex flex-wrap gap-3' },
+          filterCategories.map(category => (
+            React.createElement('button', {
+              key: category.key,
+              type: 'button',
+              onClick: () => setSelectedCategory(category.key),
+              className: `inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${selectedCategory === category.key ? 'bg-slate-900 text-white border-slate-900 shadow-sm' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'}`
+            },
+              React.createElement('span', null, category.icon),
+              React.createElement('span', null, category.label)
+            )
+          ))
+        ),
+        React.createElement('div', { className: 'mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3' },
+          items.map(item => (
+            React.createElement('article', {
+              key: item.id,
+              className: 'rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg'
+            },
+              React.createElement('div', { className: 'text-3xl mb-4' }, item.icon),
+              React.createElement('h3', { className: 'text-xl font-semibold text-slate-900 mb-2' }, item.name),
+              React.createElement('p', { className: 'text-sm uppercase tracking-[0.18em] text-slate-500' }, item.tags)
+            )
+          ))
+        )
+      )
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('react-menu-root')).render(
+    React.createElement(MenuGrid)
+  );
 </script>
 </body>
 </html>
