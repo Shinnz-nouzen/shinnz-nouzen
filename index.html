@@ -15,7 +15,7 @@
   :root {
     --cream: #FAF6EE;
     --warm: #F2EAD3;
-    --espresso: #2C1A0E;
+    --espresso: #4A2C11;
     --mocha: #5C3A1E;
     --caramel: #C4842A;
     --gold: #E8B84B;
@@ -273,6 +273,31 @@
 
   .btn-outline:hover { background: var(--warm); transform: translateY(-2px); }
 
+  .menu-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.75rem;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    border: 1.5px solid var(--espresso);
+    background: transparent;
+    color: var(--espresso);
+    font-weight: 600;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    cursor: pointer;
+  }
+
+  .menu-toggle-btn:hover {
+    background: var(--espresso);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .menu-toggle-btn.hidden {
+    display: none;
+  }
+
   /* Hero visual */
   .hero-visual {
     display: flex;
@@ -416,7 +441,7 @@
   }
 
   #about h2,
-  #menu h2 {
+  #menu-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(3rem, 4vw, 4.5rem);
     font-weight: 800;
@@ -426,7 +451,7 @@
   }
 
   #about .section-intro p,
-  #menu .section-intro p {
+  #menu-section .section-intro p {
     margin-top: 1rem;
     color: var(--muted);
     font-size: 1rem;
@@ -941,7 +966,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#about" data-i18n="nav.about">About</a></li>
-    <li><a href="#menu" data-i18n="nav.menu">Menu</a></li>
+    <li><a href="#menu-section" data-i18n="nav.menu">Menu</a></li>
     <li><a href="#hours" data-i18n="nav.hours">Hours</a></li>
     <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
     <li><a href="#contact" class="nav-cta" data-i18n="nav.find">Find Us</a></li>
@@ -961,8 +986,8 @@
       <h1 data-i18n="heroTitle">Where Every<br><em>Sip Feels</em><br>Like Home</h1>
       <p class="hero-desc" data-i18n="heroDesc">A cozy neighborhood café and mart in Tboung Khmum, built by siblings who love great coffee and friendly smiles. Affordable prices, warm service — every single day.</p>
       <div class="hero-actions">
-        <a href="#menu" class="btn-primary" data-i18n="exploreBtn">Explore Menu →</a>
-        <a href="tel:017291588" class="btn-outline">📞 017 291 588</a>
+        <a href="#menu-section" class="btn-primary" data-i18n="exploreBtn">Explore Menu →</a>
+        <a href="tel:060331661" class="btn-outline">📞 060 331 661</a>
       </div>
     </div>
 
@@ -1031,7 +1056,7 @@
 </section>
 
 <!-- MENU -->
-<section class="section" id="menu" style="background: var(--warm);">
+<section class="section" id="menu-section" style="background: var(--warm);">
   <div class="container">
     <div class="fade-in section-intro">
       <p class="section-label" style="color: #c59b27;" data-i18n="menu.sectionLabel">What We Offer</p>
@@ -1109,7 +1134,7 @@
           <div class="contact-icon">📞</div>
           <div>
             <div class="contact-label">Phone</div>
-            <div class="contact-value"><a href="tel:017291588" style="color: var(--espresso); text-decoration:none; font-weight:500;">017 291 588</a></div>
+            <div class="contact-value"><a href="tel:060331661" style="color: var(--espresso); text-decoration:none; font-weight:500;">060 331 661</a></div>
           </div>
         </div>
         <div class="contact-row">
@@ -1171,13 +1196,13 @@
   <p class="footer-tagline">Good service · Affordable prices · Tboung Khmum</p>
   <ul class="footer-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#menu">Menu</a></li>
+    <li><a href="#menu-section">Menu</a></li>
     <li><a href="#hours">Hours</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <p class="footer-copy">© 2025 The Siblings Mart & Café · Tboung Khmum, Cambodia<br>
-  <span style="font-size:0.7rem; opacity:0.5;">☎ 017 291 588 · Open 7 AM – 10 PM Daily</span></p>
+  <span style="font-size:0.7rem; opacity:0.5;">☎ 060 331 661 · Open 7 AM – 10 PM Daily</span></p>
   <p class="footer-credit">Website by <span class="footer-credit-highlight">Future Project Team</span></p>
 </footer>
 
@@ -1240,6 +1265,8 @@
         sectionLabel: 'What We Offer',
         heading: 'Our Menu',
         meta: 'A little something for every taste — hot drinks, cold drinks, snacks and more.',
+        showMore: 'Show More',
+        showLess: 'Show Less',
         filters: {
           all: 'All',
           hot_drink: 'Hot Drinks',
@@ -1292,6 +1319,8 @@
         sectionLabel: 'អ្វីដែលយើងផ្តល់ជូន',
         heading: 'ម៉ឺនុយរបស់យើង',
         meta: 'មានអ្វីៗគ្រប់យ៉ាងសម្រាប់រាល់ចំណូលចិត្ត — ភេសជ្ជៈក្តៅ ភេសជ្ជៈត្រជាក់ អាហារសម្រន់ និងទំនិញជាច្រើនទៀត។',
+        showMore: 'មើលបន្ថែម',
+        showLess: 'បិទ',
         filters: {
           all: 'ទាំងអស់',
           hot_drink: 'ភេសជ្ជៈក្តៅ',
@@ -1457,12 +1486,13 @@
     { id: 5, name: 'Fresh Juice', category: 'cold_drink', tags: 'FRUITY • COLD', image: 'images/fresh-juice.jpg' },
     { id: 6, name: 'Pastries & Snacks', category: 'food_snack', tags: 'BITE-SIZED • TASTY', image: 'images/pastries.jpg' },
     { id: 7, name: 'Sandwich', category: 'food_snack', tags: 'FILLING • SAVORY', image: 'images/sandwich.jpg' },
-    { id: 8, name: 'Mart Essentials', category: 'mart_item', tags: 'EVERYDAY • HANDY', image: 'images/mart-essentials.jpg' },
-    { id: 9, name: 'Cold Water', category: 'mart_item', tags: 'REFRESHING • CHILLED', image: 'images/cold-water.jpg' },
+    { id: 8, name: "Lay's", category: 'food_snack', tags: 'CRISPY • SALTY', image: 'images/lay-s.jpg' },
+    { id: 9, name: 'Cold Water', category: 'cold_drink', tags: 'REFRESHING • CHILLED', image: 'images/cold-water.jpg' },
+    { id: 10, name: 'Swing Potato Chip', category: 'food_snack', tags: 'CRISPY • TASTY', image: 'images/swing-potato-chip.jpg' },
   ];
 
   const filterCategories = [
-    { key: 'all', label: 'All', icon: '☕' },
+    { key: 'all', label: 'All', icon: '🛒' },
     { key: 'hot_drink', label: 'Hot Drinks', icon: '🔥' },
     { key: 'cold_drink', label: 'Cold Drinks', icon: '🧊' },
     { key: 'food_snack', label: 'Food & Snacks', icon: '🥐' },
@@ -1474,7 +1504,7 @@
   function getMenuFilters() {
     const filterLabels = translations[currentLanguage]?.menu?.filters || translations.en.menu.filters;
     return [
-      { key: 'all', label: filterLabels.all, icon: '☕' },
+      { key: 'all', label: filterLabels.all, icon: '🛒' },
       { key: 'hot_drink', label: filterLabels.hot_drink, icon: '🔥' },
       { key: 'cold_drink', label: filterLabels.cold_drink, icon: '🧊' },
       { key: 'food_snack', label: filterLabels.food_snack, icon: '🥐' },
@@ -1484,10 +1514,25 @@
 
   function MenuGrid() {
     const [selectedCategory, setSelectedCategory] = useState('all');
+    const [isExpanded, setIsExpanded] = useState(false);
     const filterCategories = getMenuFilters();
     const items = selectedCategory === 'all'
       ? menuItems
       : menuItems.filter(item => item.category === selectedCategory);
+    const visibleItems = isExpanded ? items : items.slice(0, 6);
+    const hasMore = menuItems.length > 6;
+    const toggleText = translations[currentLanguage]?.menu?.[isExpanded ? 'showLess' : 'showMore']
+      || (isExpanded ? 'Show Less' : 'Show More');
+
+    const handleToggle = () => {
+      if (isExpanded) {
+        const section = document.getElementById('menu-section');
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      setIsExpanded(prev => !prev);
+    };
 
     return (
       React.createElement('div', { className: 'mt-8' },
@@ -1505,7 +1550,7 @@
           ))
         ),
         React.createElement('div', { className: 'mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3' },
-          items.map(item => (
+          visibleItems.map(item => (
             React.createElement('article', {
               key: item.id,
               className: 'relative overflow-hidden rounded-3xl shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg'
@@ -1525,6 +1570,14 @@
               )
             )
           ))
+        ),
+        React.createElement('div', { className: 'flex justify-center' },
+          React.createElement('button', {
+            id: 'menu-toggle-btn',
+            type: 'button',
+            onClick: handleToggle,
+            className: `menu-toggle-btn ${hasMore ? '' : 'hidden'}`
+          }, toggleText)
         )
       )
     );
