@@ -612,79 +612,116 @@
   }
 
   /* REVIEW */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
   .review-card {
     background: var(--white);
     border: 1px solid rgba(196,132,42,0.15);
-    border-radius: 20px;
+    border-radius: 24px;
     padding: 2rem;
-    max-width: 520px;
     position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(92,58,30,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
 
-  .review-quote {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    line-height: 0;
-    color: var(--caramel);
-    position: absolute;
-    top: 1.25rem;
-    left: 1.75rem;
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 50px rgba(92,58,30,0.12);
   }
 
-  .review-text {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--text);
-    margin: 1rem 0 1.25rem;
-    padding-top: 1rem;
-  }
-
-  .review-author {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .reviewer-avatar {
-    width: 40px; height: 40px;
+  .review-avatar {
+    width: 44px; height: 44px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--caramel), var(--mocha));
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     color: var(--cream);
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 1rem;
+  }
+
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
 
   .reviewer-name {
-    font-weight: 500;
-    font-size: 0.9rem;
+    font-weight: 700;
+    font-size: 1rem;
     color: var(--espresso);
   }
 
   .reviewer-meta {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--muted);
+    margin-top: 0.2rem;
   }
 
-  .owner-reply {
-    background: var(--warm);
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    margin-top: 1.25rem;
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.6;
+  .review-stars {
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
   }
 
-  .owner-reply strong {
-    display: block;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--caramel);
-    margin-bottom: 0.3rem;
+  .review-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin: 0.85rem 0 1.35rem;
+  }
+
+  .review-breakdown {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.7;
+    border-top: 1px solid rgba(196,132,42,0.12);
+    padding-top: 0.95rem;
+  }
+
+  .review-breakdown span {
+    display: inline-flex;
+    gap: 0.3rem;
+  }
+
+  .review-breakdown strong {
+    color: var(--espresso);
+    font-weight: 600;
+  }
+
+  .review-section-intro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .review-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1.5px solid var(--mocha);
+    color: var(--mocha);
+    background: var(--white);
+    padding: 0.85rem 1.2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .review-cta:hover {
+    background: rgba(196,132,42,0.1);
+    transform: translateY(-2px);
   }
 
   /* CONTACT */
@@ -733,21 +770,22 @@
     border: 1px solid rgba(196,132,42,0.15);
     border-radius: 20px;
     aspect-ratio: 4/3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
     overflow: hidden;
     position: relative;
   }
 
-  .map-pin-icon { font-size: 2.5rem; }
+  .map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
 
-  .map-placeholder p {
-    font-size: 0.85rem;
-    color: var(--muted);
-    text-align: center;
+  .map-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(250,246,238,0.05), rgba(250,246,238,0.1));
   }
 
   .map-btn {
@@ -933,7 +971,7 @@
 <section class="section" id="about">
   <div class="container">
     <div class="fade-in section-intro">
-      <p class="section-label">Who We Are</p>
+      <p class="section-label" style="color: #c59b27;">Who We Are</p>
       <h2>A Family Spot<br>You'll Love</h2>
       <p>We're a sibling-run café and convenience mart right here in Tboung Khmum. Whether you're grabbing your morning coffee, a quick snack, or just a place to sit and relax — we've got you covered with genuine warmth and honest prices.</p>
     </div>
@@ -967,7 +1005,7 @@
 <section class="section" id="menu" style="background: var(--warm);">
   <div class="container">
     <div class="fade-in section-intro">
-      <p class="section-label">What We Offer</p>
+      <p class="section-label" style="color: #c59b27;">What We Offer</p>
       <h2>Our Menu</h2>
       <p style="color: var(--muted); font-size: 0.95rem; max-width: 420px;">A little something for every taste — hot drinks, cold drinks, snacks and more.</p>
     </div>
@@ -1021,41 +1059,6 @@
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="section" id="reviews">
-  <div class="container">
-    <div class="fade-in">
-      <p class="section-label">What Guests Say</p>
-      <h2>5.0 Stars ⭐</h2>
-    </div>
-
-    <div style="margin-top: 2rem;" class="fade-in">
-      <div class="review-card">
-        <div class="review-quote">"</div>
-        <p class="review-text">Good service and affordable prices. The food was great too — definitely coming back!</p>
-        <div style="display:flex; gap:0.2rem; color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem;">★★★★★</div>
-        <div class="review-author">
-          <div class="reviewer-avatar">MD</div>
-          <div>
-            <div class="reviewer-name">Meas Davit</div>
-            <div class="reviewer-meta">Local Guide · 1 review · a month ago</div>
-          </div>
-        </div>
-        <div class="owner-reply">
-          <strong>Owner's Reply</strong>
-          Thank you so much for coming by! Your kind words mean the world to us. 🥰 We hope to see you again soon!
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top: 2rem;" class="fade-in">
-      <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn-outline" style="text-decoration:none;">
-        ✏️ Write a Review on Google
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section class="section" id="contact" style="background: var(--warm);">
   <div class="container">
@@ -1101,14 +1104,32 @@
       </div>
 
       <div class="map-placeholder">
-        <div class="map-pin-icon">📍</div>
-        <p style="font-weight: 500; color: var(--mocha);">The Siblings Mart & Café</p>
-        <p>11.92153° N, 105.57406° E<br>Tboung Khmum, Cambodia</p>
-        <a href="https://maps.google.com/?q=11.92153,105.57406" target="_blank" rel="noopener" class="map-btn">
-          Get Directions →
-        </a>
+        <iframe
+          title="The Siblings Mart & Café - Tboung Khmum"
+          src="https://maps.google.com/maps?q=The%20Siblings%20Mart%20%26%20Caf%C3%A9%20National%20Road%2011%2C%20Tboung%20Khmum%2C%20Cambodia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="fade-in review-section-intro">
+      <div>
+        <p class="section-label">What Guests Say</p>
+        <h2>Top Google Reviews</h2>
+      </div>
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="review-cta">
+        ✏️ Write a Review on Google
+      </a>
+    </div>
+
+    <div id="reviews-grid" class="reviews-grid fade-in" aria-live="polite"></div>
   </div>
 </section>
 
@@ -1131,6 +1152,60 @@
 </footer>
 
 <script>
+  const reviews = [
+    {
+      name: 'Sum Sakthana',
+      stars: 5,
+      text: 'Well, this place do a good job in a small town like this, Service is great to be honest, Keep the great job forever',
+      breakdown: { Food: 5, Service: 5, Atmosphere: 4 },
+      when: 'a week ago'
+    },
+    {
+      name: 'Sokun Nary',
+      stars: 5,
+      text: 'A warm atmosphere, friendly service, and excellent food — truly one of the best stops in town.',
+      breakdown: { Food: 5, Service: 5, Atmosphere: 4 },
+      when: '2 weeks ago'
+    },
+    {
+      name: 'Ratanak',
+      stars: 5,
+      text: 'Perfect for a quick coffee and snack. The staff are always smiling and the place feels very welcoming.',
+      breakdown: { Food: 5, Service: 4, Atmosphere: 5 },
+      when: '3 days ago'
+    }
+  ];
+
+  function renderReviews() {
+    const grid = document.getElementById('reviews-grid');
+    if (!grid) return;
+
+    grid.innerHTML = reviews.map(review => {
+      const initials = review.name.split(' ').map(part => part[0]).join('').slice(0, 2).toUpperCase();
+      const stars = '★★★★★'.slice(0, review.stars);
+      const breakdownText = Object.entries(review.breakdown)
+        .map(([label, value]) => `<span><strong>${label}:</strong> ${value}</span>`)
+        .join(' • ');
+
+      return `
+        <article class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">${initials}</div>
+            <div>
+              <div class="reviewer-name">${review.name}</div>
+              <div class="reviewer-meta">${review.when}</div>
+            </div>
+          </div>
+          <div class="review-stars">${stars}</div>
+          <p class="review-text">${review.text}</p>
+          <div class="review-breakdown">${breakdownText}</div>
+        </article>
+      `;
+    }).join('');
+  }
+
+  renderReviews();
+
   // Open/closed status based on local time
   function isStoreOpen() {
     const now = new Date();
