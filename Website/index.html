@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Siblings Mart & Café – Tboung Khmum</title>
+<meta name="description" content="A cozy café and mart in Tboung Khmum. Good service, affordable prices. Open 7 AM–10 PM daily.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF6EE;
+    --warm: #F2EAD3;
+    --espresso: #2C1A0E;
+    --mocha: #5C3A1E;
+    --caramel: #C4842A;
+    --gold: #E8B84B;
+    --sage: #7A9E7E;
+    --text: #2C1A0E;
+    --muted: #7A6251;
+    --white: #FFFDF9;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(250, 246, 238, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196, 132, 42, 0.15);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--mocha);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--caramel); }
+
+  .nav-cta {
+    background: var(--espresso);
+    color: var(--cream) !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 2rem;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--mocha) !important; color: var(--cream) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(196,132,42,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 20% 70%, rgba(122,158,126,0.1) 0%, transparent 50%),
+      var(--cream);
+  }
+
+  /* decorative circles */
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(196,132,42,0.12);
+    top: -80px; right: -100px;
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(196,132,42,0.08);
+    bottom: 60px; left: -60px;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(196,132,42,0.1);
+    border: 1px solid rgba(196,132,42,0.25);
+    padding: 0.35rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--mocha);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .star-fill { color: var(--gold); font-size: 0.9rem; }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--espresso);
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--caramel);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    max-width: 440px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--espresso);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.85rem 1.8rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--mocha); transform: translateY(-2px); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1.5px solid var(--mocha);
+    color: var(--mocha);
+    text-decoration: none;
+    padding: 0.85rem 1.8rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .btn-outline:hover { background: var(--warm); transform: translateY(-2px); }
+
+  /* Hero visual */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .cafe-illustration {
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+  }
+
+  .cafe-card-main {
+    background: var(--white);
+    border: 1px solid rgba(196,132,42,0.2);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(92,58,30,0.12);
+    position: relative;
+    z-index: 2;
+  }
+
+  .cafe-icon-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .cafe-icon-circle {
+    width: 80px; height: 80px;
+    background: linear-gradient(135deg, var(--caramel), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+  }
+
+  .cafe-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--espresso);
+    margin-bottom: 0.3rem;
+  }
+
+  .cafe-card-subtitle {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .cafe-card-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .stat-item {
+    text-align: center;
+    background: var(--warm);
+    border-radius: 12px;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--espresso);
+  }
+
+  .stat-label {
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 2px;
+  }
+
+  .float-pill {
+    position: absolute;
+    background: var(--white);
+    border: 1px solid rgba(196,132,42,0.2);
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--mocha);
+    white-space: nowrap;
+    box-shadow: 0 8px 20px rgba(92,58,30,0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .pill-1 { top: -16px; left: -24px; animation-delay: 0s; }
+  .pill-2 { bottom: 20px; right: -28px; animation-delay: 1.5s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ABOUT */
+  .section {
+    padding: 5rem 2rem;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--caramel);
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--espresso);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  /* INFO CARDS */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .info-card {
+    background: var(--white);
+    border: 1px solid rgba(196,132,42,0.15);
+    border-radius: 20px;
+    padding: 1.75rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(92,58,30,0.1);
+  }
+
+  .info-icon {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon-caramel { background: rgba(196,132,42,0.12); }
+  .icon-sage { background: rgba(122,158,126,0.12); }
+  .icon-espresso { background: rgba(44,26,14,0.08); }
+
+  .info-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--espresso);
+    margin-bottom: 0.5rem;
+  }
+
+  .info-card p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  /* HOURS */
+  .hours-section {
+    background: var(--espresso);
+    color: var(--cream);
+    border-radius: 28px;
+    padding: 3rem;
+    margin: 5rem 0;
+  }
+
+  .hours-section .section-label { color: var(--gold); }
+  .hours-section h2 { color: var(--cream); }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .day-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 1rem 0.75rem;
+    text-align: center;
+    transition: background 0.2s;
+  }
+
+  .day-card.today {
+    background: rgba(196,132,42,0.25);
+    border-color: rgba(196,132,42,0.4);
+  }
+
+  .day-card:hover { background: rgba(255,255,255,0.1); }
+
+  .day-name {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(250,246,238,0.5);
+    margin-bottom: 0.3rem;
+  }
+
+  .day-card.today .day-name { color: var(--gold); }
+
+  .day-hours {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--cream);
+  }
+
+  .hours-open-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(122,158,126,0.2);
+    border: 1px solid rgba(122,158,126,0.3);
+    color: #9DC9A1;
+    padding: 0.3rem 0.9rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .dot-green {
+    width: 7px; height: 7px;
+    background: #9DC9A1;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* MENU HIGHLIGHTS */
+  .menu-strip {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-top: 2.5rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .menu-strip::-webkit-scrollbar { display: none; }
+
+  .menu-chip {
+    flex-shrink: 0;
+    background: var(--white);
+    border: 1px solid rgba(196,132,42,0.15);
+    border-radius: 50px;
+    padding: 0.6rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--mocha);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .menu-chip:hover, .menu-chip.active {
+    background: var(--espresso);
+    color: var(--cream);
+    border-color: var(--espresso);
+  }
+
+  .menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .menu-item {
+    background: var(--white);
+    border: 1px solid rgba(196,132,42,0.12);
+    border-radius: 16px;
+    padding: 1.25rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(92,58,30,0.08);
+  }
+
+  .menu-item-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+
+  .menu-item-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--espresso);
+    margin-bottom: 0.25rem;
+  }
+
+  .menu-item-tag {
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* REVIEW */
+  .review-card {
+    background: var(--white);
+    border: 1px solid rgba(196,132,42,0.15);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 520px;
+    position: relative;
+  }
+
+  .review-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    line-height: 0;
+    color: var(--caramel);
+    position: absolute;
+    top: 1.25rem;
+    left: 1.75rem;
+  }
+
+  .review-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 1rem 0 1.25rem;
+    padding-top: 1rem;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .reviewer-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--caramel), var(--mocha));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cream);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .reviewer-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--espresso);
+  }
+
+  .reviewer-meta {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .owner-reply {
+    background: var(--warm);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .owner-reply strong {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--caramel);
+    margin-bottom: 0.3rem;
+  }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-icon {
+    width: 44px; height: 44px;
+    background: var(--warm);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .contact-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--muted);
+    margin-bottom: 0.1rem;
+  }
+
+  .contact-value {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--espresso);
+  }
+
+  .map-placeholder {
+    background: var(--warm);
+    border: 1px solid rgba(196,132,42,0.15);
+    border-radius: 20px;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .map-pin-icon { font-size: 2.5rem; }
+
+  .map-placeholder p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--espresso);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.6rem 1.3rem;
+    border-radius: 2rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    margin-top: 0.25rem;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .map-btn:hover { background: var(--mocha); transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--espresso);
+    color: rgba(250,246,238,0.6);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.82rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links a {
+    color: rgba(250,246,238,0.5);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  /* ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem; }
+    .nav-links { display: none; }
+
+    .hero-content { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-visual { order: -1; }
+    .cafe-illustration { max-width: 320px; }
+
+    .contact-grid { grid-template-columns: 1fr; }
+    .map-placeholder { aspect-ratio: 16/9; }
+
+    .hours-section { padding: 2rem; border-radius: 20px; }
+
+    .section { padding: 3.5rem 1.25rem; }
+    .hours-section { margin: 3rem 0; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-actions { flex-direction: column; }
+    .btn-primary, .btn-outline { justify-content: center; }
+    .cafe-card-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">The Siblings ☕</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#hours">Hours</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Find Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">
+        <span class="star-fill">★★★★★</span>
+        5.0 Rating · Tboung Khmum
+      </div>
+      <h1>Where Every<br><em>Sip Feels</em><br>Like Home</h1>
+      <p class="hero-desc">A cozy neighborhood café and mart in Tboung Khmum, built by siblings who love great coffee and friendly smiles. Affordable prices, warm service — every single day.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn-primary">Explore Menu →</a>
+        <a href="tel:017291588" class="btn-outline">📞 017 291 588</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="cafe-illustration">
+        <div class="float-pill pill-1">🟢 Open Now</div>
+        <div class="cafe-card-main">
+          <div class="cafe-icon-row">
+            <div class="cafe-icon-circle">☕</div>
+          </div>
+          <div class="cafe-card-name">The Siblings Mart & Café</div>
+          <div class="cafe-card-subtitle">Café · Mart · Tboung Khmum</div>
+          <div class="cafe-card-stats">
+            <div class="stat-item">
+              <div class="stat-value">5.0</div>
+              <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">7AM</div>
+              <div class="stat-label">Opens</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">10PM</div>
+              <div class="stat-label">Closes</div>
+            </div>
+          </div>
+        </div>
+        <div class="float-pill pill-2">💰 Affordable Prices</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Who We Are</p>
+      <h2>A Family Spot<br>You'll Love</h2>
+      <p style="max-width: 540px; color: var(--muted); font-size: 1rem; line-height: 1.75;">We're a sibling-run café and convenience mart right here in Tboung Khmum. Whether you're grabbing your morning coffee, a quick snack, or just a place to sit and relax — we've got you covered with genuine warmth and honest prices.</p>
+    </div>
+
+    <div class="info-grid fade-in">
+      <div class="info-card">
+        <div class="info-icon icon-caramel">☕</div>
+        <h3>Great Coffee</h3>
+        <p>From rich espresso to iced café favorites, our drinks are crafted to brighten your day — every single cup.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon icon-sage">🛒</div>
+        <h3>Mart & Essentials</h3>
+        <p>Need something on the go? Our mart has snacks, drinks, and everyday essentials for the neighborhood.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon icon-espresso">💛</div>
+        <h3>Friendly Service</h3>
+        <p>Rated 5 stars for a reason — our guests always leave with a smile. We treat every customer like family.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon icon-caramel">💰</div>
+        <h3>Affordable Prices</h3>
+        <p>Quality shouldn't break the bank. We keep our prices honest so everyone in the community can enjoy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="section" id="menu" style="background: var(--warm);">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">What We Offer</p>
+      <h2>Our Menu</h2>
+      <p style="color: var(--muted); font-size: 0.95rem; max-width: 420px;">A little something for every taste — hot drinks, cold drinks, snacks and more.</p>
+    </div>
+
+    <div class="menu-strip fade-in">
+      <div class="menu-chip active">☕ All</div>
+      <div class="menu-chip">Hot Drinks</div>
+      <div class="menu-chip">Cold Drinks</div>
+      <div class="menu-chip">Food & Snacks</div>
+      <div class="menu-chip">Mart Items</div>
+    </div>
+
+    <div class="menu-items fade-in">
+      <div class="menu-item">
+        <div class="menu-item-icon">☕</div>
+        <div class="menu-item-name">Hot Coffee</div>
+        <div class="menu-item-tag">Classic · Hot</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-icon">🧊</div>
+        <div class="menu-item-name">Iced Coffee</div>
+        <div class="menu-item-tag">Refreshing · Cold</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-icon">🧋</div>
+        <div class="menu-item-name">Milk Tea</div>
+        <div class="menu-item-tag">Creamy · Cold</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-icon">🥤</div>
+        <div class="menu-item-name">Fresh Drinks</div>
+        <div class="menu-item-tag">Juices · Cold</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-icon">🍞</div>
+        <div class="menu-item-name">Pastries & Snacks</div>
+        <div class="menu-item-tag">Light Bites</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-icon">🛍️</div>
+        <div class="menu-item-name">Mart Essentials</div>
+        <div class="menu-item-tag">Daily Needs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section class="section" id="hours">
+  <div class="container">
+    <div class="hours-section fade-in">
+      <p class="section-label">We're Here For You</p>
+      <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+        <h2 style="margin:0;">Opening Hours</h2>
+        <div class="hours-open-badge">
+          <span class="dot-green"></span>
+          Open Now
+        </div>
+      </div>
+      <p style="color: rgba(250,246,238,0.55); font-size: 0.9rem;">We're open every day of the week — come visit us!</p>
+
+      <div class="hours-grid">
+        <div class="day-card" id="day-Mon">
+          <div class="day-name">Mon</div>
+          <div class="day-hours">7 AM – 10 PM</div>
+        </div>
+        <div class="day-card" id="day-Tue">
+          <div class="day-name">Tue</div>
+          <div class="day-hours">7 AM – 10 PM</div>
+        </div>
+        <div class="day-card" id="day-Wed">
+          <div class="day-name">Wed</div>
+          <div class="day-hours">7 AM – 10 PM</div>
+        </div>
+        <div class="day-card" id="day-Thu">
+          <div class="day-name">Thu</div>
+          <div class="day-hours">7 AM – 10 PM</div>
+        </div>
+        <div class="day-card" id="day-Fri">
+          <div class="day-name">Fri</div>
+          <div class="day-hours">7 AM – 10 PM</div>
+        </div>
+        <div class="day-card" id="day-Sat">
+          <div class="day-name">Sat</div>
+          <div class="day-hours">7 AM – 10 PM</div>
+        </div>
+        <div class="day-card" id="day-Sun">
+          <div class="day-name">Sun</div>
+          <div class="day-hours">7 AM – 10 PM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">What Guests Say</p>
+      <h2>5.0 Stars ⭐</h2>
+    </div>
+
+    <div style="margin-top: 2rem;" class="fade-in">
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <p class="review-text">Good service and affordable prices. The food was great too — definitely coming back!</p>
+        <div style="display:flex; gap:0.2rem; color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem;">★★★★★</div>
+        <div class="review-author">
+          <div class="reviewer-avatar">MD</div>
+          <div>
+            <div class="reviewer-name">Meas Davit</div>
+            <div class="reviewer-meta">Local Guide · 1 review · a month ago</div>
+          </div>
+        </div>
+        <div class="owner-reply">
+          <strong>Owner's Reply</strong>
+          Thank you so much for coming by! Your kind words mean the world to us. 🥰 We hope to see you again soon!
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 2rem;" class="fade-in">
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn-outline" style="text-decoration:none;">
+        ✏️ Write a Review on Google
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact" style="background: var(--warm);">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Come Visit Us</p>
+      <h2>Find Us in<br>Tboung Khmum</h2>
+    </div>
+
+    <div class="contact-grid fade-in" style="margin-top: 2.5rem;">
+      <div class="contact-info">
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Address</div>
+            <div class="contact-value">WHCF+JH, Tboung Khmum Province, Cambodia</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value"><a href="tel:017291588" style="color: var(--espresso); text-decoration:none; font-weight:500;">017 291 588</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-label">Hours</div>
+            <div class="contact-value">7 AM – 10 PM · Daily</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">⭐</div>
+          <div>
+            <div class="contact-label">Rating</div>
+            <div class="contact-value">5.0 on Google Maps</div>
+          </div>
+        </div>
+
+        <a href="https://maps.google.com/?q=11.92153,105.57406" target="_blank" rel="noopener" class="btn-primary" style="margin-top: 0.5rem; align-self: flex-start;">
+          📍 Open in Google Maps
+        </a>
+      </div>
+
+      <div class="map-placeholder">
+        <div class="map-pin-icon">📍</div>
+        <p style="font-weight: 500; color: var(--mocha);">The Siblings Mart & Café</p>
+        <p>11.92153° N, 105.57406° E<br>Tboung Khmum, Cambodia</p>
+        <a href="https://maps.google.com/?q=11.92153,105.57406" target="_blank" rel="noopener" class="map-btn">
+          Get Directions →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">The Siblings Mart & Café</div>
+  <p class="footer-tagline">Good service · Affordable prices · Tboung Khmum</p>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#hours">Hours</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 The Siblings Mart & Café · Tboung Khmum, Cambodia<br>
+  <span style="font-size:0.7rem; opacity:0.5;">☎ 017 291 588 · Open 7 AM – 10 PM Daily</span></p>
+</footer>
+
+<script>
+  // Highlight today's day card
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const today = days[new Date().getDay()];
+  const todayCard = document.getElementById('day-' + today);
+  if (todayCard) todayCard.classList.add('today');
+
+  // Fade-in on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Menu chip filter (visual only)
+  document.querySelectorAll('.menu-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.menu-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+    });
+  });
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 40
+      ? '0 4px 20px rgba(44,26,14,0.08)'
+      : 'none';
+  });
+</script>
+</body>
+</html>
