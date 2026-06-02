@@ -144,6 +144,89 @@
     border-color: rgba(255,255,255,0.28);
   }
 
+  /* SOCIAL MEDIA ICONS */
+  .nav-socials {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 1rem;
+  }
+
+  .social-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--muted);
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+
+  .social-icon-link:hover {
+    transform: translateY(-2px);
+  }
+
+  .social-icon-link svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
+  .social-icon-link.facebook:hover {
+    color: #1877F2;
+  }
+
+  .social-icon-link.tiktok:hover {
+    color: #000000;
+  }
+
+  /* FOOTER SOCIAL ICONS */
+  .footer-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .footer-social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: var(--cream);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .footer-social-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+
+  .footer-social-btn.facebook:hover {
+    background: #1877F2;
+    border-color: #1877F2;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(24, 119, 242, 0.3);
+  }
+
+  .footer-social-btn.tiktok:hover {
+    background: #000000;
+    border-color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -409,7 +492,7 @@
   }
 
   .pill-1 { top: -16px; left: -24px; animation-delay: 0s; }
-  .pill-2 { bottom: 20px; right: -28px; animation-delay: 1.5s; }
+  .pill-2 { bottom: -10px; right: -28px; animation-delay: 1.5s; }
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -936,6 +1019,7 @@
   @media (max-width: 768px) {
     nav { padding: 1rem; }
     .nav-links { display: none; }
+    .nav-socials { margin-left: 0.5rem; }
 
     .hero-content { grid-template-columns: 1fr; gap: 2.5rem; }
     .hero-visual { order: -1; }
@@ -954,6 +1038,8 @@
     .hero-actions { flex-direction: column; }
     .btn-primary, .btn-outline { justify-content: center; }
     .cafe-card-stats { grid-template-columns: 1fr 1fr; }
+    .pill-1 { top: 0.75rem; left: 0.75rem; }
+    .pill-2 { bottom: -0.5rem; right: 0.75rem; }
   }
 </style>
 </head>
@@ -971,7 +1057,21 @@
     <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
     <li><a href="#contact" class="nav-cta" data-i18n="nav.find">Find Us</a></li>
   </ul>
-  <button id="lang-toggle" class="lang-switcher" type="button" aria-label="Toggle language">🇬🇧 EN / 🇰🇭 KH</button>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <div class="nav-socials">
+      <a href="https://www.facebook.com/ThesiblingsbyLKS" class="social-icon-link facebook" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" title="Follow on Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+      <a href="https://www.tiktok.com/@thesiblingsmartandcafe" class="social-icon-link tiktok" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" title="Follow on TikTok">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v12.7a2.85 2.85 0 0 1-5.92-0.6 2.89 2.89 0 0 1 5.92-0.6v-3.3a6.52 6.52 0 0 0-6.6 6.6 6.52 6.52 0 0 0 6.6 6.6 6.56 6.56 0 0 0 6.59-6.5v-7.35a8.27 8.27 0 0 0 5.54 2.86v-3.77a4.84 4.84 0 0 1-3.77-1.63Z"/>
+        </svg>
+      </a>
+    </div>
+    <button id="lang-toggle" class="lang-switcher" type="button" aria-label="Toggle language">🇬🇧 EN / 🇰🇭 KH</button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -1013,9 +1113,7 @@
             </div>
           </div>
         </div>
-       </div>
-        </div>
-       <div class="float-pill pill-2">💰 <span data-i18n="floatingBadge">Affordable Prices</span></div>
+        <div class="float-pill pill-2">💰 <span data-i18n="floatingBadge">Affordable Prices</span></div>
       </div>
     </div>
   </div>
@@ -1194,6 +1292,23 @@
     <img src="The Siblings Mart and Cafe logo" alt="The Siblings Mart & Café logo" class="logo-image" width="150">
   </div>
   <p class="footer-tagline">Good service · Affordable prices · Tboung Khmum</p>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.9rem; color: rgba(250,246,238,0.8); margin-bottom: 1rem;">
+    <span>☎</span>
+    <a href="tel:060331661" style="color: rgba(250,246,238,0.9); text-decoration: none; font-weight: 500;">060 331 661</a>
+  </div>
+  <p class="footer-text-follow" data-i18n="footer.followUs" style="text-align: center; color: rgba(250,246,238,0.75); font-size: 0.95rem; margin-bottom: 0.75rem; font-weight: 500;">Follow Us</p>
+  <div class="footer-socials">
+    <a href="https://www.facebook.com/ThesiblingsbyLKS" class="footer-social-btn facebook" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" title="Follow on Facebook">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+    <a href="https://www.tiktok.com/@thesiblingsmartandcafe" class="footer-social-btn tiktok" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" title="Follow on TikTok">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v12.7a2.85 2.85 0 0 1-5.92-0.6 2.89 2.89 0 0 1 5.92-0.6v-3.3a6.52 6.52 0 0 0-6.6 6.6 6.52 6.52 0 0 0 6.6 6.6 6.56 6.56 0 0 0 6.59-6.5v-7.35a8.27 8.27 0 0 0 5.54 2.86v-3.77a4.84 4.84 0 0 1-3.77-1.63Z"/>
+      </svg>
+    </a>
+  </div>
   <ul class="footer-links">
     <li><a href="#about">About</a></li>
     <li><a href="#menu-section">Menu</a></li>
@@ -1201,7 +1316,7 @@
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <p class="footer-copy">© 2025 The Siblings Mart & Café · Tboung Khmum, Cambodia<br>
+  <p class="footer-copy">© 2026 The Siblings Mart & Café · Tboung Khmum, Cambodia<br>
   <span style="font-size:0.7rem; opacity:0.5;">☎ 060 331 661 · Open 7 AM – 10 PM Daily</span></p>
   <p class="footer-credit">Website by <span class="footer-credit-highlight">Future Project Team</span></p>
 </footer>
@@ -1284,7 +1399,10 @@
         open: '● Open Now',
         closed: '● Closed Now'
       },
-      floatingBadge: 'Affordable Prices'
+      floatingBadge: 'Affordable Prices',
+      footer: {
+        followUs: 'Follow Us'
+      }
     },
     km: {
       nav: {
@@ -1298,7 +1416,7 @@
       heroDesc: 'ហាងកាហ្វេ និងម៉ាតលក្ខណៈគ្រួសារដ៏កក់ក្តៅក្នុងខេត្តត្បូងឃ្មុំ បង្កើតឡើងដោយបងប្អូនបង្កើតដែលស្រឡាញ់កាហ្វេឆ្ងាញ់ និងស្នាមញញឹមរាក់ទាក់។ តម្លៃសមរម្យ សេវាកម្មកក់ក្តៅ — ជារៀងរាល់ថ្ងៃ។',
       exploreBtn: 'មើលមុខម្ហូប/ភេសជ្ជៈ →',
       card1Title: 'កាហ្វេដ៏ឈ្ងុយឆ្ងាញ់',
-      card1Desc: 'ចាប់ពី អែសប្រេសសូ (Espresso) ដ៏เข้មខាប់ រហូតដល់ភេសជ្ជៈកាហ្វេត្រជាក់ដែលអ្នកចូលចិត្ត ភេសជ្ជៈរបស់យើងត្រូវបានឆ្នៃឡើងដើម្បីបង្កើនភាពស្រស់ស្រាយដល់ថ្ងៃថ្មីរបស់អ្នក — រាល់ពេញមួយកែវ។',
+      card1Desc: 'ចាប់ពី អែសប្រេសសូ (Espresso) រហូតដល់ភេសជ្ជៈកាហ្វេត្រជាក់ដែលអ្នកចូលចិត្ត ភេសជ្ជៈរបស់យើងត្រូវបានឆ្នៃឡើងដើម្បីបង្កើនភាពស្រស់ស្រាយដល់ថ្ងៃថ្មីរបស់អ្នក — រាល់ពេញមួយកែវ។',
       card2Title: 'ទំនិញម៉ាត & តម្រូវការប្រចាំថ្ងៃ',
       card2Desc: 'ត្រូវការទំនិញតាមផ្លូវមែនទេ? ម៉ាតរបស់យើងមាននំចំណី ភេសជ្ជៈ និងរបស់ប្រើប្រាស់ចាំបាច់ប្រចាំថ្ងៃសម្រាប់អ្នកជិតខាងទាំងអស់។',
       card3Title: 'សេវាកម្មប្រកបដោយភាពរាក់ទាក់',
@@ -1338,7 +1456,10 @@
         open: '● បើកឥឡូវនេះ',
         closed: '● បិទឥឡូវនេះ'
       },
-      floatingBadge: 'តម្លៃសមរម្យបំផុត'
+      floatingBadge: 'តម្លៃសមរម្យបំផុត',
+      footer: {
+        followUs: 'តាមដានពួកយើង'
+      }
     }
   };
 
@@ -1479,16 +1600,36 @@
   const { useState } = React;
 
   const menuItems = [
-    { id: 1, name: 'Hot Coffee', category: 'hot_drink', tags: 'CLASSIC • HOT', image: 'images/hot-coffee.jpg' },
-    { id: 2, name: 'Espresso', category: 'hot_drink', tags: 'BOLD • HOT', image: 'images/espresso.jpg' },
-    { id: 3, name: 'Iced Coffee', category: 'cold_drink', tags: 'REFRESHING • COLD', image: 'images/iced-coffee.jpg' },
-    { id: 4, name: 'Red Lemon Tea', category: 'cold_drink', tags: 'Juicy • COLD', image: 'images/red-lemon-tea.jpg' },
-    { id: 5, name: 'Fresh Juice', category: 'cold_drink', tags: 'FRUITY • COLD', image: 'images/fresh-juice.jpg' },
-    { id: 6, name: 'Pastries & Snacks', category: 'food_snack', tags: 'BITE-SIZED • TASTY', image: 'images/pastries.jpg' },
-    { id: 7, name: 'Sandwich', category: 'food_snack', tags: 'FILLING • SAVORY', image: 'images/sandwich.jpg' },
-    { id: 8, name: "Lay's", category: 'food_snack', tags: 'CRISPY • SALTY', image: 'images/lay-s.jpg' },
-    { id: 9, name: 'Cold Water', category: 'cold_drink', tags: 'REFRESHING • CHILLED', image: 'images/cold-water.jpg' },
-    { id: 10, name: 'Swing Potato Chip', category: 'food_snack', tags: 'CRISPY • TASTY', image: 'images/swing-potato-chip.jpg' },
+    { id: 1, name: 'Hot Coffee', category: 'hot_drink', tags: 'CLASSIC • HOT', price: '8,000៛', image: 'images/hot-coffee.jpg' },
+    { id: 2, name: 'Espresso', category: 'hot_drink', tags: 'BOLD • HOT', price: '7,000៛', image: 'images/espresso.jpg' },
+    { id: 3, name: 'Iced Coffee', category: 'cold_drink', tags: 'REFRESHING • COLD', price: '9,000៛', image: 'images/iced-coffee.jpg' },
+    { id: 4, name: 'Red Lemon Tea', category: 'cold_drink', tags: 'Juicy • COLD', price: '6,500៛', image: 'images/red-lemon-tea.jpg' },
+    { id: 5, name: 'Fresh Juice', category: 'cold_drink', tags: 'FRUITY • COLD', price: '10,000៛', image: 'images/fresh-juice.jpg' },
+    { id: 6, name: 'Pastries & Snacks', category: 'food_snack', tags: 'BITE-SIZED • TASTY', price: '5,500៛', image: 'images/pastries.jpg' },
+    { id: 7, name: 'Sandwich', category: 'food_snack', tags: 'FILLING • SAVORY', price: '12,000៛', image: 'images/sandwich.jpg' },
+    { id: 8, name: "Lay's", category: 'food_snack', tags: 'CRISPY • SALTY', price: '3,500៛', image: 'images/lay-s.jpg' },
+    { id: 9, name: 'Cold Water', category: 'cold_drink', tags: 'REFRESHING • CHILLED', price: '2,500៛', image: 'images/cold-water.jpg' },
+    { id: 10, name: 'Swing Potato Chip', category: 'food_snack', tags: 'CRISPY • TASTY', price: '2,000៛', image: 'images/swing-potato-chip.jpg' },
+    { id: 11, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 12, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 13, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 14, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 15, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 16, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 17, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 18, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 19, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 20, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 21, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 22, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 23, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 24, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 25, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 26, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 27, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 28, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 29, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
+    { id: 30, name: '', category: 'mart_item', tags: '', price: '', image: 'images/red-lemon-tea.jpg' },
   ];
 
   const filterCategories = [
@@ -1504,7 +1645,7 @@
   function getMenuFilters() {
     const filterLabels = translations[currentLanguage]?.menu?.filters || translations.en.menu.filters;
     return [
-      { key: 'all', label: filterLabels.all, icon: '🛒' },
+      { key: 'all', label: filterLabels.all, icon: '🛒 ' },
       { key: 'hot_drink', label: filterLabels.hot_drink, icon: '🔥' },
       { key: 'cold_drink', label: filterLabels.cold_drink, icon: '🧊' },
       { key: 'food_snack', label: filterLabels.food_snack, icon: '🥐' },
@@ -1565,7 +1706,10 @@
               ),
               React.createElement('div', { className: 'pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/70 via-black/40 to-transparent' }),
               React.createElement('div', { className: 'absolute bottom-0 left-0 w-full p-5' },
-                React.createElement('h3', { className: 'text-xl font-semibold text-white mb-1' }, item.name),
+                React.createElement('div', { className: 'flex items-center justify-between gap-4 mb-2' },
+                  React.createElement('h3', { className: 'text-xl font-semibold text-white mb-0' }, item.name),
+                  React.createElement('span', { className: 'text-sm font-semibold text-white/80' }, item.price)
+                ),
                 React.createElement('p', { className: 'text-sm uppercase tracking-[0.18em] text-white/80' }, item.tags)
               )
             )
