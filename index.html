@@ -1592,6 +1592,7 @@
   const { useState, useEffect } = React;
 
   // Clean index-based CSV parser
+  // Fixes the space splitting issue by only separating on actual commas
   function parseCSV(text) {
     const lines = text.split('\n');
     const rows = [];
@@ -1599,7 +1600,8 @@
       const line = lines[i].trim();
       if (!line) continue;
       
-      const matches = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || line.split(',');
+      // Splits strictly by commas, while safely handling text wrapped in double quotes
+      const matches = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g) || line.split(',');
       const cleanRow = matches.map(val => val.replace(/^"|"$/g, '').trim());
       rows.push(cleanRow);
     }
