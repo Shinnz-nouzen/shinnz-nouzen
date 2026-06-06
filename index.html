@@ -1589,154 +1589,218 @@
 <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 <script>
-  const { useState, useEffect } = React;
+  const { useState, useEffect, useCallback } = React;
 
-  // Clean index-based CSV parser
-  // Fixes the space splitting issue by only separating on actual commas
+  // ─── FIX 1: CSV PARSER — comma-only delimiter, proper quoted-field handling ───
+  // Uses a state-machine approach so multi-word titles like "Green Tea" are never split.
   function parseCSV(text) {
     const lines = text.split('\n');
     const rows = [];
     for (let i = 1; i < lines.length; i++) {
       const line = lines[i].trim();
       if (!line) continue;
-      
-      // Splits strictly by commas, while safely handling text wrapped in double quotes
-      const matches = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g) || line.split(',');
-      const cleanRow = matches.map(val => val.replace(/^"|"$/g, '').trim());
-      rows.push(cleanRow);
+
+      // Walk the line character-by-character so we only split on literal commas,
+      // never on spaces inside or outside quoted fields.
+      const fields = [];
+      let field = '';
+      let insideQuotes = false;
+      for (let c = 0; c < line.length; c++) {
+        const ch = line[c];
+        if (ch === '"') {
+          // Toggle quoted-mode; handle escaped double-quotes ("")
+          if (insideQuotes && line[c + 1] === '"') {
+            field += '"';
+            c++; // skip the second quote
+          } else {
+            insideQuotes = !insideQuotes;
+          }
+        } else if (ch === ',' && !insideQuotes) {
+          fields.push(field.trim());
+          field = '';
+        } else {
+          field += ch;
+        }
+      }
+      fields.push(field.trim()); // push the final field
+      rows.push(fields);
     }
     return rows;
   }
 
+  // ─── Reactive bridge: assigned inside MenuGrid so the setter is always current ───
   let triggerMenuUpdate = null;
-  let menuRoot = null; 
+  let menuRoot = null;
 
   function getMenuFilters() {
     const filterLabels = translations[currentLanguage]?.menu?.filters || translations.en.menu.filters;
     return [
-      { key: 'all', label: filterLabels.all, icon: '🛒' },
-      { key: 'hot_drink', label: filterLabels.hot_drink, icon: '🔥' },
+      { key: 'all',        label: filterLabels.all,        icon: '🛒' },
+      { key: 'hot_drink',  label: filterLabels.hot_drink,  icon: '🔥' },
       { key: 'cold_drink', label: filterLabels.cold_drink, icon: '🧊' },
       { key: 'food_snack', label: filterLabels.food_snack, icon: '🥐' },
-      { key: 'mart_item', label: filterLabels.mart_item, icon: '🛍️' }
+      { key: 'mart_item',  label: filterLabels.mart_item,  icon: '🛍️' }
     ];
   }
 
   function MenuGrid() {
-    const [menuItems, setMenuItems] = useState([]);
+    const [menuItems,        setMenuItems]        = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('all');
-    const [isExpanded, setIsExpanded] = useState(false);
-    const [loading, setLoading] = useState(true);
-    const [langTick, setLangTick] = useState(0);
+    const [isExpanded,       setIsExpanded]       = useState(false);
+    const [loading,          setLoading]          = useState(true);
+    // langTick increments each time translatePage() fires, forcing a re-render
+    const [langTick,         setLangTick]         = useState(0);
 
-    triggerMenuUpdate = () => setLangTick(prev => prev + 1);
+    // ─── FIX 4: Expose the setter as a stable global so vanilla JS can call it ───
+    // useCallback ensures the reference is stable across renders.
+    const bumpLang = useCallback(() => setLangTick(prev => prev + 1), []);
+    triggerMenuUpdate = bumpLang;
 
+    // Fetch CSV once on mount
     useEffect(() => {
-      const googleSheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL6N4uqEnbTPDWLBwiIDBkTGmRQidLNiQyx1R9FNEEPEcxddl9tCPSfe-1uKSYImKEVCatqLu4TECn/pub?output=csv";
+      const googleSheetUrl =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL6N4uqEnbTPDWLBwiIDBkTGmRQidLNiQyx1R9FNEEPEcxddl9tCPSfe-1uKSYImKEVCatqLu4TECn/pub?output=csv";
 
       fetch(googleSheetUrl)
-        .then(response => response.text())
+        .then(res => res.text())
         .then(csvText => {
           const parsedData = parseCSV(csvText);
-          
-          // Row calculation sets automated tracking IDs instead of static code loops
+
+          // ─── FIX 2: Capture all 8 columns including new Khmer columns G & H ───
           const formattedItems = parsedData.map((row, index) => ({
-            id: index,
-            name: row[0] || '',
-            category: row[1] || 'mart_item',
-            tags: row[2] || '',
-            price: row[3] || '',
-            image: row[4] || 'images/red-lemon-tea.jpg',
-            status: row[5] || '' // Maps directly to Column F (Status)
+            id:       index,
+            name:     row[0] || '',          // Col A – English Item Name
+            category: row[1] || 'mart_item', // Col B – Category
+            tags:     row[2] || '',          // Col C – English Tags / Subtitle
+            price:    row[3] || '',          // Col D – Price
+            image:    row[4] || 'images/red-lemon-tea.jpg', // Col E – Image path
+            status:   row[5] || '',          // Col F – Promotion status (e.g. "New")
+            nameKm:   row[6] || '',          // Col G – Khmer Item Name  ← NEW
+            tagsKm:   row[7] || '',          // Col H – Khmer Tags / Subtitle ← NEW
           })).filter(item => item.name && item.name.trim() !== '');
-          
+
           setMenuItems(formattedItems);
           setLoading(false);
         })
-        .catch(error => {
-          console.error("Error loading sheet menu items:", error);
+        .catch(err => {
+          console.error("Error loading sheet menu items:", err);
           setLoading(false);
         });
     }, []);
 
     if (loading) {
-      return React.createElement('div', { className: 'text-center py-12 text-lg text-slate-500 font-medium' }, 'Loading Menu Items...');
+      return React.createElement(
+        'div',
+        { className: 'text-center py-12 text-lg text-slate-500 font-medium' },
+        currentLanguage === 'km' ? 'កំពុងផ្ទុកម៉ឺនុយ...' : 'Loading Menu Items...'
+      );
     }
 
     const filterCategories = getMenuFilters();
     const items = selectedCategory === 'all'
       ? menuItems
       : menuItems.filter(item => item.category === selectedCategory);
-    
+
     const visibleItems = isExpanded ? items : items.slice(0, 6);
-    const hasMore = items.length > 6;
-    const toggleText = translations[currentLanguage]?.menu?.[isExpanded ? 'showLess' : 'showMore']
-      || (isExpanded ? 'Show Less' : 'Show More');
+    const hasMore      = items.length > 6;
+    const toggleText   = translations[currentLanguage]?.menu?.[isExpanded ? 'showLess' : 'showMore']
+                         || (isExpanded ? 'Show Less' : 'Show More');
 
     const handleToggle = () => {
       if (isExpanded) {
         const section = document.getElementById('menu-section');
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
       setIsExpanded(prev => !prev);
     };
 
-    return (
-      React.createElement('div', { className: 'mt-8' },
-        React.createElement('div', { className: 'flex flex-wrap gap-3' },
-          filterCategories.map(category => (
-            React.createElement('button', {
-              key: category.key,
-              type: 'button',
-              onClick: () => { setSelectedCategory(category.key); setIsExpanded(false); },
-              className: `inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${selectedCategory === category.key ? 'bg-slate-900 text-white border-slate-900 shadow-sm' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'}`
-            },
-              React.createElement('span', null, category.icon),
-              React.createElement('span', null, category.label)
-            )
-          ))
-        ),
-        React.createElement('div', { className: 'mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3' },
-          visibleItems.map(item => (
-            React.createElement('article', {
-              key: item.id,
-              className: 'relative overflow-hidden rounded-3xl shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg bg-white'
-            },
-              // Condition check for Column F value
-              item.status.toLowerCase() === 'new' && React.createElement('div', {
+    return React.createElement('div', { className: 'mt-8' },
+
+      // ── Category filter pills ──────────────────────────────────────────────
+      React.createElement('div', { className: 'flex flex-wrap gap-3' },
+        filterCategories.map(cat =>
+          React.createElement('button', {
+            key:       cat.key,
+            type:      'button',
+            onClick:   () => { setSelectedCategory(cat.key); setIsExpanded(false); },
+            className: `inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${
+              selectedCategory === cat.key
+                ? 'bg-slate-900 text-white border-slate-900 shadow-sm'
+                : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+            }`
+          },
+            React.createElement('span', null, cat.icon),
+            React.createElement('span', null, cat.label)
+          )
+        )
+      ),
+
+      // ── Menu cards grid ───────────────────────────────────────────────────
+      React.createElement('div', { className: 'mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3' },
+        visibleItems.map(item => {
+
+          // ─── FIX 3: Language-aware display values with graceful fallback ───
+          const isKhmer    = currentLanguage === 'km';
+          const displayName = isKhmer
+            ? (item.nameKm && item.nameKm.trim() ? item.nameKm : item.name)
+            : item.name;
+          const displayTags = isKhmer
+            ? (item.tagsKm && item.tagsKm.trim() ? item.tagsKm : item.tags)
+            : item.tags;
+
+          return React.createElement('article', {
+            key:       item.id,
+            className: 'relative overflow-hidden rounded-3xl shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg bg-white'
+          },
+
+            // NEW badge (Column F)
+            item.status && item.status.toLowerCase() === 'new' &&
+              React.createElement('div', {
                 className: 'absolute top-4 left-4 z-10 bg-rose-500 text-white text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md shadow-md animate-pulse'
               }, 'NEW'),
 
-              React.createElement('div', { className: 'h-56 w-full overflow-hidden bg-slate-100' },
-                React.createElement('img', {
-                  src: item.image,
-                  alt: item.name,
-                  loading: 'lazy',
-                  className: 'h-full w-full object-cover',
-                  onError: (e) => { e.target.src = 'images/red-lemon-tea.jpg'; }
-                })
+            // Card image
+            React.createElement('div', { className: 'h-56 w-full overflow-hidden bg-slate-100' },
+              React.createElement('img', {
+                src:       item.image,
+                alt:       displayName,
+                loading:   'lazy',
+                className: 'h-full w-full object-cover transition duration-300 hover:scale-105',
+                onError:   (e) => { e.target.src = 'images/red-lemon-tea.jpg'; }
+              })
+            ),
+
+            // Gradient overlay
+            React.createElement('div', {
+              className: 'pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/70 via-black/40 to-transparent'
+            }),
+
+            // Text overlay — name, price, tags
+            React.createElement('div', { className: 'absolute bottom-0 left-0 w-full p-5' },
+              React.createElement('div', { className: 'flex items-center justify-between gap-4 mb-2' },
+                React.createElement('h3', {
+                  className: 'text-xl font-semibold text-white mb-0 leading-snug'
+                }, displayName),
+                React.createElement('span', {
+                  className: 'text-sm font-semibold text-white/80 shrink-0'
+                }, item.price)
               ),
-              React.createElement('div', { className: 'pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/70 via-black/40 to-transparent' }),
-              React.createElement('div', { className: 'absolute bottom-0 left-0 w-full p-5' },
-                React.createElement('div', { className: 'flex items-center justify-between gap-4 mb-2' },
-                  React.createElement('h3', { className: 'text-xl font-semibold text-white mb-0' }, item.name),
-                  React.createElement('span', { className: 'text-sm font-semibold text-white/80' }, item.price)
-                ),
-                React.createElement('p', { className: 'text-sm uppercase tracking-[0.18em] text-white/80' }, item.tags)
-              )
+              displayTags && React.createElement('p', {
+                className: 'text-sm uppercase tracking-[0.18em] text-white/80'
+              }, displayTags)
             )
-          ))
-        ),
-        React.createElement('div', { className: 'flex justify-center' },
-          React.createElement('button', {
-            id: 'menu-toggle-btn',
-            type: 'button',
-            onClick: handleToggle,
-            className: `menu-toggle-btn ${hasMore ? '' : 'hidden'}`
-          }, toggleText)
-        )
+          );
+        })
+      ),
+
+      // ── Show More / Show Less button ──────────────────────────────────────
+      React.createElement('div', { className: 'flex justify-center' },
+        React.createElement('button', {
+          id:        'menu-toggle-btn',
+          type:      'button',
+          onClick:   handleToggle,
+          className: `menu-toggle-btn ${hasMore ? '' : 'hidden'}`
+        }, toggleText)
       )
     );
   }
