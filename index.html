@@ -3,1469 +3,674 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Siblings Mart & Café – Tboung Khmum</title>
-<meta name="description" content="A cozy café and mart in Tboung Khmum. Good service, affordable prices. Open 7 AM–10 PM daily.">
+<title>The Siblings Mart & Café – Tboung Khmum, Cambodia</title>
+<meta name="description" content="Sibling-run café and mart in Tboung Khmum Province. Coffee, snacks, and everyday essentials. Open 7 AM–10 PM daily. Rated 5.0 on Google Maps.">
+<meta name="keywords" content="café Tboung Khmum, coffee Cambodia, mart café, The Siblings Mart and Cafe, កាហ្វេត្បូងឃ្មុំ">
+<meta property="og:title" content="The Siblings Mart & Café">
+<meta property="og:description" content="Coffee, snacks, and essentials in Tboung Khmum. Open daily 7 AM–10 PM.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://maps.google.com/?q=The+Siblings+Mart+and+Cafe">
+<meta property="og:locale" content="en_US">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "The Siblings Mart & Café",
+  "image": "The Siblings Mart and Cafe logo",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "WHCF+JH",
+    "addressRegion": "Tboung Khmum Province",
+    "addressCountry": "KH"
+  },
+  "telephone": "+85560331661",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "07:00",
+    "closes": "22:00"
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "3" },
+  "url": "http://maps.google.com/?q=The+Siblings+Mart+and+Cafe",
+  "sameAs": [
+    "https://www.facebook.com/ThesiblingsbyLKS",
+    "https://www.tiktok.com/@thesiblingsmartandcafe"
+  ]
+}
+</script>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --cream: #FAF6EE;
-    --warm: #F2EAD3;
-    --espresso: #4A2C11;
-    --mocha: #5C3A1E;
-    --caramel: #C4842A;
-    --gold: #E8B84B;
-    --sage: #7A9E7E;
-    --text: #2C1A0E;
-    --muted: #7A6251;
-    --white: #FFFDF9;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(250, 246, 238, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(196, 132, 42, 0.15);
-    transition: all 0.3s;
-  }
-
-  .nav-logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-  }
-
-  .nav-logo img {
-    display: block;
-    width: auto;
-    max-height: 56px;
-  }
-
-  .logo-image {
-    display: inline-block;
-    max-width: 220px;
-    height: auto;
-  }
-
-  .hero-logo {
-    display: block;
-    margin: 0 auto 1rem;
-    max-width: 140px;
-    width: 100%;
-    height: auto;
-  }
-
-  .footer-logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--cream);
-    margin-bottom: 0.5rem;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--muted);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--caramel); }
-
-  .nav-cta {
-    background: var(--espresso);
-    color: var(--cream) !important;
-    padding: 0.45rem 1.1rem;
-    border-radius: 2rem;
-    transition: background 0.2s !important;
-  }
-
-  .nav-cta:hover { background: var(--mocha) !important; color: var(--cream) !important; }
-
-  .lang-switcher {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
-    min-width: 108px;
-    padding: 0.55rem 1rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.18);
-    background: var(--espresso);
-    color: var(--cream);
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  }
-
-  .lang-switcher:hover {
-    background: var(--mocha);
-    transform: translateY(-1px);
-  }
-
-  .lang-switcher.active {
-    background: var(--mocha);
-    border-color: rgba(255,255,255,0.28);
-  }
-
-  /* SOCIAL MEDIA ICONS */
-  .nav-socials {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-left: 1rem;
-  }
-
-  .social-icon-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: transparent;
-    color: var(--muted);
-    text-decoration: none;
-    transition: all 0.25s ease;
-    cursor: pointer;
-  }
-
-  .social-icon-link:hover {
-    transform: translateY(-2px);
-  }
-
-  .social-icon-link svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-  }
-
-  .social-icon-link.facebook:hover {
-    color: #1877F2;
-  }
-
-  .social-icon-link.tiktok:hover {
-    color: #000000;
-  }
-
-  /* FOOTER SOCIAL ICONS */
-  .footer-socials {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1.5rem 0;
-  }
-
-  .footer-social-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    color: var(--cream);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.25);
-  }
-
-  .footer-social-btn svg {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-  }
-
-  .footer-social-btn.facebook:hover {
-    background: #1877F2;
-    border-color: #1877F2;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(24, 119, 242, 0.3);
-  }
-
-  .footer-social-btn.tiktok:hover {
-    background: #000000;
-    border-color: #000000;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 6rem 2rem 4rem;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(196,132,42,0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 50% at 20% 70%, rgba(122,158,126,0.1) 0%, transparent 50%),
-      var(--cream);
-  }
-
-  /* decorative circles */
-  .hero-bg::before {
-    content: '';
-    position: absolute;
-    width: 500px; height: 500px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(196,132,42,0.12);
-    top: -80px; right: -100px;
-  }
-
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    width: 320px; height: 320px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(196,132,42,0.08);
-    bottom: 60px; left: -60px;
-  }
-
-  .hero-content {
-    position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    width: 100%;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(196,132,42,0.1);
-    border: 1px solid rgba(196,132,42,0.25);
-    padding: 0.35rem 1rem;
-    border-radius: 2rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--mocha);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-  }
-
-  .star-fill { color: var(--gold); font-size: 0.9rem; }
-
-  .hero h1 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(3.5rem, 5vw, 5rem) !important;
-    font-weight: 800 !important;
-    line-height: 1.05 !important;
-    letter-spacing: -0.03em !important;
-    color: var(--espresso) !important;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero h1 em {
-    font-style: italic;
-    color: var(--caramel);
-  }
-
-  .hero-desc {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--muted);
-    margin-bottom: 2rem;
-    max-width: 440px;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--espresso);
-    color: var(--cream);
-    text-decoration: none;
-    padding: 0.85rem 1.8rem;
-    border-radius: 2rem;
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 0.02em;
-    transition: transform 0.2s, background 0.2s;
-  }
-
-  .btn-primary:hover { background: var(--mocha); transform: translateY(-2px); }
-
-  .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 1.5px solid var(--mocha);
-    color: var(--mocha);
-    text-decoration: none;
-    padding: 0.85rem 1.8rem;
-    border-radius: 2rem;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: transform 0.2s, background 0.2s;
-  }
-
-  .btn-outline:hover { background: var(--warm); transform: translateY(-2px); }
-
-  .menu-toggle-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.75rem;
-    padding: 0.9rem 1.8rem;
-    border-radius: 999px;
-    border: 1.5px solid var(--espresso);
-    background: transparent;
-    color: var(--espresso);
-    font-weight: 600;
-    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
-    cursor: pointer;
-  }
-
-  .menu-toggle-btn:hover {
-    background: var(--espresso);
-    color: white;
-    transform: translateY(-2px);
-  }
-
-  .menu-toggle-btn.hidden {
-    display: none;
-  }
-
-  /* Hero visual */
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    position: relative;
-  }
-
-  .cafe-illustration {
-    width: 100%;
-    max-width: 480px;
-    position: relative;
-  }
-
-  .cafe-card-main {
-    background: var(--white);
-    border: 1px solid rgba(196,132,42,0.2);
-    border-radius: 24px;
-    padding: 2rem;
-    box-shadow: 0 20px 60px rgba(92,58,30,0.12);
-    position: relative;
-    z-index: 2;
-  }
-
-  .cafe-card-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-align: center;
-    color: var(--espresso);
-    margin-bottom: 0.3rem;
-  }
-
-  .cafe-card-subtitle {
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1.5rem;
-  }
-
-  .cafe-card-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.75rem;
-  }
-
-  .stat-item {
-    text-align: center;
-    background: var(--warm);
-    border-radius: 12px;
-    padding: 0.75rem 0.5rem;
-  }
-
-  .stat-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--espresso);
-  }
-
-  .stat-label {
-    font-size: 0.68rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-top: 2px;
-  }
-
-  .float-pill {
-    position: absolute;
-    z-index: 20;
-    background: var(--white);
-    border: 1px solid rgba(196,132,42,0.2);
-    border-radius: 2rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--mocha);
-    white-space: nowrap;
-    box-shadow: 0 8px 20px rgba(92,58,30,0.1);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.55rem 1rem;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-  }
-
-  .status-badge.open {
-    background: rgba(52, 160, 99, 0.12);
-    color: #216638;
-    border: 1px solid rgba(52, 160, 99, 0.2);
-  }
-
-  .status-badge.closed {
-    background: rgba(204, 67, 54, 0.12);
-    color: #7A1E18;
-    border: 1px solid rgba(204, 67, 54, 0.2);
-  }
-
-  .pill-1 { top: -16px; left: -24px; animation-delay: 0s; }
-  .pill-2 { bottom: -10px; right: -28px; animation-delay: 1.5s; }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
-  /* ABOUT */
-  .section {
-    padding: 5rem 2rem;
-  }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.75rem;
-  }
-
-  .section-intro {
-    max-width: 640px;
-    margin-bottom: 2.5rem;
-  }
-
-  #about h2,
-  #menu-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 4vw, 4.5rem);
-    font-weight: 800;
-    color: var(--espresso);
-    line-height: 1.05;
-    margin-bottom: 1rem;
-  }
-
-  #about .section-intro p,
-  #menu-section .section-intro p {
-    margin-top: 1rem;
-    color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.75;
-  }
-
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 700;
-    color: var(--espresso);
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
-  }
-
-  /* INFO CARDS */
-  .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
-  }
-
-  .info-card {
-    background: var(--white);
-    border: 1px solid rgba(196,132,42,0.15);
-    border-radius: 20px;
-    padding: 1.75rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .info-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(92,58,30,0.1);
-  }
-
-  .info-icon {
-    width: 48px; height: 48px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-  }
-
-  .icon-caramel { background: rgba(196,132,42,0.12); }
-  .icon-sage { background: rgba(122,158,126,0.12); }
-  .icon-espresso { background: rgba(44,26,14,0.08); }
-
-  .info-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--espresso);
-    margin-bottom: 0.5rem;
-  }
-
-  .info-card p {
-    font-size: 0.9rem;
-    line-height: 1.65;
-    color: var(--muted);
-  }
-
-  /* HOURS */
-  .hours-section {
-    background: var(--espresso);
-    color: var(--cream);
-    border-radius: 28px;
-    padding: 3rem;
-    margin: 5rem 0;
-  }
-
-  .hours-section .section-label { color: var(--gold); }
-  .hours-section h2 { color: var(--cream); }
-
-  .hours-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 0.75rem;
-    margin-top: 2rem;
-  }
-
-  .day-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 1rem 0.75rem;
-    text-align: center;
-    transition: background 0.2s;
-  }
-
-  .day-card.today {
-    background: rgba(196,132,42,0.25);
-    border-color: rgba(196,132,42,0.4);
-  }
-
-  .day-card:hover { background: rgba(255,255,255,0.1); }
-
-  .day-name {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: rgba(250,246,238,0.5);
-    margin-bottom: 0.3rem;
-  }
-
-  .day-card.today .day-name { color: var(--gold); }
-
-  .day-hours {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--cream);
-  }
-
-  .hours-open-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: rgba(122,158,126,0.2);
-    border: 1px solid rgba(122,158,126,0.3);
-    color: #9DC9A1;
-    padding: 0.3rem 0.9rem;
-    border-radius: 2rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-top: 1rem;
-  }
-
-  .dot-green {
-    width: 7px; height: 7px;
-    background: #9DC9A1;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-
-  /* MENU HIGHLIGHTS */
-  .menu-strip {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    margin-top: 2.5rem;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .menu-strip::-webkit-scrollbar { display: none; }
-
-  .menu-chip {
-    flex-shrink: 0;
-    background: var(--white);
-    border: 1px solid rgba(196,132,42,0.15);
-    border-radius: 50px;
-    padding: 0.6rem 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--mocha);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .menu-chip:hover, .menu-chip.active {
-    background: var(--espresso);
-    color: var(--cream);
-    border-color: var(--espresso);
-  }
-
-  .menu-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-
-  .menu-item {
-    background: var(--white);
-    border: 1px solid rgba(196,132,42,0.12);
-    border-radius: 16px;
-    padding: 1.25rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .menu-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(92,58,30,0.08);
-  }
-
-  .menu-item-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
-
-  .menu-item-name {
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: var(--espresso);
-    margin-bottom: 0.25rem;
-  }
-
-  .menu-item-tag {
-    font-size: 0.72rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  /* REVIEW */
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .review-card {
-    background: var(--white);
-    border: 1px solid rgba(196,132,42,0.15);
-    border-radius: 24px;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 18px 45px rgba(92,58,30,0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .review-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 50px rgba(92,58,30,0.12);
-  }
-
-  .review-avatar {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--caramel), var(--mocha));
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--cream);
-    font-weight: 700;
-    font-size: 1rem;
-  }
-
-  .review-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .reviewer-name {
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--espresso);
-  }
-
-  .reviewer-meta {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-top: 0.2rem;
-  }
-
-  .review-stars {
-    color: var(--gold);
-    letter-spacing: 0.08em;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-  }
-
-  .review-text {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text);
-    margin: 0.85rem 0 1.35rem;
-  }
-
-  .review-breakdown {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.7;
-    border-top: 1px solid rgba(196,132,42,0.12);
-    padding-top: 0.95rem;
-  }
-
-  .review-breakdown span {
-    display: inline-flex;
-    gap: 0.3rem;
-  }
-
-  .review-breakdown strong {
-    color: var(--espresso);
-    font-weight: 600;
-  }
-
-  .review-section-intro {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .review-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 1.5px solid var(--mocha);
-    color: var(--mocha);
-    background: var(--white);
-    padding: 0.85rem 1.2rem;
-    border-radius: 2rem;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
-  }
-
-  .review-cta:hover {
-    background: rgba(196,132,42,0.1);
-    transform: translateY(-2px);
-  }
-
-  /* CONTACT */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-
-  .contact-info { display: flex; flex-direction: column; gap: 1.25rem; }
-
-  .contact-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .contact-icon {
-    width: 44px; height: 44px;
-    background: var(--warm);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-  }
-
-  .contact-label {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    color: var(--muted);
-    margin-bottom: 0.1rem;
-  }
-
-  .contact-value {
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: var(--espresso);
-  }
-
-  .map-placeholder {
-    background: var(--warm);
-    border: 1px solid rgba(196,132,42,0.15);
-    border-radius: 20px;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .map-placeholder iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
-  .map-placeholder::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(180deg, rgba(250,246,238,0.05), rgba(250,246,238,0.1));
-  }
-
-  .map-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: var(--espresso);
-    color: var(--cream);
-    text-decoration: none;
-    padding: 0.6rem 1.3rem;
-    border-radius: 2rem;
-    font-size: 0.82rem;
-    font-weight: 500;
-    margin-top: 0.25rem;
-    transition: background 0.2s, transform 0.2s;
-  }
-
-  .map-btn:hover { background: var(--mocha); transform: translateY(-2px); }
-
-  /* FOOTER */
-  footer {
-    background: var(--espresso);
-    color: rgba(250,246,238,0.6);
-    padding: 3rem 2rem;
-    text-align: center;
-  }
-
-  .footer-tagline {
-    font-size: 0.82rem;
-    margin-bottom: 2rem;
-  }
-
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    list-style: none;
-    margin-bottom: 2rem;
-  }
-
-  .footer-links a {
-    color: rgba(250,246,238,0.5);
-    text-decoration: none;
-    font-size: 0.82rem;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--gold); }
-
-  .footer-copy {
-    font-size: 0.75rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 1.5rem;
-    margin-top: 0.5rem;
-  }
-
-  .footer-credit {
-    font-size: 0.72rem;
-    color: rgba(250,246,238,0.65);
-    margin-top: 0.5rem;
-    opacity: 0.9;
-  }
-
-  .footer-credit-highlight {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    color: var(--cream);
-    font-weight: 600;
-  }
-
-  .footer-credit-highlight::before {
-    content: '◆';
-    display: inline-block;
-    color: var(--gold);
-    margin-right: 0.4rem;
-    font-size: 0.85rem;
-    transform: translateY(-1px);
-  }
-
-  /* ANIMATIONS */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    nav { padding: 1rem; }
-    .nav-links { display: none; }
-    .nav-socials { margin-left: 0.5rem; }
-
-    .hero-content { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-visual { order: -1; }
-    .cafe-illustration { max-width: 320px; }
-
-    .contact-grid { grid-template-columns: 1fr; }
-    .map-placeholder { aspect-ratio: 16/9; }
-
-    .hours-section { padding: 2rem; border-radius: 20px; }
-
-    .section { padding: 3.5rem 1.25rem; }
-    .hours-section { margin: 3rem 0; }
-  }
-
-  @media (max-width: 480px) {
-    .hero-actions { flex-direction: column; }
-    .btn-primary, .btn-outline { justify-content: center; }
-    .cafe-card-stats { grid-template-columns: 1fr 1fr; }
-    .pill-1 { top: 0.75rem; left: 0.75rem; }
-    .pill-2 { bottom: -0.5rem; right: 0.75rem; }
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --font-heading:'Fraunces',Georgia,serif;
+  --font-body:'Source Sans 3',system-ui,sans-serif;
+  --bg:#FAF6EE;--bg-alt:#F2EAD3;--surface:#FFFDF9;--surface-2:#F7F0E4;
+  --text:#2C1A0E;--text-muted:#7A6251;--border:rgba(92,58,30,0.14);
+  --espresso:#4A2C11;--mocha:#5C3A1E;--caramel:#C4842A;--gold:#E8B84B;
+  --sage:#5E8A62;--sage-light:rgba(94,138,98,0.12);
+  --open:#216638;--open-bg:rgba(52,160,99,0.12);
+  --closed:#7A1E18;--closed-bg:rgba(204,67,54,0.12);
+  --shadow:0 8px 32px rgba(44,26,14,0.08);
+  --shadow-lg:0 20px 60px rgba(44,26,14,0.12);
+  --radius:16px;--radius-lg:24px;--nav-h:72px;
+  --transition:0.25s ease;
+}
+[data-theme="dark"]{
+  --bg:#1A1209;--bg-alt:#24180F;--surface:#2C1E12;--surface-2:#352618;
+  --text:#F5EDE0;--text-muted:#B8A48E;--border:rgba(232,184,75,0.12);
+  --espresso:#F5EDE0;--mocha:#E8D5BC;--shadow:0 8px 32px rgba(0,0,0,0.35);
+  --shadow-lg:0 20px 60px rgba(0,0,0,0.45);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.skip-link{position:absolute;top:-100px;left:1rem;z-index:9999;padding:.75rem 1.25rem;background:var(--caramel);color:#fff;border-radius:8px;font-weight:600;text-decoration:none}
+.skip-link:focus{top:1rem}
+:focus-visible{outline:2px solid var(--caramel);outline-offset:3px}
+.container{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+.section{padding:4.5rem 0}
+.section-label{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--caramel);margin-bottom:.6rem}
+h1,h2,h3{font-family:var(--font-heading);font-weight:700;line-height:1.15;color:var(--espresso)}
+h2{font-size:clamp(1.85rem,3.5vw,2.75rem);margin-bottom:1rem}
+h3{font-size:1.15rem;margin-bottom:.4rem}
+p{color:var(--text-muted)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.6rem;border-radius:999px;font-weight:600;font-size:.92rem;text-decoration:none;border:none;cursor:pointer;transition:transform var(--transition),background var(--transition),color var(--transition)}
+.btn-primary{background:var(--espresso);color:var(--bg)}
+.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn-outline{background:transparent;border:1.5px solid var(--mocha);color:var(--mocha)}
+.btn-outline:hover{background:var(--bg-alt);transform:translateY(-2px)}
+[data-theme="dark"] .btn-primary{background:var(--caramel);color:#1A1209}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .fade-in{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+/* Header */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);background:rgba(250,246,238,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:box-shadow var(--transition)}
+[data-theme="dark"] .site-header{background:rgba(26,18,9,.92)}
+.site-header.scrolled{box-shadow:var(--shadow)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:100%;gap:1rem}
+.logo-link{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.logo-link img{max-height:48px;width:auto}
+.nav-desktop{display:none;align-items:center;gap:1.5rem}
+.nav-desktop ul{display:flex;gap:1.4rem;list-style:none}
+.nav-desktop a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);transition:color var(--transition)}
+.nav-desktop a:hover{color:var(--caramel)}
+.header-actions{display:flex;align-items:center;gap:.5rem}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);cursor:pointer;transition:all var(--transition)}
+.icon-btn:hover{color:var(--caramel);border-color:var(--caramel)}
+.icon-btn svg{width:18px;height:18px;fill:currentColor}
+.lang-btn{padding:0 .85rem;width:auto;border-radius:999px;font-size:.8rem;font-weight:700;min-width:52px}
+.social-link{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;color:var(--text-muted);transition:color var(--transition),transform var(--transition)}
+.social-link:hover{transform:translateY(-2px)}
+.social-link.facebook:hover{color:#1877F2}
+.social-link.tiktok:hover{color:#000}
+[data-theme="dark"] .social-link.tiktok:hover{color:#fff}
+.hamburger{display:flex;flex-direction:column;gap:5px;width:40px;height:40px;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer}
+.hamburger span{display:block;width:20px;height:2px;background:var(--text);transition:transform var(--transition),opacity var(--transition)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{position:fixed;top:var(--nav-h);left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:1rem 1.25rem 1.5rem;transform:translateY(-110%);opacity:0;pointer-events:none;transition:transform var(--transition),opacity var(--transition);z-index:199}
+.mobile-nav.open{transform:none;opacity:1;pointer-events:auto}
+.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+.mobile-nav a{display:block;padding:.7rem .5rem;text-decoration:none;font-weight:600;color:var(--text);border-radius:8px}
+.mobile-nav a:hover{background:var(--bg-alt)}
+.mobile-socials{display:flex;gap:.75rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+@media(min-width:960px){
+  .nav-desktop{display:flex}
+  .header-inner>.header-actions{display:none}
+  .hamburger{display:none}
+  .mobile-nav{display:none}
+}
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav-h) + 2rem) 0 3rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 80% 30%,rgba(196,132,42,.1),transparent 60%),radial-gradient(ellipse 50% 45% at 10% 80%,rgba(94,138,98,.08),transparent 55%),var(--bg)}
+.hero-grid{display:grid;gap:2.5rem;align-items:center;position:relative}
+.hero-badge-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.25rem}
+.badge-pill{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .9rem;border-radius:999px;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;background:var(--surface);border:1px solid var(--border)}
+.badge-pill.rating{color:var(--mocha)}
+.badge-pill .star{color:var(--gold)}
+.status-badge{font-weight:700}
+.status-badge.open{background:var(--open-bg);color:var(--open);border-color:rgba(52,160,99,.25)}
+.status-badge.closed{background:var(--closed-bg);color:var(--closed);border-color:rgba(204,67,54,.25)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:1rem}
+.hero h1 em{font-style:italic;color:var(--caramel)}
+.hero-lead{font-size:1.05rem;line-height:1.75;max-width:520px;margin-bottom:1.75rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;box-shadow:var(--shadow-lg)}
+.hero-card img.logo-hero{max-width:120px;margin:0 auto 1rem}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}
+.stat-box{text-align:center;background:var(--bg-alt);border-radius:12px;padding:.75rem .5rem}
+.stat-box strong{display:block;font-family:var(--font-heading);font-size:1.35rem;color:var(--espresso)}
+.stat-box span{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted)}
+@media(min-width:768px){.hero-grid{grid-template-columns:1.1fr .9fr}}
+/* Story & Why */
+.story-grid{display:grid;gap:2rem;align-items:start}
+.story-text{max-width:640px}
+.story-text p{margin-bottom:1rem;font-size:1rem;line-height:1.8}
+.story-aside{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem}
+.story-aside dt{font-weight:700;color:var(--espresso);margin-top:.75rem}
+.story-aside dt:first-child{margin-top:0}
+.story-aside dd{color:var(--text-muted);font-size:.92rem}
+.why-grid{display:grid;gap:1.25rem;margin-top:2rem}
+.why-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:transform var(--transition),box-shadow var(--transition)}
+.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.why-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:.85rem;background:var(--sage-light)}
+.why-card p{font-size:.92rem;line-height:1.65}
+@media(min-width:640px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.story-grid{grid-template-columns:1.4fr 1fr}.why-grid{grid-template-columns:repeat(4,1fr)}}
+/* Favorites */
+.favorites-grid{display:grid;gap:1.25rem;margin-top:2rem}
+.fav-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:100px 1fr;transition:box-shadow var(--transition)}
+.fav-card:hover{box-shadow:var(--shadow)}
+.fav-img{background:var(--bg-alt);display:flex;align-items:center;justify-content:center;font-size:2rem}
+.fav-body{padding:1rem 1.1rem}
+.fav-body p{font-size:.88rem;line-height:1.55;margin-bottom:.35rem}
+.fav-price{font-family:var(--font-heading);font-weight:700;color:var(--caramel);font-size:1.05rem}
+@media(min-width:640px){.favorites-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.favorites-grid{grid-template-columns:repeat(3,1fr)}}
+/* Menu React */
+#menu-section{background:var(--surface-2)}
+.menu-intro{max-width:560px;margin-bottom:1.5rem}
+.menu-filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}
+.menu-filter-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1rem;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);font-size:.85rem;font-weight:600;cursor:pointer;transition:all var(--transition)}
+.menu-filter-btn:hover{border-color:var(--caramel);color:var(--caramel)}
+.menu-filter-btn.active{background:var(--espresso);color:var(--bg);border-color:var(--espresso)}
+[data-theme="dark"] .menu-filter-btn.active{background:var(--caramel);color:#1A1209;border-color:var(--caramel)}
+.menu-grid{display:grid;gap:1.25rem}
+.menu-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);border:1px solid var(--border);transition:transform var(--transition),box-shadow var(--transition)}
+.menu-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.menu-card-visual{position:relative;height:200px;overflow:hidden}
+.menu-card-img{height:100%;background:var(--bg-alt)}
+.menu-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.menu-card:hover .menu-card-img img{transform:scale(1.04)}
+.menu-card-badge{position:absolute;top:.85rem;left:.85rem;z-index:3;background:#e11d48;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .55rem;border-radius:6px}
+.menu-card-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(20,12,6,.82) 0%,transparent 55%);pointer-events:none}
+.menu-card-content{position:absolute;bottom:0;left:0;right:0;padding:1.1rem;color:#fff;z-index:2}
+.menu-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.75rem;margin-bottom:.25rem}
+.menu-card-title{font-family:var(--font-heading);font-size:1.1rem;font-weight:600;line-height:1.25;color:#fff;margin:0}
+.menu-card-price{font-weight:700;font-size:.95rem;white-space:nowrap;color:rgba(255,255,255,.9)}
+.menu-card-tags{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.75)}
+.menu-loading{text-align:center;padding:3rem 1rem;color:var(--text-muted);font-size:1.05rem}
+.menu-toggle-wrap{display:flex;justify-content:center;margin-top:1.5rem}
+.menu-toggle-btn{display:inline-flex;padding:.85rem 1.75rem;border-radius:999px;border:1.5px solid var(--espresso);background:transparent;color:var(--espresso);font-weight:700;cursor:pointer;transition:all var(--transition)}
+.menu-toggle-btn:hover{background:var(--espresso);color:var(--bg)}
+.menu-toggle-btn.hidden{display:none}
+@media(min-width:640px){.menu-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.menu-grid{grid-template-columns:repeat(3,1fr)}}
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem;margin-top:2rem}
+.gallery-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;cursor:pointer;border:none;padding:0;background:none}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item::after{content:'';position:absolute;inset:0;background:rgba(44,26,14,.2);opacity:0;transition:opacity var(--transition)}
+.gallery-item:hover::after{opacity:1}
+@media(min-width:768px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
+/* Hours */
+.hours-section{background:var(--espresso);color:var(--bg)}
+.hours-section .section-label{color:var(--gold)}
+.hours-section h2{color:var(--bg)}
+.hours-section>p{color:rgba(250,246,238,.65);margin-bottom:2rem}
+.hours-grid{display:grid;gap:.65rem}
+.day-card{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font-weight:500}
+.day-card.today{background:rgba(232,184,75,.18);border-color:rgba(232,184,75,.35);font-weight:700}
+.day-card .time{color:rgba(250,246,238,.75);font-size:.9rem}
+@media(min-width:640px){.hours-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.hours-grid{grid-template-columns:repeat(4,1fr)}}
+/* Reviews */
+.reviews-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem;margin-bottom:2rem}
+.review-cta{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.25rem;border-radius:999px;background:var(--surface);border:1px solid var(--border);text-decoration:none;font-weight:600;font-size:.88rem;transition:all var(--transition)}
+.review-cta:hover{border-color:var(--caramel);color:var(--caramel);transform:translateY(-2px)}
+.reviews-grid{display:grid;gap:1.25rem}
+.review-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:box-shadow var(--transition)}
+.review-card:hover{box-shadow:var(--shadow)}
+.review-header{display:flex;align-items:center;gap:.85rem;margin-bottom:.75rem}
+.review-avatar{width:44px;height:44px;border-radius:50%;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:var(--mocha)}
+.reviewer-name{font-weight:700;color:var(--espresso)}
+.reviewer-meta{font-size:.8rem;color:var(--text-muted)}
+.review-stars{color:var(--gold);letter-spacing:.05em;margin-bottom:.6rem}
+.review-text{font-size:.95rem;line-height:1.65;margin-bottom:.75rem}
+.review-breakdown{font-size:.78rem;color:var(--text-muted)}
+.review-breakdown strong{color:var(--espresso)}
+@media(min-width:768px){.reviews-grid{grid-template-columns:repeat(3,1fr)}}
+/* FAQ */
+.faq-list{margin-top:2rem;display:flex;flex-direction:column;gap:.65rem}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 1.25rem;background:none;border:none;text-align:left;font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--espresso);cursor:pointer}
+.faq-question svg{width:18px;height:18px;fill:currentColor;flex-shrink:0;transition:transform var(--transition)}
+.faq-item.open .faq-question svg{transform:rotate(180deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-answer-inner{padding:0 1.25rem 1.1rem;font-size:.92rem;line-height:1.7}
+.faq-item.open .faq-answer{max-height:200px}
+/* Contact */
+.contact-grid{display:grid;gap:2rem;margin-top:2rem}
+.contact-details{display:flex;flex-direction:column;gap:1.25rem}
+.contact-item{display:flex;gap:1rem;align-items:flex-start}
+.contact-icon{width:42px;height:42px;border-radius:10px;background:var(--sage-light);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.contact-item a{color:var(--caramel);text-decoration:none;font-weight:600}
+.contact-item a:hover{text-decoration:underline}
+.contact-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem}
+.form-group{margin-bottom:1.1rem}
+.form-group label{display:block;font-weight:600;font-size:.88rem;margin-bottom:.35rem;color:var(--espresso)}
+.form-group input,.form-group textarea{width:100%;padding:.75rem 1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:.95rem;transition:border-color var(--transition)}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--caramel)}
+.form-group input.error,.form-group textarea.error{border-color:#c0392b}
+.form-error{font-size:.78rem;color:#c0392b;margin-top:.25rem}
+.form-success{display:none;padding:1rem;border-radius:10px;background:var(--sage-light);color:var(--sage);font-weight:600;text-align:center}
+.form-success.show{display:block}
+.map-wrap{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);margin-top:2rem;aspect-ratio:16/9}
+.map-wrap iframe{width:100%;height:100%;border:0}
+@media(min-width:768px){.contact-grid{grid-template-columns:1fr 1.2fr}}
+/* Visit CTA */
+.visit-cta{background:linear-gradient(135deg,var(--mocha),var(--espresso));color:var(--bg);text-align:center;padding:3.5rem 1.25rem}
+.visit-cta h2{color:var(--bg);margin-bottom:.75rem}
+.visit-cta p{color:rgba(250,246,238,.8);max-width:480px;margin:0 auto 1.5rem}
+.visit-cta .btn-primary{background:var(--gold);color:var(--espresso)}
+/* Footer */
+.site-footer{background:#1A1209;color:rgba(250,246,238,.75);padding:3rem 0 1.5rem}
+.site-footer h3{color:var(--bg);font-size:1rem;margin-bottom:.75rem}
+.footer-grid{display:grid;gap:2rem;margin-bottom:2rem}
+.footer-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.footer-logo img{max-height:44px}
+.footer-logo span{font-family:var(--font-heading);font-size:1.2rem;font-weight:700;color:var(--bg)}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.footer-links a{color:rgba(250,246,238,.65);text-decoration:none;font-size:.9rem;transition:color var(--transition)}
+.footer-links a:hover{color:var(--gold)}
+.footer-socials{display:flex;gap:.65rem;margin-top:.75rem}
+.footer-socials a{display:inline-flex;width:40px;height:40px;border-radius:50%;align-items:center;justify-content:center;background:rgba(255,255,255,.08);color:var(--bg);transition:background var(--transition)}
+.footer-socials a:hover{background:var(--caramel)}
+.footer-socials svg{width:18px;height:18px;fill:currentColor}
+.footer-bottom{text-align:center;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);font-size:.82rem}
+.footer-credit{margin-top:.5rem;font-size:.75rem;opacity:.55}
+.footer-credit a{color:var(--gold);text-decoration:none}
+@media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+/* Scroll top & Lightbox */
+.scroll-top{position:fixed;bottom:1.5rem;right:1.5rem;width:46px;height:46px;border-radius:50%;background:var(--espresso);color:var(--bg);border:none;cursor:pointer;opacity:0;pointer-events:none;transition:opacity var(--transition),transform var(--transition);z-index:150;box-shadow:var(--shadow)}
+.scroll-top.visible{opacity:1;pointer-events:auto}
+.scroll-top:hover{transform:translateY(-3px)}
+.scroll-top svg{width:20px;height:20px;fill:currentColor}
+.lightbox{position:fixed;inset:0;z-index:300;background:rgba(10,6,3,.92);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity var(--transition)}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img{max-width:100%;max-height:85vh;border-radius:var(--radius);object-fit:contain}
+.lightbox-close{position:absolute;top:1rem;right:1rem;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.5rem;cursor:pointer;line-height:1}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.4rem;cursor:pointer}
+.lightbox-prev{left:1rem}
+.lightbox-next{right:1rem}
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link" data-i18n="skipLink">Skip to main content</a>
 
-<nav>
-  <a href="#top" class="nav-logo">
-    <img src="The Siblings Mart and Cafe logo" alt="The Siblings Mart & Café logo" class="logo-image" width="150">
-  </a>
-  <ul class="nav-links">
-    <li><a href="#about" data-i18n="nav.about">About</a></li>
-    <li><a href="#menu-section" data-i18n="nav.menu">Menu</a></li>
-    <li><a href="#hours" data-i18n="nav.hours">Hours</a></li>
-    <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
-    <li><a href="#contact" class="nav-cta" data-i18n="nav.find">Find Us</a></li>
-  </ul>
-  <div style="display: flex; align-items: center; gap: 0.5rem;">
-    <div class="nav-socials">
-      <a href="https://www.facebook.com/ThesiblingsbyLKS" class="social-icon-link facebook" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" title="Follow on Facebook">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-      </a>
-      <a href="https://www.tiktok.com/@thesiblingsmartandcafe" class="social-icon-link tiktok" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" title="Follow on TikTok">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v12.7a2.85 2.85 0 0 1-5.92-0.6 2.89 2.89 0 0 1 5.92-0.6v-3.3a6.52 6.52 0 0 0-6.6 6.6 6.52 6.52 0 0 0 6.6 6.6 6.56 6.56 0 0 0 6.59-6.5v-7.35a8.27 8.27 0 0 0 5.54 2.86v-3.77a4.84 4.84 0 0 1-3.77-1.63Z"/>
-        </svg>
-      </a>
-    </div>
-    <button id="lang-toggle" class="lang-switcher" type="button" aria-label="Toggle language">🇬🇧 EN / 🇰🇭 KH</button>
-  </div>
-</nav>
-
-<section class="hero" id="top">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div>
-      <div class="hero-badge">
-        <span class="star-fill">★★★★★</span>
-        5.0 Rating · Tboung Khmum
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a href="#" class="logo-link" aria-label="The Siblings Mart & Café home">
+      <img src="The Siblings Mart and Cafe logo" alt="The Siblings Mart & Café logo" width="160" height="48">
+    </a>
+    <nav class="nav-desktop" aria-label="Main navigation">
+      <ul>
+        <li><a href="#story" data-i18n="nav.story">Story</a></li>
+        <li><a href="#menu-section" data-i18n="nav.menu">Menu</a></li>
+        <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="#hours" data-i18n="nav.hours">Hours</a></li>
+        <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#contact" data-i18n="nav.visit">Visit</a></li>
+      </ul>
+      <div class="header-actions">
+        <a href="https://www.facebook.com/ThesiblingsbyLKS" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.tiktok.com/@thesiblingsmartandcafe" target="_blank" rel="noopener noreferrer" class="social-link tiktok" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.5a8.28 8.28 0 0 0 4.86 1.56V6.6a4.85 4.85 0 0 1-1.09-.09z"/></svg></a>
+        <button type="button" class="icon-btn lang-btn" id="lang-toggle" aria-label="Switch language">EN</button>
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg></button>
       </div>
-      <h1 data-i18n="heroTitle">Where Every<br><em>Sip Feels</em><br>Like Home</h1>
-      <p class="hero-desc" data-i18n="heroDesc">A cozy neighborhood café and mart in Tboung Khmum, built by siblings who love great coffee and friendly smiles. Affordable prices, warm service — every single day.</p>
-      <div class="hero-actions">
-        <a href="#menu-section" class="btn-primary" data-i18n="exploreBtn">Explore Menu →</a>
-        <a href="tel:060331661" class="btn-outline">📞 060 331 661</a>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="cafe-illustration">
-        <div class="float-pill pill-1 status-badge">● Open Now</div>
-        <div class="cafe-card-main">
-          <img src="The Siblings Mart and Cafe logo" alt="The Siblings Mart & Café logo" class="hero-logo" width="180">
-          <div class="cafe-card-name">The Siblings Mart & Café</div>
-          <div class="cafe-card-subtitle">Café · Mart · Tboung Khmum</div>
-          <div class="cafe-card-stats">
-            <div class="stat-item">
-              <div class="stat-value">5.0</div>
-              <div class="stat-label">Rating</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">7AM</div>
-              <div class="stat-label">Opens</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">10PM</div>
-              <div class="stat-label">Closes</div>
-            </div>
-          </div>
-        </div>
-        <div class="float-pill pill-2">💰 <span data-i18n="floatingBadge">Affordable Prices</span></div>
-      </div>
+    </nav>
+    <div class="header-actions" style="margin-left:auto">
+      <button type="button" class="icon-btn lang-btn" id="lang-toggle-mobile" aria-label="Switch language">EN</button>
+      <button type="button" class="icon-btn" id="theme-toggle-mobile" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg></button>
+      <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
-</section>
-
-<section class="section" id="about">
-  <div class="container">
-    <div class="fade-in section-intro">
-      <p class="section-label" style="color: #c59b27;" data-i18n="about.sectionLabel">Who We Are</p>
-      <h2 data-i18n="about.heading">A Family Spot<br>You'll Love</h2>
-      <p data-i18n="about.description">We're a sibling-run café and convenience mart right here in Tboung Khmum. Whether you're grabbing your morning coffee, a quick snack, or just a place to sit and relax — we've got you covered with genuine warmth and honest prices.</p>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="#story" data-i18n="nav.story">Story</a></li>
+      <li><a href="#menu-section" data-i18n="nav.menu">Menu</a></li>
+      <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+      <li><a href="#hours" data-i18n="nav.hours">Hours</a></li>
+      <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+      <li><a href="#contact" data-i18n="nav.visit">Visit</a></li>
+    </ul>
+    <div class="mobile-socials">
+      <a href="https://www.facebook.com/ThesiblingsbyLKS" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://www.tiktok.com/@thesiblingsmartandcafe" target="_blank" rel="noopener noreferrer" class="social-link tiktok" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.5a8.28 8.28 0 0 0 4.86 1.56V6.6a4.85 4.85 0 0 1-1.09-.09z"/></svg></a>
     </div>
+  </nav>
+</header>
 
-    <div class="info-grid fade-in">
-      <div class="info-card">
-        <div class="info-icon icon-caramel">☕</div>
-        <h3 data-i18n="card1Title">Great Coffee</h3>
-        <p data-i18n="card1Desc">From rich espresso to iced café favorites, our drinks are crafted to brighten your day — every single cup.</p>
-      </div>
-      <div class="info-card">
-        <div class="info-icon icon-sage">🛒</div>
-        <h3 data-i18n="card2Title">Mart & Essentials</h3>
-        <p data-i18n="card2Desc">Need something on the go? Our mart has snacks, drinks, and everyday essentials for the neighborhood.</p>
-      </div>
-      <div class="info-card">
-        <div class="info-icon icon-espresso">💛</div>
-        <h3 data-i18n="card3Title">Friendly Service</h3>
-        <p data-i18n="card3Desc">Rated 5 stars for a reason — our guests always leave with a smile. We treat every customer like family.</p>
-      </div>
-      <div class="info-card">
-        <div class="info-icon icon-caramel">💰</div>
-        <h3 data-i18n="card4Title">Affordable Prices</h3>
-        <p data-i18n="card4Desc">Quality shouldn't break the bank. We keep our prices honest so everyone in the community can enjoy.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="menu-section" style="background: var(--warm);">
-  <div class="container">
-    <div class="fade-in section-intro">
-      <p class="section-label" style="color: #c59b27;" data-i18n="menu.sectionLabel">What We Offer</p>
-      <h2 data-i18n="menu.heading">Our Menu</h2>
-      <p style="color: var(--muted); font-size: 0.95rem; max-width: 420px;" data-i18n="menu.meta">A little something for every taste — hot drinks, cold drinks, snacks and more.</p>
-    </div>
-
-    <div id="react-menu-root" class="mt-8"></div>
-  </div>
-</section>
-
-<section class="section" id="hours">
-  <div class="container">
-    <div class="hours-section fade-in">
-      <p class="section-label" data-i18n="hoursSub">We're Here For You</p>
-      <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-bottom:0.5rem;">
-        <h2 style="margin:0;" data-i18n="hoursTitle">Opening Hours</h2>
-        <div class="hours-open-badge status-badge">● Open Now</div>
-      </div>
-      <p style="color: rgba(250,246,238,0.55); font-size: 0.9rem;" data-i18n="hoursDesc">We're open every day of the week — come visit us!</p>
-
-      <div class="hours-grid">
-        <div class="day-card" id="day-Mon">
-          <div class="day-name">Mon</div>
-          <div class="day-hours">7 AM – 10 PM</div>
-        </div>
-        <div class="day-card" id="day-Tue">
-          <div class="day-name">Tue</div>
-          <div class="day-hours">7 AM – 10 PM</div>
-        </div>
-        <div class="day-card" id="day-Wed">
-          <div class="day-name">Wed</div>
-          <div class="day-hours">7 AM – 10 PM</div>
-        </div>
-        <div class="day-card" id="day-Thu">
-          <div class="day-name">Thu</div>
-          <div class="day-hours">7 AM – 10 PM</div>
-        </div>
-        <div class="day-card" id="day-Fri">
-          <div class="day-name">Fri</div>
-          <div class="day-hours">7 AM – 10 PM</div>
-        </div>
-        <div class="day-card" id="day-Sat">
-          <div class="day-name">Sat</div>
-          <div class="day-hours">7 AM – 10 PM</div>
-        </div>
-        <div class="day-card" id="day-Sun">
-          <div class="day-name">Sun</div>
-          <div class="day-hours">7 AM – 10 PM</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="contact" style="background: var(--warm);">
-  <div class="container">
+<main id="main">
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-grid">
     <div class="fade-in">
-      <p class="section-label" data-i18n="mapSub">Come Visit Us</p>
-      <h2 data-i18n="mapTitle">Find Us in<br>Tboung Khmum</h2>
+      <div class="hero-badge-row">
+        <span class="badge-pill rating"><span class="star">★</span> 5.0 <span data-i18n="hero.googleRating">on Google Maps</span></span>
+        <span class="badge-pill status-badge open" data-status-badge>● Open Now</span>
+      </div>
+      <h1 id="hero-heading" data-i18n="hero.title">Your neighborhood<br><em>café &amp; mart</em><br>in Tboung Khmum</h1>
+      <p class="hero-lead" data-i18n="hero.lead">Three siblings opened this spot so people in town could grab a proper coffee, a cold drink, or something from the shelf without driving far. We open early, stay open late, and keep prices fair for everyday customers.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary" data-i18n="hero.ctaVisit">Get Directions</a>
+        <a href="tel:060331661" class="btn btn-outline" data-i18n="hero.ctaCall">Call 060 331 661</a>
+      </div>
     </div>
-
-    <div class="contact-grid fade-in" style="margin-top: 2.5rem;">
-      <div class="contact-info">
-        <div class="contact-row">
-          <div class="contact-icon">📍</div>
-          <div>
-            <div class="contact-label">Address</div>
-            <div class="contact-value">WHCF+JH, Tboung Khmum Province, Cambodia</div>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-icon">📞</div>
-          <div>
-            <div class="contact-label">Phone</div>
-            <div class="contact-value"><a href="tel:060331661" style="color: var(--espresso); text-decoration:none; font-weight:500;">060 331 661</a></div>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-icon">🕐</div>
-          <div>
-            <div class="contact-label">Hours</div>
-            <div class="contact-value">7 AM – 10 PM · Daily</div>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-icon">⭐</div>
-          <div>
-            <div class="contact-label">Rating</div>
-            <div class="contact-value">5.0 on Google Maps</div>
-          </div>
-        </div>
-
-        <a href="http://maps.google.com/?q=The+Siblings+Mart+and+Cafe" target="_blank" rel="noopener" class="btn-primary" style="margin-top: 0.5rem; align-self: flex-start;">
-          📍 Open in Google Maps
-        </a>
+    <div class="hero-card fade-in">
+      <img class="logo-hero" src="The Siblings Mart and Cafe logo" alt="The Siblings Mart & Café">
+      <div class="hero-stats">
+        <div class="stat-box"><strong>7–22</strong><span data-i18n="hero.statHours">Daily Hours</span></div>
+        <div class="stat-box"><strong>5.0</strong><span data-i18n="hero.statRating">Rating</span></div>
+        <div class="stat-box"><strong>7/7</strong><span data-i18n="hero.statDays">Open Days</span></div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="map-placeholder">
-        <iframe
-          title="The Siblings Mart & Café - Tboung Khmum"
-          src="about:blank"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen>
-        </iframe>
+<section class="section" id="story">
+  <div class="container">
+    <div class="story-grid fade-in">
+      <div class="story-text">
+        <p class="section-label" data-i18n="story.label">Our Story</p>
+        <h2 data-i18n="story.heading">Started by siblings,<br>built for the neighborhood</h2>
+        <p data-i18n="story.p1">We grew up in Tboung Khmum and noticed there weren't many places where you could sit down with a coffee and also pick up snacks or small groceries on the way home. So we pooled what we had, fixed up the shop ourselves, and opened The Siblings Mart &amp; Café.</p>
+        <p data-i18n="story.p2">One of us handles the drinks, another runs the mart side, and we all take turns at the counter. Regulars know us by name. Students come before school. Motorbike drivers stop in for iced coffee on hot afternoons. That is exactly the kind of place we wanted this to be.</p>
       </div>
+      <aside class="story-aside">
+        <dl>
+          <dt data-i18n="story.fact1label">Location</dt>
+          <dd>WHCF+JH, Tboung Khmum Province</dd>
+          <dt data-i18n="story.fact2label">Since</dt>
+          <dd data-i18n="story.fact2">A local family business serving the community</dd>
+          <dt data-i18n="story.fact3label">What we sell</dt>
+          <dd data-i18n="story.fact3">Hot &amp; iced drinks, snacks, and everyday mart items</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why-us" style="background:var(--surface-2)">
+  <div class="container fade-in">
+    <p class="section-label" data-i18n="why.label">Why Us</p>
+    <h2 data-i18n="why.heading">What makes us different</h2>
+    <p data-i18n="why.intro">There are other drink shops around town. Here is why people keep coming back to us.</p>
+    <div class="why-grid">
+      <article class="why-card">
+        <div class="why-icon" aria-hidden="true">☕</div>
+        <h3 data-i18n="why.card1title">Café + Mart in one stop</h3>
+        <p data-i18n="why.card1desc">Order an iced latte and grab bread, snacks, or drinks to take home — no need to visit two places.</p>
+      </article>
+      <article class="why-card">
+        <div class="why-icon" aria-hidden="true">🌅</div>
+        <h3 data-i18n="why.card2title">Open from 7 AM</h3>
+        <p data-i18n="why.card2desc">Early workers and students can get coffee before most shops in the area even flip their signs open.</p>
+      </article>
+      <article class="why-card">
+        <div class="why-icon" aria-hidden="true">💵</div>
+        <h3 data-i18n="why.card3title">Local pricing</h3>
+        <p data-i18n="why.card3desc">We price for Tboung Khmum — not city-center markups. Most drinks stay under $2.</p>
+      </article>
+      <article class="why-card">
+        <div class="why-icon" aria-hidden="true">🤝</div>
+        <h3 data-i18n="why.card4title">Personal service</h3>
+        <p data-i18n="why.card4desc">You are talking to the owners, not a rotating staff. We remember your usual if you come often.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="favorites">
+  <div class="container fade-in">
+    <p class="section-label" data-i18n="fav.label">House Favorites</p>
+    <h2 data-i18n="fav.heading">What regulars order</h2>
+    <p data-i18n="fav.intro">A few items people ask for again and again. Full menu below updates from our sheet.</p>
+    <div class="favorites-grid">
+      <article class="fav-card"><div class="fav-img" aria-hidden="true">☕</div><div class="fav-body"><h3 data-i18n="fav.item1name">Iced Cambodian Coffee</h3><p data-i18n="fav.item1desc">Strong brew with condensed milk over ice. Sweet, bold, and cooling on hot days.</p><span class="fav-price">$1.00</span></div></article>
+      <article class="fav-card"><div class="fav-img" aria-hidden="true">🧋</div><div class="fav-body"><h3 data-i18n="fav.item2name">Brown Sugar Milk Tea</h3><p data-i18n="fav.item2desc">Creamy milk tea with brown sugar syrup. Popular with students after school.</p><span class="fav-price">$1.25</span></div></article>
+      <article class="fav-card"><div class="fav-img" aria-hidden="true">🍋</div><div class="fav-body"><h3 data-i18n="fav.item3name">Red Lemon Tea</h3><p data-i18n="fav.item3desc">Tangy and refreshing. Good if you want something cold without caffeine.</p><span class="fav-price">$0.75</span></div></article>
+      <article class="fav-card"><div class="fav-img" aria-hidden="true">🥐</div><div class="fav-body"><h3 data-i18n="fav.item4name">Butter Croissant</h3><p data-i18n="fav.item4desc">Flaky pastry from our snack shelf. Pairs well with hot coffee in the morning.</p><span class="fav-price">$0.85</span></div></article>
+      <article class="fav-card"><div class="fav-img" aria-hidden="true">🍫</div><div class="fav-body"><h3 data-i18n="fav.item5name">Hot Chocolate</h3><p data-i18n="fav.item5desc">Warm and not too sweet. Kids and adults both order this in the evening.</p><span class="fav-price">$1.50</span></div></article>
+      <article class="fav-card"><div class="fav-img" aria-hidden="true">🥤</div><div class="fav-body"><h3 data-i18n="fav.item6name">Fresh Lime Soda</h3><p data-i18n="fav.item6desc">Squeezed lime with soda water. Simple and sharp — great with spicy snacks.</p><span class="fav-price">$1.00</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="menu-section">
+  <div class="container fade-in">
+    <div class="menu-intro">
+      <p class="section-label" data-i18n="menu.sectionLabel">Full Menu</p>
+      <h2 data-i18n="menu.heading">Everything we serve</h2>
+      <p data-i18n="menu.meta">Hot drinks, cold drinks, snacks, and mart items — updated live from our menu sheet.</p>
+    </div>
+    <div id="react-menu-root"></div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="container fade-in">
+    <p class="section-label" data-i18n="gallery.label">Gallery</p>
+    <h2 data-i18n="gallery.heading">Inside the shop</h2>
+    <p data-i18n="gallery.intro">Warm lighting, a clean counter, and cold drinks lined up for the afternoon rush — swap these photos for your own shop shots when you have them.</p>
+    <div class="gallery-grid" id="gallery-grid">
+      <button type="button" class="gallery-item" data-index="0"><img src="https://images.unsplash.com/photo-1495474472283-4d71bcdd2085?w=600&q=80" alt="Pouring fresh coffee" loading="lazy" width="600" height="450"></button>
+      <button type="button" class="gallery-item" data-index="1"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Coffee cup on wooden table" loading="lazy" width="600" height="450"></button>
+      <button type="button" class="gallery-item" data-index="2"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80" alt="Café interior with warm lighting" loading="lazy" width="600" height="450"></button>
+      <button type="button" class="gallery-item" data-index="3"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&q=80" alt="Latte art in white cup" loading="lazy" width="600" height="450"></button>
+      <button type="button" class="gallery-item" data-index="4"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80" alt="Cozy café seating area" loading="lazy" width="600" height="450"></button>
+      <button type="button" class="gallery-item" data-index="5"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" alt="Iced coffee on counter" loading="lazy" width="600" height="450"></button>
+    </div>
+  </div>
+</section>
+
+<section class="section hours-section" id="hours">
+  <div class="container fade-in">
+    <p class="section-label" data-i18n="hoursSub">Hours</p>
+    <h2 data-i18n="hoursTitle">Open every day, 7 AM – 10 PM</h2>
+    <p data-i18n="hoursDesc">Same hours all week. Stop by before work, after school, or on a late evening walk.</p>
+    <div class="hours-grid" id="hours-grid">
+      <div class="day-card" id="day-Mon"><span data-i18n="days.mon">Monday</span><span class="time">7 AM – 10 PM</span></div>
+      <div class="day-card" id="day-Tue"><span data-i18n="days.tue">Tuesday</span><span class="time">7 AM – 10 PM</span></div>
+      <div class="day-card" id="day-Wed"><span data-i18n="days.wed">Wednesday</span><span class="time">7 AM – 10 PM</span></div>
+      <div class="day-card" id="day-Thu"><span data-i18n="days.thu">Thursday</span><span class="time">7 AM – 10 PM</span></div>
+      <div class="day-card" id="day-Fri"><span data-i18n="days.fri">Friday</span><span class="time">7 AM – 10 PM</span></div>
+      <div class="day-card" id="day-Sat"><span data-i18n="days.sat">Saturday</span><span class="time">7 AM – 10 PM</span></div>
+      <div class="day-card" id="day-Sun"><span data-i18n="days.sun">Sunday</span><span class="time">7 AM – 10 PM</span></div>
     </div>
   </div>
 </section>
 
 <section class="section" id="reviews">
-  <div class="container">
-    <div class="fade-in review-section-intro">
+  <div class="container fade-in">
+    <div class="reviews-header">
       <div>
-        <p class="section-label" data-i18n="reviews.subheading">What Guests Say</p>
-        <h2 data-i18n="reviews.heading">Top Google Reviews</h2>
+        <p class="section-label" data-i18n="reviews.subheading">Reviews</p>
+        <h2 data-i18n="reviews.heading">What guests say on Google</h2>
       </div>
-      <a href="http://maps.google.com/?q=The+Siblings+Mart+and+Cafe" target="_blank" rel="noopener" class="review-cta">
-        <span aria-hidden="true">✏️</span>
-        <span data-i18n="reviews.button">Write a Review on Google</span>
-      </a>
+      <a href="http://maps.google.com/?q=The+Siblings+Mart+and+Cafe" target="_blank" rel="noopener noreferrer" class="review-cta" data-i18n="reviews.button">Write a Review on Google</a>
     </div>
-
-    <div id="reviews-grid" class="reviews-grid fade-in" aria-live="polite"></div>
+    <div id="reviews-grid" class="reviews-grid" aria-live="polite"></div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-logo">
-    <img src="The Siblings Mart and Cafe logo" alt="The Siblings Mart & Café logo" class="logo-image" width="150">
+<section class="section" id="faq" style="background:var(--surface-2)">
+  <div class="container fade-in">
+    <p class="section-label" data-i18n="faq.label">FAQ</p>
+    <h2 data-i18n="faq.heading">Common questions</h2>
+    <div class="faq-list" id="faq-list">
+      <div class="faq-item"><button type="button" class="faq-question" aria-expanded="false"><span data-i18n="faq.q1">Is there parking?</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button><div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq.a1">Yes — you can pull motorbikes right in front of the shop. There is usually space along the roadside. Cars may need to park a short walk away depending on how busy it is.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-question" aria-expanded="false"><span data-i18n="faq.q2">Do you have Wi-Fi?</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button><div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq.a2">We have free Wi-Fi for customers sitting in. Ask at the counter for the password — we change it occasionally for security.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-question" aria-expanded="false"><span data-i18n="faq.q3">What payment do you accept?</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button><div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq.a3">Cash (USD and riel) is always welcome. We also accept common mobile payment apps — just ask when you order.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-question" aria-expanded="false"><span data-i18n="faq.q4">Do you deliver?</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button><div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq.a4">We do not run our own delivery yet, but you can message us on Facebook for larger orders nearby. Most people visit in person or send someone to pick up.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-question" aria-expanded="false"><span data-i18n="faq.q5">Can I reserve a table?</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button><div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq.a5">We do not take reservations — it is a casual neighborhood spot. Groups are welcome; just come in and we will find you space if we can.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-question" aria-expanded="false"><span data-i18n="faq.q6">Are kids welcome?</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button><div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq.a6">Absolutely. Families stop in often. We have hot chocolate and snacks that kids like, and the mart side has small treats they can pick out.</div></div></div>
+    </div>
   </div>
-  <p class="footer-tagline">Good service · Affordable prices · Tboung Khmum</p>
-  <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.9rem; color: rgba(250,246,238,0.8); margin-bottom: 1rem;">
-    <span>☎</span>
-    <a href="tel:060331661" style="color: rgba(250,246,238,0.9); text-decoration: none; font-weight: 500;">060 331 661</a>
+</section>
+
+<section class="section" id="contact">
+  <div class="container fade-in">
+    <p class="section-label" data-i18n="contact.label">Contact</p>
+    <h2 data-i18n="contact.heading">Come visit or send a message</h2>
+    <div class="contact-grid">
+      <div class="contact-details">
+        <div class="contact-item"><div class="contact-icon" aria-hidden="true">📍</div><div><strong data-i18n="contact.addressLabel">Address</strong><p>WHCF+JH, Tboung Khmum Province, Cambodia</p></div></div>
+        <div class="contact-item"><div class="contact-icon" aria-hidden="true">📞</div><div><strong data-i18n="contact.phoneLabel">Phone</strong><p><a href="tel:060331661">060 331 661</a></p></div></div>
+        <div class="contact-item"><div class="contact-icon" aria-hidden="true">🕐</div><div><strong data-i18n="contact.hoursLabel">Hours</strong><p data-i18n="contact.hoursValue">7 AM – 10 PM, every day</p></div></div>
+        <div class="contact-item"><div class="contact-icon" aria-hidden="true">🗺️</div><div><strong data-i18n="contact.mapsLabel">Google Maps</strong><p><a href="http://maps.google.com/?q=The+Siblings+Mart+and+Cafe" target="_blank" rel="noopener noreferrer" data-i18n="contact.mapsLink">Open in Google Maps</a></p></div></div>
+      </div>
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-group"><label for="contact-name" data-i18n="form.name">Your name</label><input type="text" id="contact-name" name="name" required autocomplete="name"><div class="form-error" id="error-name" hidden></div></div>
+        <div class="form-group"><label for="contact-email" data-i18n="form.email">Email</label><input type="email" id="contact-email" name="email" required autocomplete="email"><div class="form-error" id="error-email" hidden></div></div>
+        <div class="form-group"><label for="contact-message" data-i18n="form.message">Message</label><textarea id="contact-message" name="message" rows="4" required></textarea><div class="form-error" id="error-message" hidden></div></div>
+        <button type="submit" class="btn btn-primary" data-i18n="form.submit">Send Message</button>
+        <div class="form-success" id="form-success" data-i18n="form.success">Thanks! We received your message and will get back to you soon.</div>
+      </form>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=The+Siblings+Mart+and+Cafe&output=embed" title="The Siblings Mart & Café on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
   </div>
-  <p class="footer-text-follow" data-i18n="footer.followUs" style="text-align: center; color: rgba(250,246,238,0.75); font-size: 0.95rem; margin-bottom: 0.75rem; font-weight: 500;">Follow Us</p>
-  <div class="footer-socials">
-    <a href="https://www.facebook.com/ThesiblingsbyLKS" class="footer-social-btn facebook" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" title="Follow on Facebook">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-      </svg>
-    </a>
-    <a href="https://www.tiktok.com/@thesiblingsmartandcafe" class="footer-social-btn tiktok" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" title="Follow on TikTok">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v12.7a2.85 2.85 0 0 1-5.92-0.6 2.89 2.89 0 0 1 5.92-0.6v-3.3a6.52 6.52 0 0 0-6.6 6.6 6.52 6.52 0 0 0 6.6 6.6 6.56 6.56 0 0 0 6.59-6.5v-7.35a8.27 8.27 0 0 0 5.54 2.86v-3.77a4.84 4.84 0 0 1-3.77-1.63Z"/>
-      </svg>
-    </a>
+</section>
+
+<section class="visit-cta fade-in">
+  <div class="container">
+    <h2 data-i18n="visitCta.title">We are open right now — come say hello</h2>
+    <p data-i18n="visitCta.desc">Pull up on your motorbike, grab a drink, and see why our neighbors rated us 5.0 on Google.</p>
+    <a href="http://maps.google.com/?q=The+Siblings+Mart+and+Cafe" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="visitCta.btn">Open in Google Maps</a>
   </div>
-  <ul class="footer-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#menu-section">Menu</a></li>
-    <li><a href="#hours">Hours</a></li>
-    <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <p class="footer-copy">© 2026 The Siblings Mart & Café · Tboung Khmum, Cambodia<br>
-  <span style="font-size:0.7rem; opacity:0.5;">☎ 060 331 661 · Open 7 AM – 10 PM Daily</span></p>
-  <p class="footer-credit">Website by <a href="https://www.facebook.com/profile.php?id=61590719906614" target="_blank" rel="noopener noreferrer"><span class="footer-credit-highlight">Future Project Team</span></a></p>
+</section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="The Siblings Mart and Cafe logo" alt="" width="44" height="44">
+          <span>The Siblings Mart &amp; Café</span>
+        </div>
+        <p data-i18n="footer.tagline">Coffee, snacks, and essentials in Tboung Khmum — run by siblings, for the neighborhood.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/ThesiblingsbyLKS" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.tiktok.com/@thesiblingsmartandcafe" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.5a8.28 8.28 0 0 0 4.86 1.56V6.6a4.85 4.85 0 0 1-1.09-.09z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h3 data-i18n="footer.linksTitle">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#story" data-i18n="nav.story">Story</a></li>
+          <li><a href="#menu-section" data-i18n="nav.menu">Menu</a></li>
+          <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+          <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.hoursTitle">Hours</h3>
+        <ul class="footer-links">
+          <li data-i18n="footer.hoursLine">7 AM – 10 PM daily</li>
+          <li data-i18n="footer.hoursNote">All 7 days, same hours</li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.contactTitle">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="tel:060331661">060 331 661</a></li>
+          <li>WHCF+JH, Tboung Khmum</li>
+          <li><a href="http://maps.google.com/?q=The+Siblings+Mart+and+Cafe" target="_blank" rel="noopener noreferrer" data-i18n="contact.mapsLink">Open in Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Siblings Mart &amp; Café &middot; Tboung Khmum, Cambodia</p>
+      <p class="footer-credit">Website by <a href="https://www.facebook.com/profile.php?id=61590719906614" target="_blank" rel="noopener noreferrer">Future Project Team</a></p>
+    </div>
+  </div>
 </footer>
 
-<script>
+<button type="button" class="scroll-top" id="scroll-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24"><path d="M12 8l-6 6h12z"/></svg></button>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+  <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8249;</button>
+  <img src="" alt="" id="lightbox-img">
+  <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#8250;</button>
+</div>
+
+<script defer>
+(function(){
   const reviews = [
-    {
-      name: 'Sum Sakthana',
-      stars: 5,
-      text: 'Well, this place do a good job in a small town like this, Service is great to be honest, Keep the great job forever',
-      breakdown: { Food: 5, Service: 5, Atmosphere: 4 },
-      when: 'a week ago'
-    },
-    {
-      name: 'Sokun Nary',
-      stars: 5,
-      text: 'A warm atmosphere, friendly service, and excellent food — truly one of the best stops in town.',
-      breakdown: { Food: 5, Service: 5, Atmosphere: 4 },
-      when: '2 weeks ago'
-    },
-    {
-      name: 'Ratanak',
-      stars: 5,
-      text: 'Perfect for a quick coffee and snack. The staff are always smiling and the place feels very welcoming.',
-      breakdown: { Food: 5, Service: 4, Atmosphere: 5 },
-      when: '3 days ago'
-    }
+    { name:'Sum Sakthana', stars:5, text:'Well, this place does a good job in a small town like this. Service is great, to be honest. Keep up the great work forever.', breakdown:{Food:5,Service:5,Atmosphere:4}, when:'a week ago' },
+    { name:'Sokun Nary', stars:5, text:'A warm atmosphere, friendly service, and excellent food — truly one of the best stops in town.', breakdown:{Food:5,Service:5,Atmosphere:4}, when:'2 weeks ago' },
+    { name:'Ratanak', stars:5, text:'Perfect for a quick coffee and snack. The staff are always smiling and the place feels very welcoming.', breakdown:{Food:5,Service:4,Atmosphere:5}, when:'3 days ago' }
   ];
 
   const translations = {
     en: {
-      nav: {
-        about: 'About',
-        menu: 'Menu',
-        hours: 'Hours',
-        reviews: 'Reviews',
-        find: 'Find Us'
-      },
-      heroTitle: 'Where Every<br><em>Sip Feels</em><br>Like Home',
-      heroDesc: 'A cozy neighborhood café and mart in Tboung Khmum, built by siblings who love great coffee and friendly smiles. Affordable prices, warm service — every single day.',
-      exploreBtn: 'Explore Menu →',
-      card1Title: 'Great Coffee',
-      card1Desc: 'From rich espresso to iced café favorites, our drinks are crafted to brighten your day — every single cup.',
-      card2Title: 'Mart & Essentials',
-      card2Desc: 'Need something on the go? Our mart has snacks, drinks, and everyday essentials for the neighborhood.',
-      card3Title: 'Friendly Service',
-      card3Desc: 'Rated 5 stars for a reason — our guests always leave with a smile. We treat every customer like family.',
-      card4Title: 'Affordable Prices',
-      card4Desc: 'Quality shouldn\'t break the bank. We keep our prices honest so everyone in the community can enjoy.',
-      hoursSub: 'WE\'RE HERE FOR YOU',
-      hoursTitle: 'Opening Hours',
-      hoursDesc: 'We\'re open every day of the week — come visit us!',
-      mapSub: 'COME VISIT US',
-      mapTitle: 'Find Us in Tboung Khmum',
-      about: {
-        sectionLabel: 'Who We Are',
-        heading: 'A Family Spot<br>You\'ll Love',
-        description: 'We\'re a sibling-run café and convenience mart right here in Tboung Khmum. Whether you\'re grabbing your morning coffee, a quick snack, or just a place to sit and relax — we\'ve got you covered with genuine warmth and honest prices.'
-      },
-      menu: {
-        sectionLabel: 'What We Offer',
-        heading: 'Our Menu',
-        meta: 'A little something for every taste — hot drinks, cold drinks, snacks and more.',
-        showMore: 'Show More',
-        showLess: 'Show Less',
-        filters: {
-          all: 'All',
-          hot_drink: 'Hot Drinks',
-          cold_drink: 'Cold Drinks',
-          food_snack: 'Food & Snacks',
-          mart_item: 'Mart Items'
-        }
-      },
-      reviews: {
-        subheading: 'WHAT GUESTS SAY',
-        heading: 'Top Google Reviews',
-        button: 'Write a Review on Google'
-      },
-      status: {
-        open: '● Open Now',
-        closed: '● Closed Now'
-      },
-      floatingBadge: 'Affordable Prices',
-      footer: {
-        followUs: 'Follow Us'
-      }
+      skipLink:'Skip to main content',
+      nav:{ story:'Story', menu:'Menu', gallery:'Gallery', hours:'Hours', reviews:'Reviews', faq:'FAQ', visit:'Visit' },
+      hero:{ googleRating:'on Google Maps', title:'Your neighborhood<br><em>café & mart</em><br>in Tboung Khmum', lead:'Three siblings opened this spot so people in town could grab a proper coffee, a cold drink, or something from the shelf without driving far. We open early, stay open late, and keep prices fair for everyday customers.', ctaVisit:'Get Directions', ctaCall:'Call 060 331 661', statHours:'Daily Hours', statRating:'Rating', statDays:'Open Days' },
+      story:{ label:'Our Story', heading:'Started by siblings,<br>built for the neighborhood', p1:'We grew up in Tboung Khmum and noticed there weren\'t many places where you could sit down with a coffee and also pick up snacks or small groceries on the way home. So we pooled what we had, fixed up the shop ourselves, and opened The Siblings Mart & Café.', p2:'One of us handles the drinks, another runs the mart side, and we all take turns at the counter. Regulars know us by name. Students come before school. Motorbike drivers stop in for iced coffee on hot afternoons. That is exactly the kind of place we wanted this to be.', fact1label:'Location', fact2label:'Since', fact2:'A local family business serving the community', fact3label:'What we sell', fact3:'Hot & iced drinks, snacks, and everyday mart items' },
+      why:{ label:'Why Us', heading:'What makes us different', intro:'There are other drink shops around town. Here is why people keep coming back to us.', card1title:'Café + Mart in one stop', card1desc:'Order an iced latte and grab bread, snacks, or drinks to take home — no need to visit two places.', card2title:'Open from 7 AM', card2desc:'Early workers and students can get coffee before most shops in the area even flip their signs open.', card3title:'Local pricing', card3desc:'We price for Tboung Khmum — not city-center markups. Most drinks stay under $2.', card4title:'Personal service', card4desc:'You are talking to the owners, not a rotating staff. We remember your usual if you come often.' },
+      fav:{ label:'House Favorites', heading:'What regulars order', intro:'A few items people ask for again and again. Full menu below updates from our sheet.', item1name:'Iced Cambodian Coffee', item1desc:'Strong brew with condensed milk over ice. Sweet, bold, and cooling on hot days.', item2name:'Brown Sugar Milk Tea', item2desc:'Creamy milk tea with brown sugar syrup. Popular with students after school.', item3name:'Red Lemon Tea', item3desc:'Tangy and refreshing. Good if you want something cold without caffeine.', item4name:'Butter Croissant', item4desc:'Flaky pastry from our snack shelf. Pairs well with hot coffee in the morning.', item5name:'Hot Chocolate', item5desc:'Warm and not too sweet. Kids and adults both order this in the evening.', item6name:'Fresh Lime Soda', item6desc:'Squeezed lime with soda water. Simple and sharp — great with spicy snacks.' },
+      menu:{ sectionLabel:'Full Menu', heading:'Everything we serve', meta:'Hot drinks, cold drinks, snacks, and mart items — updated live from our menu sheet.', showMore:'Show More', showLess:'Show Less', filters:{ all:'All', hot_drink:'Hot Drinks', cold_drink:'Cold Drinks', food_snack:'Food & Snacks', mart_item:'Mart Items' } },
+      gallery:{ label:'Gallery', heading:'Inside the shop', intro:'Warm lighting, a clean counter, and cold drinks lined up for the afternoon rush — swap these photos for your own shop shots when you have them.' },
+      hoursSub:'Hours', hoursTitle:'Open every day, 7 AM – 10 PM', hoursDesc:'Same hours all week. Stop by before work, after school, or on a late evening walk.',
+      days:{ mon:'Monday', tue:'Tuesday', wed:'Wednesday', thu:'Thursday', fri:'Friday', sat:'Saturday', sun:'Sunday' },
+      reviews:{ subheading:'Reviews', heading:'What guests say on Google', button:'Write a Review on Google' },
+      faq:{ label:'FAQ', heading:'Common questions', q1:'Is there parking?', a1:'Yes — you can pull motorbikes right in front of the shop. There is usually space along the roadside. Cars may need to park a short walk away depending on how busy it is.', q2:'Do you have Wi-Fi?', a2:'We have free Wi-Fi for customers sitting in. Ask at the counter for the password — we change it occasionally for security.', q3:'What payment do you accept?', a3:'Cash (USD and riel) is always welcome. We also accept common mobile payment apps — just ask when you order.', q4:'Do you deliver?', a4:'We do not run our own delivery yet, but you can message us on Facebook for larger orders nearby. Most people visit in person or send someone to pick up.', q5:'Can I reserve a table?', a5:'We do not take reservations — it is a casual neighborhood spot. Groups are welcome; just come in and we will find you space if we can.', q6:'Are kids welcome?', a6:'Absolutely. Families stop in often. We have hot chocolate and snacks that kids like, and the mart side has small treats they can pick out.' },
+      contact:{ label:'Contact', heading:'Come visit or send a message', addressLabel:'Address', phoneLabel:'Phone', hoursLabel:'Hours', hoursValue:'7 AM – 10 PM, every day', mapsLabel:'Google Maps', mapsLink:'Open in Google Maps' },
+      form:{ name:'Your name', email:'Email', message:'Message', submit:'Send Message', success:'Thanks! We received your message and will get back to you soon.', errName:'Please enter your name.', errEmail:'Please enter a valid email.', errMessage:'Please write a short message.' },
+      visitCta:{ title:'We are open right now — come say hello', desc:'Pull up on your motorbike, grab a drink, and see why our neighbors rated us 5.0 on Google.', btn:'Open in Google Maps' },
+      footer:{ tagline:'Coffee, snacks, and essentials in Tboung Khmum — run by siblings, for the neighborhood.', linksTitle:'Quick Links', hoursTitle:'Hours', hoursLine:'7 AM – 10 PM daily', hoursNote:'All 7 days, same hours', contactTitle:'Contact', followUs:'Follow Us' },
+      status:{ open:'● Open Now', closed:'● Closed Now' }
     },
     km: {
-      nav: {
-        about: 'អំពីយើង',
-        menu: 'ម៉ឺនុយ',
-        hours: 'ម៉ោងបើកលក់',
-        reviews: 'ការវាយតម្លៃ',
-        find: 'ស្វែងរកយើង'
-      },
-      heroTitle: 'ទីកន្លែងដែលរាល់ការក្រេបកាហ្វេផ្តល់អារម្មណ៍ដូចនៅផ្ទះ',
-      heroDesc: 'ហាងកាហ្វេ និងម៉ាតលក្ខណៈគ្រួសារដ៏កក្តៅក្នុងខេត្តត្បូងឃ្មុំ បង្កើតឡើងដោយបងប្អូនបង្កើតដែលស្រឡាញ់កាហ្វេឆ្ងាញ់ និងស្នាមញញឹមរាក់ទាក់។ តម្លៃសមរម្យ សេវាកម្មកក់ក្តៅ — ជារៀងរាល់ថ្ងៃ។',
-      exploreBtn: 'មើលមុខម្ហូប/ភេសជ្ជៈ →',
-      card1Title: 'កាកាហ្វេដ៏ឈ្ងុយឆ្ងាញ់',
-      card1Desc: 'ចាប់ពី អែសប្រេសសូ (Espresso) រហូតដល់ភេសជ្ជៈកាហ្វេត្រជាក់ដែលអ្នកចូលចិត្ត ភេសជ្ជៈរបស់យើងត្រូវបានឆ្នៃឡើងដើម្បីបង្កើនភាពស្រស់ស្រាយដល់ថ្ងៃថ្មីរបស់អ្នក — រាល់ពេញមួយកែវ។',
-      card2Title: 'ទំនិញម៉ាត & តម្រូវការប្រចាំថ្ងៃ',
-      card2Desc: 'ត្រូវការទំនិញតាមផ្លូវមែនទេ? ម៉ាតរបស់យើងមាននំចំណី ភេសជ្ជៈ និងរបស់ប្រើប្រាស់ចាំបាច់ប្រចាំថ្ងៃសម្រាប់អ្នកជិតខាងទាំងអស់។',
-      card3Title: 'សេវាកម្មប្រកបដោយភាពរាក់ទាក់',
-      card3Desc: 'ទទួលបានការវាយតម្លៃផ្កាយ ៥ ដោយសារតែមូលហេតុច្បាស់លាស់ — ភ្ញៀវរបស់យើងតែងតែត្រឡប់ទៅវិញដោយស្នាមញញឹម  យើងរាប់អានអតិថិជនគ្រប់រូបដូចជាគ្រួសារ។',
-      card4Title: 'តម្លៃសមរម្យបំផុត',
-      card4Desc: 'គុណភាពល្អមិនចាំបាច់ចំណាយច្រើនពេកនោះទេ។ យើងរក្សាលតម្លៃឲ្យនៅសមរម្យ និងស្មោះត្រង់បំផុត ដើម្បីឲ្យគ្រប់គ្នាក្នុងសហគមន៍អាចរីករាយបាន Lazy។',
-      hoursSub: 'យើងនៅទីនេះសម្រាប់អ្នក',
-      hoursTitle: 'ម៉ោងបើកបំរើការ',
-      hoursDesc: 'យើងបើកបំរើការជារៀងរាល់ថ្ងៃក្នុងសប្តាហ៍ — អញ្ជើញមកលេងយើងខ្ញុំដោយក្តីរីករាយ!',
-      mapSub: 'មកជួបយើងផ្ទាល់',
-      mapTitle: 'ស្វែងរកយើងនៅក្នុងខេត្តត្បូងឃ្មុំ',
-      about: {
-        sectionLabel: 'ស្គាល់ពីយើង',
-        heading: 'ទីកន្លែងគ្រួសារដែលអ្នកនឹងស្រឡាញ់',
-        description: 'យើងជាហាងកាហ្វេ និងម៉ាតលក្ខណៈគ្រួសារ បង្កើតឡើងដោយបងប្អូនបង្កើតនៅក្នុងខេត្តត្បូងឃ្មុំ។ ទោះបីអ្នកកំពុងយកកាហ្វេទំព័រព្រឹក រឺ អាហារឆុងលឿន ឬតែចំនុចសម្រាប់អង្គុយ សម្រាក — យើងមានសេវាកម្មគ្រប់គ្រាន់ដោយក្តីមេត្តា និងតម្លៃស្មើ។',
-      },
-      menu: {
-        sectionLabel: 'អ្វីដែលយើងផ្តល់ជូន',
-        heading: 'ម៉ឺនុយរបស់យើង',
-        meta: 'មានអ្វីៗគ្រប់យ៉ាងសម្រាប់រាល់ចំណូលចិត្ត — ភេសជ្ជៈក្តៅ ភេសជ្ជៈត្រជាក់ អាហារសម្រន់ និងទំនិញជាច្រើនទៀត។',
-        showMore: 'មើលបន្ថែម',
-        showLess: 'បិទ',
-        filters: {
-          all: 'ទាំងអស់',
-          hot_drink: 'ភេសជ្ជៈក្តៅ',
-          cold_drink: 'ភេសជ្ជៈត្រជាក់',
-          food_snack: 'អាហារ និងសម្រន់',
-          mart_item: 'ទំនិញម៉ាត'
-        }
-      },
-      reviews: {
-        subheading: 'អ្វីដែលភ្ញៀវរបស់យើងបាននិយាយ',
-        heading: 'ការវាយតម្លៃឈានមុខគេលៅលើ Google',
-        button: 'សរសេរការវាយតម្លៃនៅលើ Google'
-      },
-      status: {
-        open: '● បើកឥឡូវនេះ',
-        closed: '● បិទឥឡូវនេះ'
-      },
-      floatingBadge: 'តម្លៃសមរម្យបំផុត',
-      footer: {
-        followUs: 'តាមដានពួកយើង'
-      }
+      skipLink:'រំលងទៅមាតិកាសំខាន់',
+      nav:{ story:'រឿងរ៉ាវ', menu:'ម៉ឺនុយ', gallery:'វិចិត្រសាល', hours:'ម៉ោង', reviews:'ការវាយតម្លៃ', faq:'សំណួរ', visit:'មកលេង' },
+      hero:{ googleRating:'លើ Google Maps', title:'ហាងកាហ្វេ &amp; ម៉ាត<br><em>ក្នុងខេត្តត្បូងឃ្មុំ</em>', lead:'បងប្អូនបីនាក់បានបើកហាងនេះ ដើម្បីឲ្យមនុស្សក្នុងទីកន្លែងអាចយកកាហ្វេ ភេសជ្ជៈត្រជាក់ ឬទំនិញតាមធ្នើរដោយមិនចាំបាច់ធ្វើដំណើរឆ្ងាយ។ យើងបើកព្រឹក បិទយប់ និងរក្សាតម្លៃសមរម្យសម្រាប់អតិថិជនប្រចាំថ្ងៃ។', ctaVisit:'មើលទីតាំង', ctaCall:'ហៅ 060 331 661', statHours:'ម៉ោងបើក', statRating:'ការវាយតម្លៃ', statDays:'ថ្ងៃបើក' },
+      story:{ label:'រឿងរ៉ាវរបស់យើង', heading:'បង្កើតឡើងដោយបងប្អូន<br>សម្រាប់សហគមន៍', p1:'យើងធំឡើងនៅត្បូងឃ្មុំ ហើយសង្កេតឃើញថាមិនមានទីកន្លែងច្រើនដែលអាចអង្គុយផឹកកាហ្វេ និងយកអាហារសម្រន់ឬទំនិញតូចៗទៅផ្ទះបាន។ ដូច្នេះយើងប្រមូលធនធាន ជួសជុលហាងដោយខ្លួនឯង ហើយបើក The Siblings Mart &amp; Café។', p2:'មួយនាក់ធ្វើភេសជ្ជៈ មួយនាក់គ្រប់គ្រងម៉ាត ហើយយើងប្តូរគ្នានៅការិយាល័យ។ អតិថិជនទំនាក់ទំនងស្គាល់ឈ្មោះយើង។ សិស្សមកមុនសាលា។ អ្នកបើកម៉ូតូឈប់យកកាហ្វេត្រជាក់ថ្ងៃក្តៅ។ នេះជាកន្លែងដែលយើងចង់បង្កើត។', fact1label:'ទីតាំង', fact2label:'តាំងពី', fact2:'អាជីវកម្មគ្រួសារក្នុងស្រុក', fact3label:'អ្វីដែលយើងលក់', fact3:'ភេសជ្ជៈក្តៅ ត្រជាក់ អាហារសម្រន់ និងទំនិញម៉ាត' },
+      why:{ label:'ហេតុអ្វីជ្រើសយើង', heading:'អ្វីដែលធ្វើឲ្យយើងខុសគេ', intro:'មានហាងភេសជ្ជៈផ្សេងទៀតក្នុងទីកន្លែង។ នេះជាហេតុដែលអតិថិជនត្រឡប់មកវិញ។', card1title:'កាហ្វេ + ម៉ាតក្នុងកន្លែងតែមួយ', card1desc:'បញ្ជាទិញឡាតេត្រជាក់ ហើយយកនំ អាហារសម្រន់ ឬភេសជ្ជៈទៅផ្ទះ — មិនចាំបាច់ទៅពីរកន្លែង។', card2title:'បើកពី ៧ ព្រឹក', card2desc:'អ្នកធ្វើការព្រឹក និងសិស្សអាចយកកាហ្វេមុនហាងផ្សេងភាគច្រើនបើក។', card3title:'តម្លៃក្នុងស្រុក', card3desc:'យើងដាក់តម្លៃសម្រាប់ត្បូងឃ្មុំ — មិនមែនតម្លៃទីក្រុង។ ភេសជ្ជៈភាគច្រើនក្រោម $2។', card4title:'សេវាកម្មផ្ទាល់ខ្លួន', card4desc:'អ្នកនិយាយជាមួយម្ចាស់ហាង មិនមែនបុគ្គលិកប្តូរទៅមកវិញ។ យើងចងចាំអ្វីដែលអ្នកបញ្ជាញឹកញាប់។' },
+      fav:{ label:'មុខម្ហូបពេញនិយម', heading:'អ្វីដែលអតិថិជនប្រចាំញ៉ាង់', intro:'មុខម្ហូបមួយចំនួនដែលមនុស្សបញ្ជាញឹកញាប់។ ម៉ឺនុយពេញខាងក្រោមធ្វើបច្ចុប្បន្នភាពពីសៀវភៅរបស់យើង។', item1name:'កាហ្វេត្រជាក់កម្ពុជា', item1desc:'កាហ្វេខ្លាំងជាមួយទឹកដោះគោជូរ លើទឹកកក។ ផ្អែម និងស្រស់ស្រាយថ្ងៃក្តៅ។', item2name:'តែទឹកដោះគោស្ករត្នោត', item2desc:'តែទឹកដោះគោជាមួយស្ករត្នោត។ ពេញនិយមសម្រាប់សិស្សបន្ទាប់ពីសាលា។', item3name:'តែក្រូចក្រហម', item3desc:'ជាតិទឹកឆ្មា និងស្រស់ស្រាយ។ ល្អប្រសិនបើអ្នកចង់ភេសជ្ជៈត្រជាក់គ្មានកាហ្វេ។', item4name:'ក្រូសងប៊ឺ', item4desc:'នំខ្យងពីធ្នើរអាហារសម្រន់។ ល្អជាមួយកាហ្វេក្តៅព្រឹក។', item5name:'សូកូឡាក្តៅ', item5desc:'កក់ក្តៅ មិនផ្អែមពេក។ កុមារ និងវ័យធំទាំងពីរបញ្ជាទិញយប់។', item6name:'សូដាក្រូចឆ្មា', item6desc:'ក្រូចឆ្មាចុចជាមួយទឹកសូដា។ សាមញ្ញ និងច្បាស់ — ល្អជាមួយអាហារសម្រន់ហឹរ។' },
+      menu:{ sectionLabel:'ម៉ឺនុយពេញ', heading:'អ្វីគ្រប់យ៉ាងដែលយើងមាន', meta:'ភេសជ្ជៈក្តៅ ត្រជាក់ អាហារសម្រន់ និងទំនិញម៉ាត — ធ្វើបច្ចុប្បន្នភាពផ្ទាល់ពីសៀវភៅម៉ឺនុយ។', showMore:'មើលបន្ថែម', showLess:'បិទ', filters:{ all:'ទាំងអស់', hot_drink:'ភេសជ្ជៈក្តៅ', cold_drink:'ភេសជ្ជៈត្រជាក់', food_snack:'អាហារ និងសម្រន់', mart_item:'ទំនិញម៉ាត' } },
+      gallery:{ label:'វិចិត្រសាល', heading:'ក្នុងហាង', intro:'ពន្លឺកក់ក្តៅ ការិយាល័យស្អាត និងភេសជ្ជៈត្រជាក់រួចសម្រាប់ម៉ោងល្បី — ជំនួសរូបថតទាំងនេះដោយរូបពិតប្រាកដពីហាងរបស់អ្នកនៅពេលមាន។' },
+      hoursSub:'ម៉ោង', hoursTitle:'បើករាល់ថ្ងៃ ៧ ព្រឹក – ១០ យប់', hoursDesc:'ម៉ោងដូចគ្នារាល់សប្តាហ៍។ មកមុនធ្វើការ បន្ទាប់សាលា ឬដើរលេងយប់។',
+      days:{ mon:'ច័ន្ទ', tue:'អង្គារ', wed:'ពុធ', thu:'ព្រហស្បតិ៍', fri:'សុក្រ', sat:'សៅរ៍', sun:'អាទិត្យ' },
+      reviews:{ subheading:'ការវាយតម្លៃ', heading:'អ្វីដែលភ្ញៀវនិយាយលើ Google', button:'សរសេរការវាយតម្លៃនៅលើ Google' },
+      faq:{ label:'សំណួរញឹកញាប់', heading:'សំណួរទូទៅ', q1:'មានចំណតទេ?', a1:'មាន — អ្នកអាចឈប់ម៉ូតូខាងមុខហាង។ ជាធម្មតាមានចំណតតាមផ្លូវ។ រថយន្តអាចត្រូវចតដើរខ្លីអាស្រ័យលើភាពរវល់។', q2:'មាន Wi-Fi ទេ?', a2:'មាន Wi-Fi ឥតគិតថ្លៃសម្រាប់អតិថិជនអង្គុយក្នុងហាង។ សួរពាក្យសម្ងាត់នៅការិយាល័យ។', q3:'ទទួលបង់ប្រាក់យ៉ាងណា?', a3:'សាច់ប្រាក់ (ដុល្លារ និងរៀល) តែងតែទទួល។ យើងក៏ទទួលកម្មវិធីបង់ប្រាក់ទូរស័ព្ទផងដែរ — សួរពេលបញ្ជាទិញ។', q4:'មានដឹកជញ្ជូនទេ?', a4:'យើងមិនទាន់មានដឹកជញ្ជូនផ្ទាល់ ប៉ុន្តែអាចសារតាម Facebook សម្រាប់ការបញ្ជាទិញធំៗក្បែរៗ។ ភាគច្រើនមកផ្ទាល់ ឬឲ្យអ្នកដទៃមកយក។', q5:'អាចកក់តុទេ?', a5:'យើងមិនទទួលកក់ — នេះជាកន្លែងសាមញ្ញក្នុងស្រុក។ ក្រុមអាចមកបាន យើងរកទីអង្គុយឲ្យបាន។', q6:'កុមារមកបានទេ?', a6:'បានទាំងអស់។ គ្រួសារមកញឹកញាប់។ មានសូកូឡាក្តៅ និងអាហារសម្រន់សម្រាប់កុមារ។' },
+      contact:{ label:'ទំនាក់ទំនង', heading:'មកលេង ឬផ្ញើសារ', addressLabel:'អាសយដ្ឋាន', phoneLabel:'ទូរស័ព្ទ', hoursLabel:'ម៉ោង', hoursValue:'៧ ព្រឹក – ១០ យប់ រាល់ថ្ងៃ', mapsLabel:'Google Maps', mapsLink:'បើកក្នុង Google Maps' },
+      form:{ name:'ឈ្មោះរបស់អ្នក', email:'អ៊ីមែល', message:'សារ', submit:'ផ្ញើសារ', success:'អរគុណ! យើងបានទទួលសាររបស់អ្នក ហើយនឹងឆ្លើយតបឆាប់ៗ។', errName:'សូមបញ្ចូលឈ្មោះរបស់អ្នក។', errEmail:'សូមបញ្ចូលអ៊ីមែលត្រឹមត្រូវ។', errMessage:'សូមសរសេរសារខ្លី។' },
+      visitCta:{ title:'យើងបើកឥឡូវនេះ — មកស្វាគមន៍', desc:'ឈប់ម៉ូតូ យកភេសជ្ជៈ ហើយមើលហេតុអ្វីអ្នកជិតខាងវាយតម្លៃ ៥.០ លើ Google។', btn:'បើកក្នុង Google Maps' },
+      footer:{ tagline:'កាហ្វេ អាហារសម្រន់ និងទំនិញក្នុងត្បូងឃ្មុំ — ដំណើរការដោយបងប្អូន សម្រាប់សហគមន៍។', linksTitle:'តំណភ្ជាប់', hoursTitle:'ម៉ោង', hoursLine:'៧ ព្រឹក – ១០ យប់ រាល់ថ្ងៃ', hoursNote:'៧ ថ្ងៃ ម៉ោងដូចគ្នា', contactTitle:'ទំនាក់ទំនង', followUs:'តាមដានពួកយើង' },
+      status:{ open:'● បើកឥឡូវនេះ', closed:'● បិទឥឡូវនេះ' }
     }
   };
 
   let currentLanguage = 'en';
 
+  function t(key) {
+    return key.split('.').reduce((o, p) => o && o[p], translations[currentLanguage]);
+  }
+
   function translateElement(el, value) {
     if (!value) return;
     const tag = el.tagName.toLowerCase();
-    if (tag === 'h1' || tag === 'h2' || tag === 'p' || tag === 'button' || tag === 'li' || tag === 'a' || tag === 'span' || tag === 'div') {
-      if (value.includes('<br')) {
-        el.innerHTML = value;
-      } else {
-        el.textContent = value;
-      }
+    if (['h1','h2','h3','p','button','li','a','span','div','dt','dd','label'].includes(tag) && (value.includes('<br') || value.includes('<em>'))) {
+      el.innerHTML = value;
     } else {
       el.textContent = value;
     }
@@ -1473,21 +678,17 @@
 
   function translatePage() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.dataset.i18n;
-      const translation = key.split('.').reduce((obj, part) => obj && obj[part], translations[currentLanguage]);
-      translateElement(el, translation);
+      translateElement(el, t(el.dataset.i18n));
     });
-
-    updateStatusBadges();
-    if (typeof triggerMenuUpdate === 'function') {
-      triggerMenuUpdate();
-    }
-
-    const langButton = document.getElementById('lang-toggle');
-    if (langButton) {
-      langButton.classList.toggle('active', currentLanguage === 'km');
-    }
-
+    document.querySelectorAll('[data-status-badge]').forEach(b => {
+      const open = isStoreOpen();
+      b.textContent = t('status.' + (open ? 'open' : 'closed'));
+      b.classList.toggle('open', open);
+      b.classList.toggle('closed', !open);
+    });
+    if (typeof window.triggerMenuUpdate === 'function') window.triggerMenuUpdate();
+    const langLabel = currentLanguage === 'km' ? 'ខ្មែរ' : 'EN';
+    document.querySelectorAll('.lang-btn').forEach(b => { b.textContent = langLabel; });
     document.documentElement.lang = currentLanguage === 'km' ? 'km' : 'en';
   }
 
@@ -1500,322 +701,290 @@
 
   function loadLanguage() {
     const saved = localStorage.getItem('preferredLanguage');
-    if (saved === 'en' || saved === 'km') {
-      currentLanguage = saved;
-    } else if (navigator.language && navigator.language.startsWith('km')) {
-      currentLanguage = 'km';
-    }
+    if (saved === 'en' || saved === 'km') currentLanguage = saved;
+    else if (navigator.language && navigator.language.startsWith('km')) currentLanguage = 'km';
     translatePage();
   }
 
-  const langButton = document.getElementById('lang-toggle');
-  if (langButton) {
-    langButton.addEventListener('click', () => setLanguage(currentLanguage === 'en' ? 'km' : 'en'));
+  function isStoreOpen() {
+    const h = new Date().getHours();
+    return h >= 7 && h < 22;
   }
 
   function renderReviews() {
     const grid = document.getElementById('reviews-grid');
     if (!grid) return;
-
-    grid.innerHTML = reviews.map(review => {
-      const initials = review.name.split(' ').map(part => part[0]).join('').slice(0, 2).toUpperCase();
-      const stars = '★★★★★'.slice(0, review.stars);
-      const breakdownText = Object.entries(review.breakdown)
-        .map(([label, value]) => `<span><strong>${label}:</strong> ${value}</span>`)
-        .join(' • ');
-
-      return `
-        <article class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">${initials}</div>
-            <div>
-              <div class="reviewer-name">${review.name}</div>
-              <div class="reviewer-meta">${review.when}</div>
-            </div>
-          </div>
-          <div class="review-stars">${stars}</div>
-          <p class="review-text">${review.text}</p>
-          <div class="review-breakdown">${breakdownText}</div>
-        </article>
-      `;
+    grid.innerHTML = reviews.map(r => {
+      const initials = r.name.split(' ').map(p => p[0]).join('').slice(0, 2).toUpperCase();
+      const breakdown = Object.entries(r.breakdown).map(([k,v]) => '<span><strong>' + k + ':</strong> ' + v + '</span>').join(' &bull; ');
+      return '<article class="review-card"><div class="review-header"><div class="review-avatar">' + initials + '</div><div><div class="reviewer-name">' + r.name + '</div><div class="reviewer-meta">' + r.when + '</div></div></div><div class="review-stars">' + '★'.repeat(r.stars) + '</div><p class="review-text">' + r.text + '</p><div class="review-breakdown">' + breakdown + '</div></article>';
     }).join('');
   }
 
-  renderReviews();
-
-  // Open/closed status based on local time
-  function isStoreOpen() {
-    const now = new Date();
-    const hour = now.getHours();
-    return hour >= 7 && hour < 22;
+  /* Theme */
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('preferredTheme', theme);
+  }
+  function loadTheme() {
+    const saved = localStorage.getItem('preferredTheme');
+    if (saved === 'dark' || saved === 'light') setTheme(saved);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+    else setTheme('light');
+  }
+  function toggleTheme() {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(next);
   }
 
-  function updateStatusBadges() {
-    const open = isStoreOpen();
-    const statusText = translations[currentLanguage]?.status?.[open ? 'open' : 'closed']
-      || (open ? '● Open Now' : '● Closed Now');
-    document.querySelectorAll('.status-badge').forEach(badge => {
-      badge.textContent = statusText;
-      badge.classList.toggle('open', open);
-      badge.classList.toggle('closed', !open);
-    });
-  }
+  /* Nav */
+  const header = document.querySelector('.site-header');
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }));
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
 
-  // Highlight today's day card
+  document.getElementById('lang-toggle')?.addEventListener('click', () => setLanguage(currentLanguage === 'en' ? 'km' : 'en'));
+  document.getElementById('lang-toggle-mobile')?.addEventListener('click', () => setLanguage(currentLanguage === 'en' ? 'km' : 'en'));
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
+
+  /* Today highlight */
   const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  const today = days[new Date().getDay()];
-  const todayCard = document.getElementById('day-' + today);
-  if (todayCard) todayCard.classList.add('today');
+  const todayEl = document.getElementById('day-' + days[new Date().getDay()]);
+  if (todayEl) todayEl.classList.add('today');
 
-  updateStatusBadges();
-  setInterval(updateStatusBadges, 60000);
+  setInterval(() => {
+    document.querySelectorAll('[data-status-badge]').forEach(b => {
+      const open = isStoreOpen();
+      b.textContent = t('status.' + (open ? 'open' : 'closed'));
+      b.classList.toggle('open', open);
+      b.classList.toggle('closed', !open);
+    });
+  }, 60000);
 
-  // Fade-in on scroll
-  const obs = new IntersectionObserver((entries) => {
+  /* Fade-in */
+  const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-
+  }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-  // Nav scroll effect
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    nav.style.boxShadow = window.scrollY > 40
-      ? '0 4px 20px rgba(44,26,14,0.08)'
-      : 'none';
+  /* FAQ */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-question').setAttribute('aria-expanded', 'false'); });
+      if (!wasOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
   });
+
+  /* Contact form */
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let valid = true;
+    const name = document.getElementById('contact-name');
+    const email = document.getElementById('contact-email');
+    const message = document.getElementById('contact-message');
+    const errName = document.getElementById('error-name');
+    const errEmail = document.getElementById('error-email');
+    const errMsg = document.getElementById('error-message');
+    const success = document.getElementById('form-success');
+    [name, email, message].forEach(f => f.classList.remove('error'));
+    [errName, errEmail, errMsg].forEach(el => { el.hidden = true; });
+    success.classList.remove('show');
+    if (!name.value.trim()) { name.classList.add('error'); errName.textContent = t('form.errName'); errName.hidden = false; valid = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { email.classList.add('error'); errEmail.textContent = t('form.errEmail'); errEmail.hidden = false; valid = false; }
+    if (!message.value.trim() || message.value.trim().length < 5) { message.classList.add('error'); errMsg.textContent = t('form.errMessage'); errMsg.hidden = false; valid = false; }
+    if (valid) { form.reset(); success.classList.add('show'); }
+  });
+
+  /* Gallery lightbox */
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item img'));
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  let lbIndex = 0;
+  function openLightbox(i) {
+    lbIndex = i;
+    lightboxImg.src = galleryItems[i].src.replace('w=600', 'w=1200');
+    lightboxImg.alt = galleryItems[i].alt;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.gallery-item').forEach(btn => btn.addEventListener('click', () => openLightbox(+btn.dataset.index)));
+  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+  document.getElementById('lightbox-prev').addEventListener('click', () => openLightbox((lbIndex - 1 + galleryItems.length) % galleryItems.length));
+  document.getElementById('lightbox-next').addEventListener('click', () => openLightbox((lbIndex + 1) % galleryItems.length));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') openLightbox((lbIndex - 1 + galleryItems.length) % galleryItems.length);
+    if (e.key === 'ArrowRight') openLightbox((lbIndex + 1) % galleryItems.length);
+  });
+
+  /* Scroll to top */
+  const scrollTop = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => scrollTop.classList.toggle('visible', window.scrollY > 400));
+  scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  renderReviews();
+  loadTheme();
+  loadLanguage();
+
+  window.currentLanguage = () => currentLanguage;
+  window.translations = translations;
+  window.getMenuFilters = function() {
+    const f = translations[currentLanguage]?.menu?.filters || translations.en.menu.filters;
+    return [
+      { key:'all', label:f.all, icon:'🛒' },
+      { key:'hot_drink', label:f.hot_drink, icon:'🔥' },
+      { key:'cold_drink', label:f.cold_drink, icon:'🧊' },
+      { key:'food_snack', label:f.food_snack, icon:'🥐' },
+      { key:'mart_item', label:f.mart_item, icon:'🛍️' }
+    ];
+  };
+})();
 </script>
 
-<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-<script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin defer></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin defer></script>
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
   const { useState, useEffect, useCallback } = React;
 
-  // ─── FIX 1: CSV PARSER — comma-only delimiter, proper quoted-field handling ───
-  // Uses a state-machine approach so multi-word titles like "Green Tea" are never split.
   function parseCSV(text) {
     const lines = text.split('\n');
     const rows = [];
     for (let i = 1; i < lines.length; i++) {
       const line = lines[i].trim();
       if (!line) continue;
-
-      // Walk the line character-by-character so we only split on literal commas,
-      // never on spaces inside or outside quoted fields.
       const fields = [];
-      let field = '';
-      let insideQuotes = false;
+      let field = '', insideQuotes = false;
       for (let c = 0; c < line.length; c++) {
         const ch = line[c];
         if (ch === '"') {
-          // Toggle quoted-mode; handle escaped double-quotes ("")
-          if (insideQuotes && line[c + 1] === '"') {
-            field += '"';
-            c++; // skip the second quote
-          } else {
-            insideQuotes = !insideQuotes;
-          }
-        } else if (ch === ',' && !insideQuotes) {
-          fields.push(field.trim());
-          field = '';
-        } else {
-          field += ch;
-        }
+          if (insideQuotes && line[c + 1] === '"') { field += '"'; c++; }
+          else insideQuotes = !insideQuotes;
+        } else if (ch === ',' && !insideQuotes) { fields.push(field.trim()); field = ''; }
+        else field += ch;
       }
-      fields.push(field.trim()); // push the final field
+      fields.push(field.trim());
       rows.push(fields);
     }
     return rows;
   }
 
-  // ─── Reactive bridge: assigned inside MenuGrid so the setter is always current ───
-  let triggerMenuUpdate = null;
   let menuRoot = null;
 
-  function getMenuFilters() {
-    const filterLabels = translations[currentLanguage]?.menu?.filters || translations.en.menu.filters;
-    return [
-      { key: 'all',        label: filterLabels.all,        icon: '🛒' },
-      { key: 'hot_drink',  label: filterLabels.hot_drink,  icon: '🔥' },
-      { key: 'cold_drink', label: filterLabels.cold_drink, icon: '🧊' },
-      { key: 'food_snack', label: filterLabels.food_snack, icon: '🥐' },
-      { key: 'mart_item',  label: filterLabels.mart_item,  icon: '🛍️' }
-    ];
-  }
-
   function MenuGrid() {
-    const [menuItems,        setMenuItems]        = useState([]);
+    const [menuItems, setMenuItems] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('all');
-    const [isExpanded,       setIsExpanded]       = useState(false);
-    const [loading,          setLoading]          = useState(true);
-    // langTick increments each time translatePage() fires, forcing a re-render
-    const [langTick,         setLangTick]         = useState(0);
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [langTick, setLangTick] = useState(0);
+    const bumpLang = useCallback(() => setLangTick(n => n + 1), []);
+    window.triggerMenuUpdate = bumpLang;
 
-    // ─── FIX 4: Expose the setter as a stable global so vanilla JS can call it ───
-    // useCallback ensures the reference is stable across renders.
-    const bumpLang = useCallback(() => setLangTick(prev => prev + 1), []);
-    triggerMenuUpdate = bumpLang;
-
-    // Fetch CSV once on mount
     useEffect(() => {
-      const googleSheetUrl =
-        "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL6N4uqEnbTPDWLBwiIDBkTGmRQidLNiQyx1R9FNEEPEcxddl9tCPSfe-1uKSYImKEVCatqLu4TECn/pub?output=csv";
-
-      fetch(googleSheetUrl)
+      fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRL6N4uqEnbTPDWLBwiIDBkTGmRQidLNiQyx1R9FNEEPEcxddl9tCPSfe-1uKSYImKEVCatqLu4TECn/pub?output=csv')
         .then(res => res.text())
         .then(csvText => {
-          const parsedData = parseCSV(csvText);
-
-          // ─── FIX 2: Capture all 8 columns including new Khmer columns G & H ───
-          const formattedItems = parsedData.map((row, index) => ({
-            id:       index,
-            name:     row[0] || '',          // Col A – English Item Name
-            category: row[1] || 'mart_item', // Col B – Category
-            tags:     row[2] || '',          // Col C – English Tags / Subtitle
-            price:    row[3] || '',          // Col D – Price
-            image:    row[4] || 'images/red-lemon-tea.jpg', // Col E – Image path
-            status:   row[5] || '',          // Col F – Promotion status (e.g. "New")
-            nameKm:   row[6] || '',          // Col G – Khmer Item Name  ← NEW
-            tagsKm:   row[7] || '',          // Col H – Khmer Tags / Subtitle ← NEW
+          const formattedItems = parseCSV(csvText).map((row, index) => ({
+            id: index, name: row[0] || '', category: row[1] || 'mart_item', tags: row[2] || '',
+            price: row[3] || '', image: row[4] || 'images/red-lemon-tea.jpg', status: row[5] || '',
+            nameKm: row[6] || '', tagsKm: row[7] || ''
           })).filter(item => item.name && item.name.trim() !== '');
-
           setMenuItems(formattedItems);
           setLoading(false);
         })
-        .catch(err => {
-          console.error("Error loading sheet menu items:", err);
-          setLoading(false);
-        });
+        .catch(() => setLoading(false));
     }, []);
 
+    const lang = window.currentLanguage ? window.currentLanguage() : 'en';
+    const tr = window.translations || {};
+    void langTick;
+
     if (loading) {
-      return React.createElement(
-        'div',
-        { className: 'text-center py-12 text-lg text-slate-500 font-medium' },
-        currentLanguage === 'km' ? 'កំពុងផ្ទុកម៉ឺនុយ...' : 'Loading Menu Items...'
-      );
+      return React.createElement('div', { className: 'menu-loading' }, lang === 'km' ? 'កំពុងផ្ទុកម៉ឺនុយ...' : 'Loading menu items...');
     }
 
-    const filterCategories = getMenuFilters();
-    const items = selectedCategory === 'all'
-      ? menuItems
-      : menuItems.filter(item => item.category === selectedCategory);
-
+    const filterCategories = window.getMenuFilters();
+    const items = selectedCategory === 'all' ? menuItems : menuItems.filter(item => item.category === selectedCategory);
     const visibleItems = isExpanded ? items : items.slice(0, 6);
-    const hasMore      = items.length > 6;
-    const toggleText   = translations[currentLanguage]?.menu?.[isExpanded ? 'showLess' : 'showMore']
-                         || (isExpanded ? 'Show Less' : 'Show More');
+    const hasMore = items.length > 6;
+    const toggleText = tr[lang]?.menu?.[isExpanded ? 'showLess' : 'showMore'] || (isExpanded ? 'Show Less' : 'Show More');
 
-    const handleToggle = () => {
-      if (isExpanded) {
-        const section = document.getElementById('menu-section');
-        if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-      setIsExpanded(prev => !prev);
-    };
-
-    return React.createElement('div', { className: 'mt-8' },
-
-      // ── Category filter pills ──────────────────────────────────────────────
-      React.createElement('div', { className: 'flex flex-wrap gap-3' },
+    return React.createElement('div', null,
+      React.createElement('div', { className: 'menu-filters' },
         filterCategories.map(cat =>
           React.createElement('button', {
-            key:       cat.key,
-            type:      'button',
-            onClick:   () => { setSelectedCategory(cat.key); setIsExpanded(false); },
-            className: `inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${
-              selectedCategory === cat.key
-                ? 'bg-slate-900 text-white border-slate-900 shadow-sm'
-                : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
-            }`
-          },
-            React.createElement('span', null, cat.icon),
-            React.createElement('span', null, cat.label)
-          )
+            key: cat.key, type: 'button',
+            className: 'menu-filter-btn' + (selectedCategory === cat.key ? ' active' : ''),
+            onClick: () => { setSelectedCategory(cat.key); setIsExpanded(false); }
+          }, React.createElement('span', null, cat.icon), React.createElement('span', null, cat.label))
         )
       ),
-
-      // ── Menu cards grid ───────────────────────────────────────────────────
-      React.createElement('div', { className: 'mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3' },
+      React.createElement('div', { className: 'menu-grid' },
         visibleItems.map(item => {
-
-          // ─── FIX 3: Language-aware display values with graceful fallback ───
-          const isKhmer    = currentLanguage === 'km';
-          const displayName = isKhmer
-            ? (item.nameKm && item.nameKm.trim() ? item.nameKm : item.name)
-            : item.name;
-          const displayTags = isKhmer
-            ? (item.tagsKm && item.tagsKm.trim() ? item.tagsKm : item.tags)
-            : item.tags;
-
-          return React.createElement('article', {
-            key:       item.id,
-            className: 'relative overflow-hidden rounded-3xl shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg bg-white'
-          },
-
-            // NEW badge (Column F)
-            item.status && item.status.toLowerCase() === 'new' &&
-              React.createElement('div', {
-                className: 'absolute top-4 left-4 z-10 bg-rose-500 text-white text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md shadow-md animate-pulse'
-              }, 'NEW'),
-
-            // Card image
-            React.createElement('div', { className: 'h-56 w-full overflow-hidden bg-slate-100' },
-              React.createElement('img', {
-                src:       item.image,
-                alt:       displayName,
-                loading:   'lazy',
-                className: 'h-full w-full object-cover transition duration-300 hover:scale-105',
-                onError:   (e) => { e.target.src = 'images/red-lemon-tea.jpg'; }
-              })
-            ),
-
-            // Gradient overlay
-            React.createElement('div', {
-              className: 'pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/70 via-black/40 to-transparent'
-            }),
-
-            // Text overlay — name, price, tags
-            React.createElement('div', { className: 'absolute bottom-0 left-0 w-full p-5' },
-              React.createElement('div', { className: 'flex items-center justify-between gap-4 mb-2' },
-                React.createElement('h3', {
-                  className: 'text-xl font-semibold text-white mb-0 leading-snug'
-                }, displayName),
-                React.createElement('span', {
-                  className: 'text-sm font-semibold text-white/80 shrink-0'
-                }, item.price)
+          const isKhmer = lang === 'km';
+          const displayName = isKhmer && item.nameKm.trim() ? item.nameKm : item.name;
+          const displayTags = isKhmer && item.tagsKm.trim() ? item.tagsKm : item.tags;
+          return React.createElement('article', { key: item.id, className: 'menu-card' },
+            React.createElement('div', { className: 'menu-card-visual' },
+              item.status && item.status.toLowerCase() === 'new' &&
+                React.createElement('div', { className: 'menu-card-badge' }, 'NEW'),
+              React.createElement('div', { className: 'menu-card-img' },
+                React.createElement('img', {
+                  src: item.image, alt: displayName, loading: 'lazy',
+                  onError: e => { e.target.src = 'images/red-lemon-tea.jpg'; }
+                })
               ),
-              displayTags && React.createElement('p', {
-                className: 'text-sm uppercase tracking-[0.18em] text-white/80'
-              }, displayTags)
+              React.createElement('div', { className: 'menu-card-overlay' }),
+              React.createElement('div', { className: 'menu-card-content' },
+              React.createElement('div', { className: 'menu-card-top' },
+                React.createElement('h3', { className: 'menu-card-title' }, displayName),
+                React.createElement('span', { className: 'menu-card-price' }, item.price)
+              ),
+              displayTags && React.createElement('p', { className: 'menu-card-tags' }, displayTags)
+              )
             )
           );
         })
       ),
-
-      // ── Show More / Show Less button ──────────────────────────────────────
-      React.createElement('div', { className: 'flex justify-center' },
+      React.createElement('div', { className: 'menu-toggle-wrap' },
         React.createElement('button', {
-          id:        'menu-toggle-btn',
-          type:      'button',
-          onClick:   handleToggle,
-          className: `menu-toggle-btn ${hasMore ? '' : 'hidden'}`
+          type: 'button',
+          className: 'menu-toggle-btn' + (hasMore ? '' : ' hidden'),
+          onClick: () => {
+            if (isExpanded) document.getElementById('menu-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setIsExpanded(p => !p);
+          }
         }, toggleText)
       )
     );
   }
 
-  function renderMenuGrid() {
-    if (!menuRoot) {
-      const rootEl = document.getElementById('react-menu-root');
-      if (!rootEl || !ReactDOM) return;
-      menuRoot = ReactDOM.createRoot(rootEl);
-    }
+  const rootEl = document.getElementById('react-menu-root');
+  if (rootEl && ReactDOM) {
+    menuRoot = ReactDOM.createRoot(rootEl);
     menuRoot.render(React.createElement(MenuGrid));
   }
-
-  renderMenuGrid();
-  loadLanguage();
+});
 </script>
 </body>
 </html>
