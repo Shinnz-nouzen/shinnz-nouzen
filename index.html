@@ -410,22 +410,18 @@ p{color:var(--text-muted)}
     <p data-i18n="why.intro">There are other drink shops around town. Here is why people keep coming back to us.</p>
     <div class="why-grid">
       <article class="why-card">
-        <div class="why-icon" aria-hidden="true">☕</div>
         <h3 data-i18n="why.card1title">Café + Mart in one stop</h3>
         <p data-i18n="why.card1desc">Order an iced latte and grab bread, snacks, or drinks to take home — no need to visit two places.</p>
       </article>
       <article class="why-card">
-        <div class="why-icon" aria-hidden="true">🌅</div>
         <h3 data-i18n="why.card2title">Open from 7 AM</h3>
         <p data-i18n="why.card2desc">Early workers and students can get coffee before most shops in the area even flip their signs open.</p>
       </article>
       <article class="why-card">
-        <div class="why-icon" aria-hidden="true">💵</div>
         <h3 data-i18n="why.card3title">Local pricing</h3>
         <p data-i18n="why.card3desc">We price for Tboung Khmum — not city-center markups. Most drinks stay under $2.</p>
       </article>
       <article class="why-card">
-        <div class="why-icon" aria-hidden="true">🤝</div>
         <h3 data-i18n="why.card4title">Personal service</h3>
         <p data-i18n="why.card4desc">You are talking to the owners, not a rotating staff. We remember your usual if you come often.</p>
       </article>
@@ -851,12 +847,12 @@ p{color:var(--text-muted)}
   window.getMenuFilters = function() {
     const f = translations[currentLanguage]?.menu?.filters || translations.en.menu.filters;
     return [
-      { key:'all', label:f.all, icon:'🛒' },
-      { key:'hot_drink', label:f.hot_drink, icon:'🔥' },
-      { key:'cold_drink', label:f.cold_drink, icon:'🧊' },
-      { key:'food_snack', label:f.food_snack, icon:'🥐' },
-      { key:'frappe_drink', label:f.frappe_drink, icon:'🍹'},
-      { key:'mart_item', label:f.mart_item, icon:'🛍️' }
+      { key:'all', label:f.all },
+      { key:'hot_drink', label:f.hot_drink },
+      { key:'cold_drink', label:f.cold_drink },
+      { key:'food_snack', label:f.food_snack },
+      { key:'frappe_drink', label:f.frappe_drink },
+      { key:'mart_item', label:f.mart_item }
     ];
   };
 })();
