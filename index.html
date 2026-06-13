@@ -166,15 +166,53 @@ p{color:var(--text-muted)}
 @media(min-width:640px){.why-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:900px){.story-grid{grid-template-columns:1.4fr 1fr}.why-grid{grid-template-columns:repeat(4,1fr)}}
 /* Favorites */
-.favorites-grid{display:grid;gap:1.25rem;margin-top:2rem}
-.fav-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:100px 1fr;transition:box-shadow var(--transition)}
-.fav-card:hover{box-shadow:var(--shadow)}
-.fav-img{background:var(--bg-alt);display:flex;align-items:center;justify-content:center;font-size:2rem}
-.fav-body{padding:1rem 1.1rem}
-.fav-body p{font-size:.88rem;line-height:1.55;margin-bottom:.35rem}
-.fav-price{font-family:var(--font-heading);font-weight:700;color:var(--caramel);font-size:1.05rem}
-@media(min-width:640px){.favorites-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:900px){.favorites-grid{grid-template-columns:repeat(3,1fr)}}
+.favorites-grid {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: start;
+}
+.fav-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+.fav-card:hover {
+    box-shadow: var(--shadow);
+}
+.fav-img {
+    background: var(--bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+.fav-body {
+    padding: 1rem 1.1rem;
+}
+.fav-body h3 {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+.fav-body p {
+    font-size: .88rem;
+    line-height: 1.55;
+    margin-bottom: .35rem;
+    word-break: normal;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+.fav-price {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--caramel);
+    font-size: 1.05rem;
+}
 /* Menu React */
 #menu-section{background:var(--surface-2)}
 .menu-intro{max-width:560px;margin-bottom:1.5rem}
@@ -433,18 +471,17 @@ p{color:var(--text-muted)}
   <div class="container fade-in">
     <p class="section-label" data-i18n="fav.label">House Favorites</p>
     <h2 data-i18n="fav.heading">What regulars order</h2>
-    <p data-i18n="fav.intro">A few items people ask for again and again. Full menu below updates from our sheet.</p>
+    <p data-i18n="fav.intro">A few items people ask for again and again. Full menu below.</p>
     <div class="favorites-grid">
-      <article class="fav-card"><div class="fav-img" aria-hidden="true">☕</div><div class="fav-body"><h3 data-i18n="fav.item1name">Iced Cambodian Coffee</h3><p data-i18n="fav.item1desc">Strong brew with condensed milk over ice. Sweet, bold, and cooling on hot days.</p><span class="fav-price">$1.00</span></div></article>
-      <article class="fav-card"><div class="fav-img" aria-hidden="true">🧋</div><div class="fav-body"><h3 data-i18n="fav.item2name">Brown Sugar Milk Tea</h3><p data-i18n="fav.item2desc">Creamy milk tea with brown sugar syrup. Popular with students after school.</p><span class="fav-price">$0.87</span></div></article>
-      <article class="fav-card"><div class="fav-img" aria-hidden="true">🍋</div><div class="fav-body"><h3 data-i18n="fav.item3name">Red Lemon Tea</h3><p data-i18n="fav.item3desc">Tangy and refreshing. Good if you want something cold without caffeine.</p><span class="fav-price">$0.75</span></div></article>
-      <article class="fav-card"><div class="fav-img" aria-hidden="true">🍵</div><div class="fav-body"><h3 data-i18n="fav.item4name">Matcha Latte</h3><p data-i18n="fav.item4desc">Creamy milk and premium matcha tea blended together for a smooth, refreshing drink that's not too sweet and full of flavor.</p><span class="fav-price">$1.25</span></div></article>
-      <article class="fav-card"><div class="fav-img" aria-hidden="true">🥛</div><div class="fav-body"><h3 data-i18n="fav.item5name">Milk Tea</h3><p data-i18n="fav.item5desc">Creamy milk and brewed tea combined for a smooth, sweet, and satisfying drink.</p><span class="fav-price">$1.00</span></div></article>
-      <article class="fav-card"><div class="fav-img" aria-hidden="true">🍃</div><div class="fav-body"><h3 data-i18n="fav.item6name">Green Tea</h3><p data-i18n="fav.item6desc">Light and refreshing green tea with a delicate aroma and clean finish.</p><span class="fav-price">$1.00</span></div></article>
+      <article class="fav-card"><div class="fav-body"><h3 data-i18n="fav.item1name">Iced Cambodian Coffee</h3><p data-i18n="fav.item1desc">Strong brew with condensed milk over ice. Sweet, bold, and cooling on hot days.</p><span class="fav-price">$1.00</span></div></article>
+      <article class="fav-card"><div class="fav-body"><h3 data-i18n="fav.item2name">Brown Sugar Milk Tea</h3><p data-i18n="fav.item2desc">Creamy milk tea with brown sugar syrup. Popular with students after school.</p><span class="fav-price">$0.87</span></div></article>
+      <article class="fav-card"><div class="fav-body"><h3 data-i18n="fav.item3name">Red Lemon Tea</h3><p data-i18n="fav.item3desc">Tangy and refreshing. Good if you want something cold without caffeine.</p><span class="fav-price">$0.75</span></div></article>
+      <article class="fav-card"><div class="fav-body"><h3 data-i18n="fav.item4name">Matcha Latte</h3><p data-i18n="fav.item4desc">Creamy milk and premium matcha tea blended together for a smooth, refreshing drink that's not too sweet and full of flavor.</p><span class="fav-price">$1.25</span></div></article>
+      <article class="fav-card"><div class="fav-body"><h3 data-i18n="fav.item5name">Milk Tea</h3><p data-i18n="fav.item5desc">Creamy milk and brewed tea combined for a smooth, sweet, and satisfying drink.</p><span class="fav-price">$1.00</span></div></article>
+      <article class="fav-card"><div class="fav-body"><h3 data-i18n="fav.item6name">Green Tea</h3><p data-i18n="fav.item6desc">Light and refreshing green tea with a delicate aroma and clean finish.</p><span class="fav-price">$1.00</span></div></article>
     </div>
   </div>
 </section>
-
 <section class="section" id="menu-section">
   <div class="container fade-in">
     <div class="menu-intro">
@@ -622,7 +659,7 @@ p{color:var(--text-muted)}
       hero:{ googleRating:'on Google Maps', title:'Your neighborhood<br><em>café & mart</em><br>in Tboung Khmum', lead:'Three siblings opened this spot so people in town could grab a proper coffee, a cold drink, or something from the shelf without driving far. We open early, stay open late, and keep prices fair for everyday customers.', ctaVisit:'Get Directions', ctaCall:'Call 060 331 661', statHours:'Daily Hours', statRating:'Rating', statDays:'Open Days' },
       story:{ label:'Our Story', heading:'Started by siblings,<br>built for the neighborhood', p1:'We grew up in Tboung Khmum and noticed there weren\'t many places where you could sit down with a coffee and also pick up snacks or small groceries on the way home. So we pooled what we had, fixed up the shop ourselves, and opened The Siblings Mart & Café.', p2:'One of us handles the drinks, another runs the mart side, and we all take turns at the counter. Regulars know us by name. Students come before school. Motorbike drivers stop in for iced coffee on hot afternoons. That is exactly the kind of place we wanted this to be.', fact1label:'Location', fact2label:'Since', fact2:'A local family business serving the community', fact3label:'What we sell', fact3:'Hot & iced drinks, snacks, and everyday mart items' },
       why:{ label:'Why Us', heading:'What makes us different', intro:'There are other drink shops around town. Here is why people keep coming back to us.', card1title:'Café + Mart in one stop', card1desc:'Order an iced latte and grab bread, snacks, or drinks to take home — no need to visit two places.', card2title:'Open from 7 AM', card2desc:'Early workers and students can get coffee before most shops in the area even flip their signs open.', card3title:'Local pricing', card3desc:'We price for Tboung Khmum — not city-center markups. Most drinks stay under $2.', card4title:'Personal service', card4desc:'You are talking to the owners, not a rotating staff. We remember your usual if you come often.' },
-      fav:{ label:'House Favorites', heading:'What regulars order', intro:'A few items people ask for again and again. Full menu below updates from our sheet.', item1name:'Iced Cambodian Coffee', item1desc:'Strong brew with condensed milk over ice. Sweet, bold, and cooling on hot days.', item2name:'Brown Sugar Milk Tea', item2desc:'Creamy milk tea with brown sugar syrup. Popular with students after school.', item3name:'Red Lemon Tea', item3desc:'Tangy and refreshing. Good if you want something cold without caffeine.', item4name:'Matcha Latte', item4desc:'Creamy milk and premium matcha tea blended together for a smooth, refreshing drink that\'s not too sweet and full of flavor.', item5name:'Milk Tea', item5desc:'Creamy milk and brewed tea combined for a smooth, sweet, and satisfying drink. ', item6name:'Green Tea', item6desc:'Light and refreshing green tea with a delicate aroma and clean finish.' },
+      fav:{ label:'House Favorites', heading:'What regulars order', intro:'A few items people ask for again and again. Full menu below.', item1name:'Iced Cambodian Coffee', item1desc:'Strong brew with condensed milk over ice. Sweet, bold, and cooling on hot days.', item2name:'Brown Sugar Milk Tea', item2desc:'Creamy milk tea with brown sugar syrup. Popular with students after school.', item3name:'Red Lemon Tea', item3desc:'Tangy and refreshing. Good if you want something cold without caffeine.', item4name:'Matcha Latte', item4desc:'Creamy milk and premium matcha tea blended together for a smooth, refreshing drink that\'s not too sweet and full of flavor.', item5name:'Milk Tea', item5desc:'Creamy milk and brewed tea combined for a smooth, sweet, and satisfying drink. ', item6name:'Green Tea', item6desc:'Light and refreshing green tea with a delicate aroma and clean finish.' },
       menu:{ sectionLabel:'Full Menu', heading:'Everything we serve', meta:'Hot drinks, cold drinks, snacks, and mart items — updated live from our menu sheet.', showMore:'Show More', showLess:'Show Less', filters:{ all:'All', hot_drink:'Hot Drinks', cold_drink:'Cold Drinks', food_snack:'Food & Snacks', mart_item:'Mart Items', frappe_drink:'Frappe Drinks' } },
       gallery:{ label:'Gallery', heading:'Inside the shop', intro:'Warm lighting, a clean counter, and cold drinks lined up for the afternoon rush — swap these photos for your own shop shots when you have them.' },
       hoursSub:'Hours', hoursTitle:'Open every day, 7 AM – 10 PM', hoursDesc:'Same hours all week. Stop by before work, after school, or on a late evening walk.',
@@ -641,7 +678,7 @@ p{color:var(--text-muted)}
       hero:{ googleRating:'លើ Google Maps', title:'ហាងកាហ្វេ &amp; ម៉ាត<br><em>ក្នុងខេត្តត្បូងឃ្មុំ</em>', lead:'បងប្អូនបីនាក់បានបើកហាងនេះ ដើម្បីឲ្យមនុស្សក្នុងទីកន្លែងអាចយកកាហ្វេ ភេសជ្ជៈត្រជាក់ ឬទំនិញតាមធ្នើរដោយមិនចាំបាច់ធ្វើដំណើរឆ្ងាយ។ យើងបើកព្រឹក បិទយប់ និងរក្សាតម្លៃសមរម្យសម្រាប់អតិថិជនប្រចាំថ្ងៃ។', ctaVisit:'មើលទីតាំង', ctaCall:'ហៅ 060 331 661', statHours:'ម៉ោងបើក', statRating:'ការវាយតម្លៃ', statDays:'ថ្ងៃបើក' },
       story:{ label:'រឿងរ៉ាវរបស់យើង', heading:'បង្កើតឡើងដោយបងប្អូន<br>សម្រាប់សហគមន៍', p1:'យើងធំឡើងនៅត្បូងឃ្មុំ ហើយសង្កេតឃើញថាមិនមានទីកន្លែងច្រើនដែលអាចអង្គុយផឹកកាហ្វេ និងយកអាហារសម្រន់ឬទំនិញតូចៗទៅផ្ទះបាន។ ដូច្នេះយើងប្រមូលធនធាន ជួសជុលហាងដោយខ្លួនឯង ហើយបើក The Siblings Mart &amp; Café។', p2:'មួយនាក់ធ្វើភេសជ្ជៈ មួយនាក់គ្រប់គ្រងម៉ាត ហើយយើងប្តូរគ្នានៅការិយាល័យ។ អតិថិជនទំនាក់ទំនងស្គាល់ឈ្មោះយើង។ សិស្សមកមុនសាលា។ អ្នកបើកម៉ូតូឈប់យកកាហ្វេត្រជាក់ថ្ងៃក្តៅ។ នេះជាកន្លែងដែលយើងចង់បង្កើត។', fact1label:'ទីតាំង', fact2label:'តាំងពី', fact2:'អាជីវកម្មគ្រួសារក្នុងស្រុក', fact3label:'អ្វីដែលយើងលក់', fact3:'ភេសជ្ជៈក្តៅ ត្រជាក់ អាហារសម្រន់ និងទំនិញម៉ាត' },
       why:{ label:'ហេតុអ្វីជ្រើសយើង', heading:'អ្វីដែលធ្វើឲ្យយើងខុសគេ', intro:'មានហាងភេសជ្ជៈផ្សេងទៀតក្នុងទីកន្លែង។ នេះជាហេតុដែលអតិថិជនត្រឡប់មកវិញ។', card1title:'កាហ្វេ + ម៉ាតក្នុងកន្លែងតែមួយ', card1desc:'បញ្ជាទិញឡាតេត្រជាក់ ហើយយកនំ អាហារសម្រន់ ឬភេសជ្ជៈទៅផ្ទះ — មិនចាំបាច់ទៅពីរកន្លែង។', card2title:'បើកពី ៧ ព្រឹក', card2desc:'អ្នកធ្វើការព្រឹក និងសិស្សអាចយកកាហ្វេមុនហាងផ្សេងភាគច្រើនបើក។', card3title:'តម្លៃក្នុងស្រុក', card3desc:'យើងដាក់តម្លៃសម្រាប់ត្បូងឃ្មុំ — មិនមែនតម្លៃទីក្រុង។ ភេសជ្ជៈភាគច្រើនក្រោម $2។', card4title:'សេវាកម្មផ្ទាល់ខ្លួន', card4desc:'អ្នកនិយាយជាមួយម្ចាស់ហាង មិនមែនបុគ្គលិកប្តូរទៅមកវិញ។ យើងចងចាំអ្វីដែលអ្នកបញ្ជាញឹកញាប់។' },
-      fav:{ label:'មុខម្ហូបពេញនិយម', heading:'អ្វីដែលអតិថិជនប្រចាំញ៉ាង់', intro:'មុខម្ហូបមួយចំនួនដែលមនុស្សបញ្ជាញឹកញាប់។ ម៉ឺនុយពេញខាងក្រោមធ្វើបច្ចុប្បន្នភាពពីសៀវភៅរបស់យើង។', item1name:'កាហ្វេត្រជាក់កម្ពុជា', item1desc:'កាហ្វេខ្លាំងជាមួយទឹកដោះគោជូរ លើទឹកកក។ ផ្អែម និងស្រស់ស្រាយថ្ងៃក្តៅ។', item2name:'តែទឹកដោះគោស្ករត្នោត', item2desc:'តែទឹកដោះគោជាមួយស្ករត្នោត។ ពេញនិយមសម្រាប់សិស្សបន្ទាប់ពីសាលា។', item3name:'តែក្រូចក្រហម', item3desc:'ជាតិទឹកឆ្មា និងស្រស់ស្រាយ។ ល្អប្រសិនបើអ្នកចង់ភេសជ្ជៈត្រជាក់គ្មានកាហ្វេ។', item4name:'ម៉ាតឆាឡាតេ', item4desc:'តែម៉ាឆា និងទឹកដោះគោស្រស់ លាយបញ្ចូលគ្នាយ៉ាងល្អ ផ្តល់នូវរសជាតិទន់រលោង ស្រស់ស្រាយ មិនផ្អែមពេក និងឈ្ងុយឆ្ងាញ់ជាប់មាត់។', item5name:'តែទឹកដោះគោ', item5desc:'ទឹកដោះគោ និងតែដែលឆុងថ្មីៗ លាយបញ្ចូលគ្នាយ៉ាងល្អ ធ្វើឱ្យភេសជ្ជៈនេះមានរសជាតិទន់រលោង ផ្អែមឆ្ងាញ់ និងផ្តល់ភាពពេញចិត្ត។', item6name:'តែបៃតង', item6desc:'តែបៃតងស្រស់ស្រាយ មានក្លិនឈ្ងុយស្រាល និងរសជាតិទន់ភ្លន់ដែលងាយស្រួលផឹក។' },
+      fav:{ label:'មុខម្ហូបពេញនិយម', heading:'អ្វីដែលអតិថិជនប្រចាំញ៉ាង់', intro:'មុខម្ហូបមួយចំនួនដែលមនុស្សបញ្ជាញឹកញាប់។ ម៉ឺនុយពេញនៅខាងក្រោម។', item1name:'កាហ្វេត្រជាក់កម្ពុជា', item1desc:'កាហ្វេខ្លាំងជាមួយទឹកដោះគោជូរ លើទឹកកក។ ផ្អែម និងស្រស់ស្រាយថ្ងៃក្តៅ។', item2name:'តែទឹកដោះគោស្ករត្នោត', item2desc:'តែទឹកដោះគោជាមួយស្ករត្នោត។ ពេញនិយមសម្រាប់សិស្សបន្ទាប់ពីសាលា។', item3name:'តែក្រូចក្រហម', item3desc:'ជាតិទឹកឆ្មា និងស្រស់ស្រាយ។ ល្អប្រសិនបើអ្នកចង់ភេសជ្ជៈត្រជាក់គ្មានកាហ្វេ។', item4name:'ម៉ាតឆាឡាតេ', item4desc:'តែម៉ាឆា និងទឹកដោះគោស្រស់ លាយបញ្ចូលគ្នាយ៉ាងល្អ ផ្តល់នូវរសជាតិទន់រលោង ស្រស់ស្រាយ មិនផ្អែមពេក និងឈ្ងុយឆ្ងាញ់ជាប់មាត់។', item5name:'តែទឹកដោះគោ', item5desc:'ទឹកដោះគោ និងតែដែលឆុងថ្មីៗ លាយបញ្ចូលគ្នាយ៉ាងល្អ ធ្វើឱ្យភេសជ្ជៈនេះមានរសជាតិទន់រលោង ផ្អែមឆ្ងាញ់ និងផ្តល់ភាពពេញចិត្ត។', item6name:'តែបៃតង', item6desc:'តែបៃតងស្រស់ស្រាយ មានក្លិនឈ្ងុយស្រាល និងរសជាតិទន់ភ្លន់ដែលងាយស្រួលផឹក។' },
       menu:{ sectionLabel:'ម៉ឺនុយពេញ', heading:'អ្វីគ្រប់យ៉ាងដែលយើងមាន', meta:'ភេសជ្ជៈក្តៅ ត្រជាក់ អាហារសម្រន់ និងទំនិញម៉ាត — ធ្វើបច្ចុប្បន្នភាពផ្ទាល់ពីសៀវភៅម៉ឺនុយ។', showMore:'មើលបន្ថែម', showLess:'បិទ', filters:{ all:'ទាំងអស់', hot_drink:'ភេសជ្ជៈក្តៅ', cold_drink:'ភេសជ្ជៈត្រជាក់', food_snack:'អាហារ និងសម្រន់', mart_item:'ទំនិញម៉ាត', frappe_drink:'ភេសជ្ជៈក្រឡុក' } },
       gallery:{ label:'វិចិត្រសាល', heading:'ក្នុងហាង', intro:'ពន្លឺកក់ក្តៅ ការិយាល័យស្អាត និងភេសជ្ជៈត្រជាក់រួចសម្រាប់ម៉ោងល្បី — ជំនួសរូបថតទាំងនេះដោយរូបពិតប្រាកដពីហាងរបស់អ្នកនៅពេលមាន។' },
       hoursSub:'ម៉ោង', hoursTitle:'បើករាល់ថ្ងៃ ៧ ព្រឹក – ១០ យប់', hoursDesc:'ម៉ោងដូចគ្នារាល់សប្តាហ៍។ មកមុនធ្វើការ បន្ទាប់សាលា ឬដើរលេងយប់។',
