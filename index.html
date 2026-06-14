@@ -940,7 +940,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(csvText => {
           const formattedItems = parseCSV(csvText).map((row, index) => ({
             id: index, name: row[0] || '', category: row[1] || 'mart_item', tags: row[2] || '',
-            price: row[3] || '', image: row[4] || 'images/red-lemon-tea.jpg', status: row[5] || '',
+            price: row[3] || '', image: row[4] || 'images/No images.png', status: row[5] || '',
             nameKm: row[6] || '', tagsKm: row[7] || ''
           })).filter(item => item.name && item.name.trim() !== '');
           setMenuItems(formattedItems);
