@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/slime-mascot.svg" width="150" alt="Cute blue slime mascot" />
+  <img src="https://www.ten-sura.com/4GfGdAp7/wp-content/themes/tensura_portal/assets/images/character/rimuru/character-image.png?v=5" width="230" alt="Official Rimuru Tempest character artwork showing human form alongside slime form" />
 </p>
 
 <h1 align="center">Hey, I'm Shinn!</h1>
