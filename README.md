@@ -1,73 +1,62 @@
-# Hey, I'm Shinn 👋
-
+<!-- PROFILE BANNER -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=36BC7B&center=true&vCenter=true&width=500&lines=Developer+%7C+Creator+%7C+Problem+Solver;Building+things+that+matter.;Always+learning.+Always+creating." alt="Typing SVG" />
+  <img src="./assets/rimuru-banner.svg" width="100%" alt="Shinn profile banner with a cute blue slime mascot" />
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:101820,100:145A42&height=2&section=header" width="100%" />
+  <img src="./assets/slime-mascot.svg" width="150" alt="Cute blue slime mascot" />
 </p>
 
-## About Me
-
-```yaml
-name: Shinn
-role: Developer & Creator
-interests:
-  - Web Development
-  - Python Automation
-  - Creative Coding
-  - UI/UX Design
-  - Experimental Projects
-mindset: "Learn. Build. Improve. Repeat."
-```
-
-I enjoy turning ideas into real projects, experimenting with technology, and creating digital experiences that are both functional and visually appealing.
-
-## Tech Stack
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,python,git,github,vscode" />
-</p>
-
-## Featured Projects
-
-| Project | Description |
-|---|---|
-| ☕ The Siblings | Café and mart website |
-| ⚗️ Reaction Chamber | Interactive chemistry learning application |
-| 🐍 Student Automation | Python-based attendance and ID card generation tools |
-
-## Currently Exploring
-
-- Building better web experiences
-- Improving Python automation workflows
-- Learning and experimenting with new technologies
-- Turning creative concepts into functional applications
-
-## GitHub Statistics
-
+<h1 align="center">Hey, I'm Shinn!</h1>
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=transparent&hide_border=true&title_color=36BC7B&icon_color=36BC7B&text_color=9CA3AF" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=transparent&hide_border=true&title_color=36BC7B&text_color=9CA3AF" />
+  <strong>Developer · Creator · Curious mind</strong><br/>
+  I turn ideas into useful things, one experiment at a time.
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=YOUR_USERNAME&theme=transparent&hide_border=true&ring=36BC7B&fire=36BC7B&currStreakLabel=36BC7B" width="70%" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&pause=1200&color=65DDF5&center=true&vCenter=true&width=520&lines=Building+for+the+web;Automating+the+boring+stuff;Learning+something+new+every+day" alt="A rotating introduction" />
 </p>
 
-## Let's Connect
+---
+
+## ✦ A little about me
+
+- I enjoy building **web applications**, useful tools, and creative side projects.
+- I like clean interfaces as much as I like making things work.
+- Currently exploring better ways to build, automate, and learn.
+
+> **My loop:** Learn → Build → Break → Improve → Repeat.
+
+## ✦ Tech I work with
 
 <p align="center">
-  <a href="https://github.com/YOUR_USERNAME">
-    <img src="https://img.shields.io/badge/GitHub-101820?style=for-the-badge&logo=github&logoColor=36BC7B" />
-  </a>
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,python,git,github,vscode&theme=dark" alt="HTML, CSS, JavaScript, TypeScript, React, Python, Git, GitHub and VS Code" />
+</p>
+
+## ✦ Things I've been building
+
+| Project | What it is |
+|:--|:--|
+| [The Siblings](https://thesiblingsmartandcafe.vercel.app/) | A café and mart website |
+| **Reaction Chamber** | An interactive chemistry learning project |
+| **Student Automation** | Python tools for attendance and student ID workflows |
+| [SAKRA](https://github.com/Shinnz-nouzen/SAKRA) | A clothing / creative brand project |
+
+## ✦ GitHub activity
+
+<p align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Shinnz-nouzen&show_icons=true&hide_border=true&bg_color=0B1930&title_color=72DFF5&icon_color=72DFF5&text_color=D6EAF7&ring_color=72DFF5" alt="Shinn's GitHub statistics" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Shinnz-nouzen&layout=compact&hide_border=true&bg_color=0B1930&title_color=72DFF5&text_color=D6EAF7" alt="Most used languages" />
 </p>
 
 <p align="center">
-  <i>"Great things are built one line at a time."</i>
+  <img width="70%" src="https://streak-stats.demolab.com?user=Shinnz-nouzen&hide_border=true&background=0B1930&ring=72DFF5&fire=72DFF5&currStreakLabel=72DFF5&sideLabels=D6EAF7&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=8BA9C2" alt="GitHub contribution streak" />
 </p>
 
+---
+
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:145A42,100:101820&height=100&section=footer" width="100%" />
+  <img src="./assets/slime-divider.svg" width="100%" alt="" />
+  <sub>Thanks for stopping by. Stay curious and keep creating.</sub><br/>
+  <sub>💧 Slime mode: always on</sub>
 </p>
